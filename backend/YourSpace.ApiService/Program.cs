@@ -1,41 +1,47 @@
+using Microsoft.EntityFrameworkCore;
+using YourSpace.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+// Configurare servicii
 builder.Services.AddOpenApi();
+
+// Adăugare CORS pentru a permite frontend-ul să comunice cu API-ul
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000") // URL-ul frontend-ului Next.js
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
+// Configurare bază de date PostgreSQL
+// Connection string-ul îl vom lua din configurare (appsettings.json sau variabile de mediu)
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
+    ?? "Host=localhost;Database=yourspace;Username=postgres;Password=postgres";
+
+builder.Services.AddDbContext<YourSpaceDbContext>(options =>
+    options.UseNpgsql(connectionString));
+
+// Adăugare controllere pentru API
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configurare pipeline HTTP
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
 
+app.UseCors("AllowFrontend");
 app.UseHttpsRedirection();
+app.MapControllers();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+// Endpoint de test pentru a verifica că API-ul funcționează
+app.MapGet("/api/health", () => new { status = "healthy", timestamp = DateTime.UtcNow })
+    .WithName("HealthCheck");
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
