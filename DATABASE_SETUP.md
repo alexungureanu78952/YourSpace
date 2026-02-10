@@ -9,7 +9,7 @@ Dacă ai Docker instalat, rulează în directorul rădăcină al proiectului:
 docker-compose up -d
 ```
 
-Aceasta va porni PostgreSQL pe `localhost:5432` cu credențialele:
+Aceasta va porni PostgreSQL pe `localhost:5433` cu credențialele:
 - **Database**: yourspace
 - **Username**: postgres
 - **Password**: postgres

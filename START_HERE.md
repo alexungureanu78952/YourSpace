@@ -30,7 +30,7 @@ Am construit complet o **platformă social media moderne** inspirată de MySpace
            │ SQL
            ↓
 ┌─────────────────────┐
-│   PostgreSQL 16     │ (localhost:5432)
+│   PostgreSQL 16     │ (localhost:5433)
 │   - Users table     │
 │   - Profiles table  │
 │   - Posts table     │

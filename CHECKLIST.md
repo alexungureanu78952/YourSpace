@@ -52,7 +52,7 @@
 - [x] Database: yourspace
 - [x] User: postgres
 - [x] Password: postgres
-- [x] Port: 5432
+- [x] Port: 5433
 - [x] Health check configured
 - [x] Volume persistence configured
 
