@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="YourSpace.ApiService/YourSpace.ApiService.csproj" />
+  <Project Path="YourSpace.Data/YourSpace.Data.csproj" />
+</Solution>
