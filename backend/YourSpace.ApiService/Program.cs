@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using YourSpace.ApiService.Services;
 using YourSpace.Data;
+using YourSpace.Data.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,11 +21,17 @@ builder.Services.AddCors(options =>
 
 // Configurare bază de date PostgreSQL
 // Connection string-ul îl vom lua din configurare (appsettings.json sau variabile de mediu)
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
     ?? "Host=localhost;Database=yourspace;Username=postgres;Password=postgres";
 
 builder.Services.AddDbContext<YourSpaceDbContext>(options =>
     options.UseNpgsql(connectionString));
+
+// Dependency Injection - Repositories (Data Access Layer)
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+// Dependency Injection - Services (Business Logic Layer)
+builder.Services.AddScoped<IUserService, UserService>();
 
 // Adăugare controllere pentru API
 builder.Services.AddControllers();
