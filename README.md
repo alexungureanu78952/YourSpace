@@ -23,6 +23,12 @@ O platformă social media modernă inspirată de MySpace, unde utilizatorii îș
   - Chat în timp real
   - Design responsive
 
+
+## Standarde de Inginerie
+
+- Toate funcționalitățile și modificările de cod trebuie să includă teste unitare (xUnit pentru backend, Jest/React Testing Library pentru frontend).
+- Arhitectura codului este proiectată pentru testabilitate: se folosesc dependențe injectabile, interfețe și mock-uri pentru toate dependențele externe.
+
 ## Structură Proiect
 
 ```

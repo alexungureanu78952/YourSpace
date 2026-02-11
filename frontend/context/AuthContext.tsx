@@ -9,14 +9,14 @@ interface User {
     createdAt: string;
 }
 
-interface AuthContextType {
+export interface AuthContextType {
     user: User | null;
     token: string | null;
     login: (token: string, user: User) => void;
     logout: () => void;
 }
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
     const [user, setUser] = useState<User | null>(null);
@@ -26,8 +26,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         const storedToken = typeof window !== "undefined" ? localStorage.getItem("token") : null;
         const storedUser = typeof window !== "undefined" ? localStorage.getItem("user") : null;
         if (storedToken && storedUser) {
-            setToken(storedToken);
-            setUser(JSON.parse(storedUser));
+            try {
+                setToken(storedToken);
+                setUser(JSON.parse(storedUser));
+            } catch (error) {
+                // Invalid JSON in localStorage, clear it
+                console.warn('Failed to parse stored user data, clearing localStorage');
+                localStorage.removeItem("token");
+                localStorage.removeItem("user");
+            }
         }
     }, []);
 

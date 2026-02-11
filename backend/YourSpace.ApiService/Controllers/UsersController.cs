@@ -36,8 +36,16 @@ public class UsersController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<UserDto>>> GetUsers()
     {
-        var users = await _userService.GetAllUsersAsync();
-        return Ok(users);
+        try
+        {
+            var users = await _userService.GetAllUsersAsync();
+            return Ok(users);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error in GetUsers");
+            return StatusCode(500, new { message = "A apărut o eroare la preluarea utilizatorilor." });
+        }
     }
 
     /// <summary>
@@ -47,13 +55,19 @@ public class UsersController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<UserDetailDto>> GetUser(int id)
     {
-        var user = await _userService.GetUserByIdAsync(id);
-
-        if (user == null)
+        try
         {
-            return NotFound(new { message = "Utilizatorul nu a fost găsit" });
+            var user = await _userService.GetUserByIdAsync(id);
+            if (user == null)
+            {
+                return NotFound(new { message = "Utilizatorul nu a fost găsit" });
+            }
+            return Ok(user);
         }
-
-        return Ok(user);
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, $"Error in GetUser for id {id}");
+            return StatusCode(500, new { message = "A apărut o eroare la preluarea utilizatorului." });
+        }
     }
 }

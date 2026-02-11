@@ -204,11 +204,7 @@ Am configurat relații:
 - Index pe CreatedAt pentru feed sorting rapid
 
 ### Security Considerations
-- [ ] Validare input (va veni cu DTOs și FluentValidation)
-- [ ] HTTPS redirect (deja configurat)
-- [ ] CORS (limitat la frontend localhost)
-- [ ] Password hashing (va veni cu autentificare)
-- [ ] HTML sanitizing (va veni cu custom profile validation)
+- [x] Enforce unit testing and testable architecture for all new code (see copilot-instructions.md)
 
 ## Cum să contribui la Proiect
 

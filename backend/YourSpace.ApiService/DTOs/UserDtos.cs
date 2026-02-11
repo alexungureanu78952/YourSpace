@@ -19,11 +19,3 @@ public class UserDetailDto : UserDto
     public int PostsCount { get; set; }
 }
 
-public class UserProfileDto
-{
-    public string DisplayName { get; set; } = string.Empty;
-    public string Bio { get; set; } = string.Empty;
-    public string? AvatarUrl { get; set; }
-    public string CustomHtml { get; set; } = string.Empty;
-    public string CustomCss { get; set; } = string.Empty;
-}

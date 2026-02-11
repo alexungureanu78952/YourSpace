@@ -1,0 +1,4602 @@
+{
+  "YourSpace.ApiService.dll": {
+    "d:\\GitHub\\YourSpace\\backend\\YourSpace.ApiService\\Program.cs": {
+      "Program": {
+        "System.Void Program::<Main>$(System.String[])": {
+          "Lines": {
+            "11": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "35": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "50": 0,
+            "51": 0,
+            "53": 0,
+            "54": 0,
+            "57": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "67": 0,
+            "69": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "77": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "85": 0,
+            "86": 0,
+            "88": 0
+          },
+          "Branches": [
+            {
+              "Line": 50,
+              "Offset": 168,
+              "EndOffset": 170,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 50,
+              "Offset": 168,
+              "EndOffset": 176,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 72,
+              "Offset": 299,
+              "EndOffset": 301,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 72,
+              "Offset": 299,
+              "EndOffset": 315,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "d:\\GitHub\\YourSpace\\backend\\YourSpace.ApiService\\obj\\Debug\\net10.0\\Microsoft.AspNetCore.OpenApi.SourceGenerators\\Microsoft.AspNetCore.OpenApi.SourceGenerators.XmlCommentGenerator\\OpenApiXmlCommentSupport.generated.cs": {
+      "Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlComment": {
+        "System.String Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlComment::get_Summary()": {
+          "Lines": {
+            "47": 0
+          },
+          "Branches": []
+        },
+        "System.String Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlComment::get_Description()": {
+          "Lines": {
+            "48": 0
+          },
+          "Branches": []
+        },
+        "System.String Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlComment::get_Remarks()": {
+          "Lines": {
+            "49": 0
+          },
+          "Branches": []
+        },
+        "System.String Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlComment::get_Returns()": {
+          "Lines": {
+            "50": 0
+          },
+          "Branches": []
+        },
+        "System.String Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlComment::get_Value()": {
+          "Lines": {
+            "51": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlComment::get_Deprecated()": {
+          "Lines": {
+            "52": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<System.String> Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlComment::get_Examples()": {
+          "Lines": {
+            "53": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlParameterComment> Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlComment::get_Parameters()": {
+          "Lines": {
+            "54": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlResponseComment> Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlComment::get_Responses()": {
+          "Lines": {
+            "55": 0
+          },
+          "Branches": []
+        },
+        "System.Void Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlComment::.ctor(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Collections.Generic.List`1<System.String>,System.Collections.Generic.List`1<Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlParameterComment>,System.Collections.Generic.List`1<Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlResponseComment>)": {
+          "Lines": {
+            "46": 0
+          },
+          "Branches": []
+        }
+      },
+      "Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlParameterComment": {
+        "System.String Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlParameterComment::get_Name()": {
+          "Lines": {
+            "58": 0
+          },
+          "Branches": []
+        }
+      },
+      "Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlResponseComment": {
+        "System.String Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlResponseComment::get_Code()": {
+          "Lines": {
+            "61": 0
+          },
+          "Branches": []
+        }
+      },
+      "Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlCommentCache": {
+        "System.Collections.Generic.Dictionary`2<System.String,Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlComment> Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlCommentCache::get_Cache()": {
+          "Lines": {
+            "67": 0
+          },
+          "Branches": [
+            {
+              "Line": 67,
+              "Offset": 6,
+              "EndOffset": 8,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 6,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Collections.Generic.Dictionary`2<System.String,Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlComment> Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlCommentCache::GenerateCacheEntries()": {
+          "Lines": {
+            "70": 0,
+            "71": 0,
+            "74": 0,
+            "75": 0
+          },
+          "Branches": []
+        }
+      },
+      "Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__DocumentationCommentIdHelper": {
+        "System.String Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__DocumentationCommentIdHelper::CreateDocumentationId(System.Type)": {
+          "Lines": {
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "92": 0,
+            "93": 0
+          },
+          "Branches": [
+            {
+              "Line": 87,
+              "Offset": 10,
+              "EndOffset": 12,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 87,
+              "Offset": 10,
+              "EndOffset": 24,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.String Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__DocumentationCommentIdHelper::CreateDocumentationId(System.Reflection.PropertyInfo)": {
+          "Lines": {
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "106": 0,
+            "107": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "114": 0,
+            "115": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "134": 0,
+            "135": 0
+          },
+          "Branches": [
+            {
+              "Line": 101,
+              "Offset": 10,
+              "EndOffset": 12,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 101,
+              "Offset": 10,
+              "EndOffset": 24,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 109,
+              "Offset": 56,
+              "EndOffset": 58,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 109,
+              "Offset": 56,
+              "EndOffset": 80,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 119,
+              "Offset": 118,
+              "EndOffset": 120,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 122,
+              "Offset": 199,
+              "EndOffset": 135,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 124,
+              "Offset": 145,
+              "EndOffset": 147,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 124,
+              "Offset": 145,
+              "EndOffset": 158,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 122,
+              "Offset": 199,
+              "EndOffset": 201,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 119,
+              "Offset": 118,
+              "EndOffset": 211,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.String Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__DocumentationCommentIdHelper::CreateDocumentationId(System.Type,System.String)": {
+          "Lines": {
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "145": 0,
+            "147": 0,
+            "148": 0,
+            "149": 0,
+            "152": 0,
+            "153": 0,
+            "154": 0,
+            "155": 0,
+            "156": 0,
+            "158": 0,
+            "159": 0
+          },
+          "Branches": [
+            {
+              "Line": 143,
+              "Offset": 10,
+              "EndOffset": 12,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 143,
+              "Offset": 10,
+              "EndOffset": 24,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 147,
+              "Offset": 32,
+              "EndOffset": 34,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 147,
+              "Offset": 32,
+              "EndOffset": 51,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.String Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__DocumentationCommentIdHelper::CreateDocumentationId(System.Reflection.MethodInfo)": {
+          "Lines": {
+            "168": 0,
+            "169": 0,
+            "170": 0,
+            "171": 0,
+            "174": 0,
+            "175": 0,
+            "178": 0,
+            "179": 0,
+            "180": 0,
+            "181": 0,
+            "183": 0,
+            "186": 0,
+            "187": 0,
+            "188": 0,
+            "189": 0,
+            "191": 0,
+            "192": 0,
+            "193": 0,
+            "194": 0,
+            "195": 0,
+            "196": 0,
+            "197": 0,
+            "198": 0,
+            "201": 0,
+            "202": 0,
+            "203": 0,
+            "204": 0,
+            "205": 0,
+            "206": 0,
+            "207": 0,
+            "208": 0,
+            "209": 0,
+            "210": 0,
+            "213": 0,
+            "214": 0,
+            "215": 0,
+            "216": 0,
+            "219": 0,
+            "220": 0,
+            "221": 0,
+            "223": 0,
+            "224": 0,
+            "226": 0,
+            "227": 0
+          },
+          "Branches": [
+            {
+              "Line": 169,
+              "Offset": 10,
+              "EndOffset": 12,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 169,
+              "Offset": 10,
+              "EndOffset": 24,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 178,
+              "Offset": 56,
+              "EndOffset": 58,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 178,
+              "Offset": 56,
+              "EndOffset": 80,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 186,
+              "Offset": 99,
+              "EndOffset": 101,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 188,
+              "Offset": 109,
+              "EndOffset": 111,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 188,
+              "Offset": 109,
+              "EndOffset": 118,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 186,
+              "Offset": 99,
+              "EndOffset": 132,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 193,
+              "Offset": 156,
+              "EndOffset": 158,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 193,
+              "Offset": 156,
+              "EndOffset": 202,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 202,
+              "Offset": 219,
+              "EndOffset": 221,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 205,
+              "Offset": 300,
+              "EndOffset": 236,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            },
+            {
+              "Line": 207,
+              "Offset": 246,
+              "EndOffset": 248,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 207,
+              "Offset": 246,
+              "EndOffset": 259,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 205,
+              "Offset": 300,
+              "EndOffset": 302,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 202,
+              "Offset": 219,
+              "EndOffset": 312,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 219,
+              "Offset": 337,
+              "EndOffset": 339,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0
+            },
+            {
+              "Line": 219,
+              "Offset": 337,
+              "EndOffset": 370,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.String Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__DocumentationCommentIdHelper::GetTypeDocId(System.Type,System.Boolean,System.Boolean)": {
+          "Lines": {
+            "238": 0,
+            "239": 0,
+            "240": 0,
+            "242": 0,
+            "243": 0,
+            "244": 0,
+            "246": 0,
+            "247": 0,
+            "248": 0,
+            "251": 0,
+            "252": 0,
+            "256": 0,
+            "257": 0,
+            "258": 0,
+            "259": 0,
+            "261": 0,
+            "264": 0,
+            "265": 0,
+            "266": 0,
+            "267": 0,
+            "268": 0,
+            "269": 0,
+            "270": 0,
+            "271": 0,
+            "272": 0,
+            "273": 0,
+            "276": 0,
+            "277": 0,
+            "278": 0,
+            "279": 0,
+            "281": 0,
+            "282": 0,
+            "283": 0,
+            "284": 0,
+            "285": 0,
+            "286": 0,
+            "288": 0,
+            "289": 0,
+            "290": 0,
+            "291": 0,
+            "293": 0,
+            "294": 0,
+            "295": 0,
+            "296": 0,
+            "297": 0,
+            "298": 0,
+            "300": 0,
+            "301": 0,
+            "303": 0,
+            "304": 0,
+            "306": 0,
+            "310": 0,
+            "311": 0
+          },
+          "Branches": [
+            {
+              "Line": 239,
+              "Offset": 9,
+              "EndOffset": 11,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 242,
+              "Offset": 26,
+              "EndOffset": 28,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 242,
+              "Offset": 26,
+              "EndOffset": 59,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 246,
+              "Offset": 75,
+              "EndOffset": 77,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 246,
+              "Offset": 75,
+              "EndOffset": 108,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 239,
+              "Offset": 9,
+              "EndOffset": 121,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 256,
+              "Offset": 131,
+              "EndOffset": 136,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 259,
+              "Offset": 153,
+              "EndOffset": 155,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 259,
+              "Offset": 153,
+              "EndOffset": 163,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 264,
+              "Offset": 271,
+              "EndOffset": 184,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            },
+            {
+              "Line": 267,
+              "Offset": 206,
+              "EndOffset": 208,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 267,
+              "Offset": 206,
+              "EndOffset": 222,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 271,
+              "Offset": 232,
+              "EndOffset": 234,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 271,
+              "Offset": 232,
+              "EndOffset": 237,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 264,
+              "Offset": 271,
+              "EndOffset": 273,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 281,
+              "Offset": 281,
+              "EndOffset": 283,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0
+            },
+            {
+              "Line": 281,
+              "Offset": 281,
+              "EndOffset": 331,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 0
+            },
+            {
+              "Line": 288,
+              "Offset": 332,
+              "EndOffset": 334,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 0
+            },
+            {
+              "Line": 288,
+              "Offset": 332,
+              "EndOffset": 345,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 0
+            },
+            {
+              "Line": 288,
+              "Offset": 350,
+              "EndOffset": 352,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 0
+            },
+            {
+              "Line": 293,
+              "Offset": 439,
+              "EndOffset": 376,
+              "Path": 1,
+              "Ordinal": 25,
+              "Hits": 0
+            },
+            {
+              "Line": 295,
+              "Offset": 386,
+              "EndOffset": 388,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 0
+            },
+            {
+              "Line": 295,
+              "Offset": 386,
+              "EndOffset": 400,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 0
+            },
+            {
+              "Line": 293,
+              "Offset": 439,
+              "EndOffset": 441,
+              "Path": 0,
+              "Ordinal": 24,
+              "Hits": 0
+            },
+            {
+              "Line": 288,
+              "Offset": 350,
+              "EndOffset": 452,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 0
+            },
+            {
+              "Line": 256,
+              "Offset": 131,
+              "EndOffset": 462,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 310,
+              "Offset": 469,
+              "EndOffset": 471,
+              "Path": 0,
+              "Ordinal": 26,
+              "Hits": 0
+            },
+            {
+              "Line": 310,
+              "Offset": 469,
+              "EndOffset": 478,
+              "Path": 1,
+              "Ordinal": 27,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.String Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__DocumentationCommentIdHelper::NormalizeDocId(System.String)": {
+          "Lines": {
+            "320": 0,
+            "322": 0,
+            "323": 0,
+            "324": 0,
+            "326": 0,
+            "331": 0,
+            "332": 0,
+            "333": 0,
+            "337": 0,
+            "338": 0
+          },
+          "Branches": [
+            {
+              "Line": 323,
+              "Offset": 16,
+              "EndOffset": 18,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 323,
+              "Offset": 16,
+              "EndOffset": 23,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 331,
+              "Offset": 34,
+              "EndOffset": 36,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 331,
+              "Offset": 34,
+              "EndOffset": 49,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 331,
+              "Offset": 52,
+              "EndOffset": 54,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 331,
+              "Offset": 52,
+              "EndOffset": 59,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlCommentOperationTransformer": {
+        "System.Threading.Tasks.Task Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlCommentOperationTransformer::TransformAsync(Microsoft.OpenApi.OpenApiOperation,Microsoft.AspNetCore.OpenApi.OpenApiOperationTransformerContext,System.Threading.CancellationToken)": {
+          "Lines": {
+            "345": 0,
+            "346": 0,
+            "347": 0,
+            "348": 0,
+            "350": 0,
+            "351": 0,
+            "352": 0,
+            "354": 0,
+            "355": 0,
+            "356": 0,
+            "357": 0,
+            "358": 0,
+            "359": 0,
+            "360": 0,
+            "361": 0,
+            "362": 0,
+            "363": 0,
+            "364": 0,
+            "365": 0,
+            "366": 0,
+            "367": 0,
+            "368": 0,
+            "369": 0,
+            "370": 0,
+            "371": 0,
+            "372": 0,
+            "373": 0,
+            "374": 0,
+            "375": 0,
+            "376": 0,
+            "377": 0,
+            "378": 0,
+            "379": 0,
+            "380": 0,
+            "381": 0,
+            "382": 0,
+            "383": 0,
+            "385": 0,
+            "386": 0,
+            "387": 0,
+            "388": 0,
+            "389": 0,
+            "390": 0,
+            "391": 0,
+            "392": 0,
+            "393": 0,
+            "394": 0,
+            "395": 0,
+            "397": 0,
+            "398": 0,
+            "399": 0,
+            "400": 0,
+            "401": 0,
+            "402": 0,
+            "403": 0,
+            "404": 0,
+            "405": 0,
+            "407": 0,
+            "408": 0,
+            "409": 0,
+            "410": 0,
+            "411": 0,
+            "413": 0,
+            "414": 0,
+            "415": 0,
+            "416": 0,
+            "417": 0,
+            "418": 0,
+            "419": 0,
+            "420": 0,
+            "421": 0,
+            "422": 0,
+            "423": 0,
+            "424": 0,
+            "425": 0,
+            "426": 0,
+            "427": 0,
+            "428": 0,
+            "429": 0,
+            "430": 0,
+            "431": 0,
+            "432": 0,
+            "433": 0,
+            "434": 0,
+            "435": 0,
+            "436": 0,
+            "437": 0,
+            "438": 0,
+            "439": 0,
+            "440": 0,
+            "441": 0,
+            "442": 0,
+            "443": 0,
+            "444": 0,
+            "445": 0,
+            "446": 0,
+            "447": 0,
+            "448": 0,
+            "449": 0,
+            "450": 0,
+            "451": 0,
+            "452": 0,
+            "453": 0,
+            "454": 0,
+            "455": 0,
+            "456": 0,
+            "458": 0,
+            "459": 0,
+            "460": 0,
+            "461": 0,
+            "462": 0,
+            "463": 0,
+            "464": 0,
+            "465": 0,
+            "467": 0,
+            "468": 0,
+            "469": 0,
+            "470": 0,
+            "471": 0,
+            "472": 0,
+            "473": 0,
+            "474": 0,
+            "475": 0,
+            "476": 0,
+            "477": 0,
+            "478": 0,
+            "480": 0,
+            "481": 0
+          },
+          "Branches": [
+            {
+              "Line": 346,
+              "Offset": 19,
+              "EndOffset": 21,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 346,
+              "Offset": 19,
+              "EndOffset": 49,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 350,
+              "Offset": 62,
+              "EndOffset": 64,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 350,
+              "Offset": 62,
+              "EndOffset": 77,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 354,
+              "Offset": 104,
+              "EndOffset": 109,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 356,
+              "Offset": 127,
+              "EndOffset": 129,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 356,
+              "Offset": 127,
+              "EndOffset": 140,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 360,
+              "Offset": 157,
+              "EndOffset": 159,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 360,
+              "Offset": 157,
+              "EndOffset": 170,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 364,
+              "Offset": 187,
+              "EndOffset": 189,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 364,
+              "Offset": 187,
+              "EndOffset": 200,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 368,
+              "Offset": 210,
+              "EndOffset": 212,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 368,
+              "Offset": 210,
+              "EndOffset": 224,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 368,
+              "Offset": 229,
+              "EndOffset": 234,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 370,
+              "Offset": 629,
+              "EndOffset": 254,
+              "Path": 1,
+              "Ordinal": 35,
+              "Hits": 0
+            },
+            {
+              "Line": 373,
+              "Offset": 309,
+              "EndOffset": 311,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0
+            },
+            {
+              "Line": 373,
+              "Offset": 309,
+              "EndOffset": 315,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 0
+            },
+            {
+              "Line": 374,
+              "Offset": 344,
+              "EndOffset": 346,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 0
+            },
+            {
+              "Line": 378,
+              "Offset": 399,
+              "EndOffset": 401,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 0
+            },
+            {
+              "Line": 378,
+              "Offset": 399,
+              "EndOffset": 418,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 0
+            },
+            {
+              "Line": 374,
+              "Offset": 344,
+              "EndOffset": 444,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 0
+            },
+            {
+              "Line": 387,
+              "Offset": 462,
+              "EndOffset": 467,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 0
+            },
+            {
+              "Line": 390,
+              "Offset": 511,
+              "EndOffset": 513,
+              "Path": 0,
+              "Ordinal": 24,
+              "Hits": 0
+            },
+            {
+              "Line": 392,
+              "Offset": 516,
+              "EndOffset": 518,
+              "Path": 0,
+              "Ordinal": 26,
+              "Hits": 0
+            },
+            {
+              "Line": 392,
+              "Offset": 516,
+              "EndOffset": 521,
+              "Path": 1,
+              "Ordinal": 27,
+              "Hits": 0
+            },
+            {
+              "Line": 392,
+              "Offset": 529,
+              "EndOffset": 531,
+              "Path": 0,
+              "Ordinal": 28,
+              "Hits": 0
+            },
+            {
+              "Line": 392,
+              "Offset": 529,
+              "EndOffset": 535,
+              "Path": 1,
+              "Ordinal": 29,
+              "Hits": 0
+            },
+            {
+              "Line": 393,
+              "Offset": 551,
+              "EndOffset": 553,
+              "Path": 0,
+              "Ordinal": 30,
+              "Hits": 0
+            },
+            {
+              "Line": 393,
+              "Offset": 551,
+              "EndOffset": 556,
+              "Path": 1,
+              "Ordinal": 31,
+              "Hits": 0
+            },
+            {
+              "Line": 397,
+              "Offset": 601,
+              "EndOffset": 568,
+              "Path": 1,
+              "Ordinal": 33,
+              "Hits": 0
+            },
+            {
+              "Line": 397,
+              "Offset": 601,
+              "EndOffset": 603,
+              "Path": 0,
+              "Ordinal": 32,
+              "Hits": 0
+            },
+            {
+              "Line": 390,
+              "Offset": 511,
+              "EndOffset": 619,
+              "Path": 1,
+              "Ordinal": 25,
+              "Hits": 0
+            },
+            {
+              "Line": 387,
+              "Offset": 462,
+              "EndOffset": 620,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 0
+            },
+            {
+              "Line": 370,
+              "Offset": 629,
+              "EndOffset": 634,
+              "Path": 0,
+              "Ordinal": 34,
+              "Hits": 0
+            },
+            {
+              "Line": 368,
+              "Offset": 229,
+              "EndOffset": 652,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            },
+            {
+              "Line": 407,
+              "Offset": 662,
+              "EndOffset": 664,
+              "Path": 0,
+              "Ordinal": 36,
+              "Hits": 0
+            },
+            {
+              "Line": 407,
+              "Offset": 674,
+              "EndOffset": 676,
+              "Path": 0,
+              "Ordinal": 38,
+              "Hits": 0
+            },
+            {
+              "Line": 407,
+              "Offset": 674,
+              "EndOffset": 688,
+              "Path": 1,
+              "Ordinal": 39,
+              "Hits": 0
+            },
+            {
+              "Line": 407,
+              "Offset": 662,
+              "EndOffset": 691,
+              "Path": 1,
+              "Ordinal": 37,
+              "Hits": 0
+            },
+            {
+              "Line": 407,
+              "Offset": 696,
+              "EndOffset": 698,
+              "Path": 0,
+              "Ordinal": 40,
+              "Hits": 0
+            },
+            {
+              "Line": 407,
+              "Offset": 696,
+              "EndOffset": 728,
+              "Path": 1,
+              "Ordinal": 41,
+              "Hits": 0
+            },
+            {
+              "Line": 413,
+              "Offset": 738,
+              "EndOffset": 740,
+              "Path": 0,
+              "Ordinal": 42,
+              "Hits": 0
+            },
+            {
+              "Line": 413,
+              "Offset": 748,
+              "EndOffset": 750,
+              "Path": 0,
+              "Ordinal": 44,
+              "Hits": 0
+            },
+            {
+              "Line": 413,
+              "Offset": 760,
+              "EndOffset": 762,
+              "Path": 0,
+              "Ordinal": 46,
+              "Hits": 0
+            },
+            {
+              "Line": 413,
+              "Offset": 760,
+              "EndOffset": 774,
+              "Path": 1,
+              "Ordinal": 47,
+              "Hits": 0
+            },
+            {
+              "Line": 413,
+              "Offset": 738,
+              "EndOffset": 777,
+              "Path": 1,
+              "Ordinal": 43,
+              "Hits": 0
+            },
+            {
+              "Line": 413,
+              "Offset": 748,
+              "EndOffset": 777,
+              "Path": 1,
+              "Ordinal": 45,
+              "Hits": 0
+            },
+            {
+              "Line": 413,
+              "Offset": 782,
+              "EndOffset": 787,
+              "Path": 0,
+              "Ordinal": 48,
+              "Hits": 0
+            },
+            {
+              "Line": 415,
+              "Offset": 898,
+              "EndOffset": 804,
+              "Path": 1,
+              "Ordinal": 53,
+              "Hits": 0
+            },
+            {
+              "Line": 418,
+              "Offset": 861,
+              "EndOffset": 863,
+              "Path": 0,
+              "Ordinal": 50,
+              "Hits": 0
+            },
+            {
+              "Line": 418,
+              "Offset": 861,
+              "EndOffset": 890,
+              "Path": 1,
+              "Ordinal": 51,
+              "Hits": 0
+            },
+            {
+              "Line": 415,
+              "Offset": 898,
+              "EndOffset": 900,
+              "Path": 0,
+              "Ordinal": 52,
+              "Hits": 0
+            },
+            {
+              "Line": 413,
+              "Offset": 782,
+              "EndOffset": 918,
+              "Path": 1,
+              "Ordinal": 49,
+              "Hits": 0
+            },
+            {
+              "Line": 354,
+              "Offset": 104,
+              "EndOffset": 919,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 425,
+              "Offset": 1499,
+              "EndOffset": 943,
+              "Path": 1,
+              "Ordinal": 93,
+              "Hits": 0
+            },
+            {
+              "Line": 428,
+              "Offset": 981,
+              "EndOffset": 983,
+              "Path": 0,
+              "Ordinal": 54,
+              "Hits": 0
+            },
+            {
+              "Line": 428,
+              "Offset": 996,
+              "EndOffset": 998,
+              "Path": 0,
+              "Ordinal": 56,
+              "Hits": 0
+            },
+            {
+              "Line": 428,
+              "Offset": 1014,
+              "EndOffset": 1016,
+              "Path": 0,
+              "Ordinal": 58,
+              "Hits": 0
+            },
+            {
+              "Line": 428,
+              "Offset": 981,
+              "EndOffset": 1037,
+              "Path": 1,
+              "Ordinal": 55,
+              "Hits": 0
+            },
+            {
+              "Line": 428,
+              "Offset": 996,
+              "EndOffset": 1037,
+              "Path": 1,
+              "Ordinal": 57,
+              "Hits": 0
+            },
+            {
+              "Line": 428,
+              "Offset": 1014,
+              "EndOffset": 1037,
+              "Path": 1,
+              "Ordinal": 59,
+              "Hits": 0
+            },
+            {
+              "Line": 428,
+              "Offset": 1042,
+              "EndOffset": 1047,
+              "Path": 0,
+              "Ordinal": 60,
+              "Hits": 0
+            },
+            {
+              "Line": 434,
+              "Offset": 1082,
+              "EndOffset": 1087,
+              "Path": 0,
+              "Ordinal": 62,
+              "Hits": 0
+            },
+            {
+              "Line": 436,
+              "Offset": 1095,
+              "EndOffset": 1097,
+              "Path": 0,
+              "Ordinal": 64,
+              "Hits": 0
+            },
+            {
+              "Line": 436,
+              "Offset": 1095,
+              "EndOffset": 1101,
+              "Path": 1,
+              "Ordinal": 65,
+              "Hits": 0
+            },
+            {
+              "Line": 438,
+              "Offset": 1137,
+              "EndOffset": 1139,
+              "Path": 0,
+              "Ordinal": 66,
+              "Hits": 0
+            },
+            {
+              "Line": 438,
+              "Offset": 1137,
+              "EndOffset": 1156,
+              "Path": 1,
+              "Ordinal": 67,
+              "Hits": 0
+            },
+            {
+              "Line": 438,
+              "Offset": 1161,
+              "EndOffset": 1163,
+              "Path": 0,
+              "Ordinal": 68,
+              "Hits": 0
+            },
+            {
+              "Line": 438,
+              "Offset": 1161,
+              "EndOffset": 1188,
+              "Path": 1,
+              "Ordinal": 69,
+              "Hits": 0
+            },
+            {
+              "Line": 442,
+              "Offset": 1199,
+              "EndOffset": 1201,
+              "Path": 0,
+              "Ordinal": 70,
+              "Hits": 0
+            },
+            {
+              "Line": 442,
+              "Offset": 1199,
+              "EndOffset": 1212,
+              "Path": 1,
+              "Ordinal": 71,
+              "Hits": 0
+            },
+            {
+              "Line": 446,
+              "Offset": 1221,
+              "EndOffset": 1226,
+              "Path": 0,
+              "Ordinal": 72,
+              "Hits": 0
+            },
+            {
+              "Line": 448,
+              "Offset": 1243,
+              "EndOffset": 1248,
+              "Path": 0,
+              "Ordinal": 74,
+              "Hits": 0
+            },
+            {
+              "Line": 451,
+              "Offset": 1271,
+              "EndOffset": 1273,
+              "Path": 0,
+              "Ordinal": 76,
+              "Hits": 0
+            },
+            {
+              "Line": 451,
+              "Offset": 1271,
+              "EndOffset": 1277,
+              "Path": 1,
+              "Ordinal": 77,
+              "Hits": 0
+            },
+            {
+              "Line": 451,
+              "Offset": 1293,
+              "EndOffset": 1295,
+              "Path": 0,
+              "Ordinal": 78,
+              "Hits": 0
+            },
+            {
+              "Line": 453,
+              "Offset": 1308,
+              "EndOffset": 1310,
+              "Path": 0,
+              "Ordinal": 80,
+              "Hits": 0
+            },
+            {
+              "Line": 453,
+              "Offset": 1308,
+              "EndOffset": 1314,
+              "Path": 1,
+              "Ordinal": 81,
+              "Hits": 0
+            },
+            {
+              "Line": 454,
+              "Offset": 1330,
+              "EndOffset": 1332,
+              "Path": 0,
+              "Ordinal": 82,
+              "Hits": 0
+            },
+            {
+              "Line": 454,
+              "Offset": 1330,
+              "EndOffset": 1338,
+              "Path": 1,
+              "Ordinal": 83,
+              "Hits": 0
+            },
+            {
+              "Line": 459,
+              "Offset": 1387,
+              "EndOffset": 1359,
+              "Path": 1,
+              "Ordinal": 85,
+              "Hits": 0
+            },
+            {
+              "Line": 459,
+              "Offset": 1387,
+              "EndOffset": 1389,
+              "Path": 0,
+              "Ordinal": 84,
+              "Hits": 0
+            },
+            {
+              "Line": 451,
+              "Offset": 1293,
+              "EndOffset": 1405,
+              "Path": 1,
+              "Ordinal": 79,
+              "Hits": 0
+            },
+            {
+              "Line": 446,
+              "Offset": 1221,
+              "EndOffset": 1408,
+              "Path": 1,
+              "Ordinal": 73,
+              "Hits": 0
+            },
+            {
+              "Line": 468,
+              "Offset": 1426,
+              "EndOffset": 1428,
+              "Path": 0,
+              "Ordinal": 86,
+              "Hits": 0
+            },
+            {
+              "Line": 471,
+              "Offset": 1447,
+              "EndOffset": 1449,
+              "Path": 0,
+              "Ordinal": 88,
+              "Hits": 0
+            },
+            {
+              "Line": 471,
+              "Offset": 1447,
+              "EndOffset": 1453,
+              "Path": 1,
+              "Ordinal": 89,
+              "Hits": 0
+            },
+            {
+              "Line": 471,
+              "Offset": 1469,
+              "EndOffset": 1471,
+              "Path": 0,
+              "Ordinal": 90,
+              "Hits": 0
+            },
+            {
+              "Line": 471,
+              "Offset": 1469,
+              "EndOffset": 1488,
+              "Path": 1,
+              "Ordinal": 91,
+              "Hits": 0
+            },
+            {
+              "Line": 468,
+              "Offset": 1426,
+              "EndOffset": 1489,
+              "Path": 1,
+              "Ordinal": 87,
+              "Hits": 0
+            },
+            {
+              "Line": 434,
+              "Offset": 1082,
+              "EndOffset": 1490,
+              "Path": 1,
+              "Ordinal": 63,
+              "Hits": 0
+            },
+            {
+              "Line": 428,
+              "Offset": 1042,
+              "EndOffset": 1491,
+              "Path": 1,
+              "Ordinal": 61,
+              "Hits": 0
+            },
+            {
+              "Line": 448,
+              "Offset": 1243,
+              "EndOffset": 1492,
+              "Path": 1,
+              "Ordinal": 75,
+              "Hits": 0
+            },
+            {
+              "Line": 425,
+              "Offset": 1499,
+              "EndOffset": 1504,
+              "Path": 0,
+              "Ordinal": 92,
+              "Hits": 0
+            }
+          ]
+        },
+        "Microsoft.OpenApi.OpenApiParameter Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlCommentOperationTransformer::UnwrapOpenApiParameter(Microsoft.OpenApi.IOpenApiParameter)": {
+          "Lines": {
+            "484": 0,
+            "485": 0,
+            "486": 0,
+            "487": 0,
+            "488": 0,
+            "489": 0,
+            "492": 0,
+            "493": 0,
+            "496": 0,
+            "497": 0,
+            "498": 0,
+            "501": 0,
+            "502": 0,
+            "504": 0
+          },
+          "Branches": [
+            {
+              "Line": 485,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 487,
+              "Offset": 35,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 487,
+              "Offset": 35,
+              "EndOffset": 43,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 485,
+              "Offset": 14,
+              "EndOffset": 55,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 496,
+              "Offset": 72,
+              "EndOffset": 74,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 496,
+              "Offset": 72,
+              "EndOffset": 81,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlCommentSchemaTransformer": {
+        "System.Threading.Tasks.Task Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__XmlCommentSchemaTransformer::TransformAsync(Microsoft.OpenApi.OpenApiSchema,Microsoft.AspNetCore.OpenApi.OpenApiSchemaTransformerContext,System.Threading.CancellationToken)": {
+          "Lines": {
+            "511": 0,
+            "513": 0,
+            "514": 0,
+            "515": 0,
+            "516": 0,
+            "517": 0,
+            "518": 0,
+            "519": 0,
+            "520": 0,
+            "522": 0,
+            "523": 0,
+            "525": 0,
+            "526": 0,
+            "527": 0,
+            "528": 0,
+            "529": 0,
+            "530": 0,
+            "531": 0,
+            "532": 0,
+            "533": 0,
+            "534": 0,
+            "535": 0,
+            "536": 0,
+            "537": 0,
+            "538": 0,
+            "539": 0,
+            "541": 0,
+            "542": 0,
+            "543": 0,
+            "544": 0,
+            "545": 0,
+            "546": 0,
+            "548": 0,
+            "550": 0,
+            "551": 0,
+            "552": 0,
+            "553": 0,
+            "554": 0,
+            "555": 0,
+            "556": 0,
+            "557": 0,
+            "558": 0,
+            "559": 0,
+            "560": 0,
+            "561": 0,
+            "562": 0
+          },
+          "Branches": [
+            {
+              "Line": 513,
+              "Offset": 36,
+              "EndOffset": 38,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 516,
+              "Offset": 59,
+              "EndOffset": 61,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 516,
+              "Offset": 59,
+              "EndOffset": 65,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 516,
+              "Offset": 79,
+              "EndOffset": 81,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 516,
+              "Offset": 79,
+              "EndOffset": 96,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 513,
+              "Offset": 36,
+              "EndOffset": 97,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 522,
+              "Offset": 107,
+              "EndOffset": 109,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 522,
+              "Offset": 107,
+              "EndOffset": 128,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 522,
+              "Offset": 133,
+              "EndOffset": 138,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 525,
+              "Offset": 166,
+              "EndOffset": 171,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 528,
+              "Offset": 188,
+              "EndOffset": 190,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 528,
+              "Offset": 188,
+              "EndOffset": 207,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 528,
+              "Offset": 212,
+              "EndOffset": 214,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 528,
+              "Offset": 212,
+              "EndOffset": 239,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            },
+            {
+              "Line": 532,
+              "Offset": 250,
+              "EndOffset": 252,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0
+            },
+            {
+              "Line": 532,
+              "Offset": 250,
+              "EndOffset": 263,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 0
+            },
+            {
+              "Line": 536,
+              "Offset": 269,
+              "EndOffset": 271,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 0
+            },
+            {
+              "Line": 536,
+              "Offset": 289,
+              "EndOffset": 291,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 0
+            },
+            {
+              "Line": 536,
+              "Offset": 269,
+              "EndOffset": 305,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 0
+            },
+            {
+              "Line": 536,
+              "Offset": 289,
+              "EndOffset": 305,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 0
+            },
+            {
+              "Line": 536,
+              "Offset": 310,
+              "EndOffset": 312,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 0
+            },
+            {
+              "Line": 542,
+              "Offset": 330,
+              "EndOffset": 332,
+              "Path": 0,
+              "Ordinal": 24,
+              "Hits": 0
+            },
+            {
+              "Line": 542,
+              "Offset": 330,
+              "EndOffset": 336,
+              "Path": 1,
+              "Ordinal": 25,
+              "Hits": 0
+            },
+            {
+              "Line": 542,
+              "Offset": 352,
+              "EndOffset": 354,
+              "Path": 0,
+              "Ordinal": 26,
+              "Hits": 0
+            },
+            {
+              "Line": 542,
+              "Offset": 352,
+              "EndOffset": 370,
+              "Path": 1,
+              "Ordinal": 27,
+              "Hits": 0
+            },
+            {
+              "Line": 536,
+              "Offset": 310,
+              "EndOffset": 373,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 0
+            },
+            {
+              "Line": 550,
+              "Offset": 388,
+              "EndOffset": 390,
+              "Path": 0,
+              "Ordinal": 28,
+              "Hits": 0
+            },
+            {
+              "Line": 550,
+              "Offset": 388,
+              "EndOffset": 411,
+              "Path": 1,
+              "Ordinal": 29,
+              "Hits": 0
+            },
+            {
+              "Line": 554,
+              "Offset": 419,
+              "EndOffset": 421,
+              "Path": 0,
+              "Ordinal": 30,
+              "Hits": 0
+            },
+            {
+              "Line": 554,
+              "Offset": 419,
+              "EndOffset": 425,
+              "Path": 1,
+              "Ordinal": 31,
+              "Hits": 0
+            },
+            {
+              "Line": 554,
+              "Offset": 441,
+              "EndOffset": 443,
+              "Path": 0,
+              "Ordinal": 32,
+              "Hits": 0
+            },
+            {
+              "Line": 554,
+              "Offset": 441,
+              "EndOffset": 469,
+              "Path": 1,
+              "Ordinal": 33,
+              "Hits": 0
+            },
+            {
+              "Line": 525,
+              "Offset": 166,
+              "EndOffset": 471,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 522,
+              "Offset": 133,
+              "EndOffset": 472,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__JsonNodeExtensions": {
+        "System.Text.Json.Nodes.JsonNode Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__JsonNodeExtensions::Parse(System.String)": {
+          "Lines": {
+            "569": 0,
+            "570": 0,
+            "571": 0,
+            "572": 0,
+            "576": 0,
+            "577": 0,
+            "579": 0,
+            "580": 0,
+            "582": 0,
+            "584": 0,
+            "586": 0,
+            "587": 0,
+            "588": 0,
+            "591": 0
+          },
+          "Branches": [
+            {
+              "Line": 570,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 570,
+              "Offset": 7,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__GeneratedServiceCollectionExtensions": {
+        "Microsoft.Extensions.DependencyInjection.IServiceCollection Microsoft.AspNetCore.OpenApi.Generated.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__GeneratedServiceCollectionExtensions::AddOpenApi(Microsoft.Extensions.DependencyInjection.IServiceCollection)": {
+          "Lines": {
+            "599": 0,
+            "600": 0,
+            "601": 0,
+            "602": 0,
+            "603": 0,
+            "604": 0,
+            "605": 0
+          },
+          "Branches": []
+        }
+      },
+      "System.Runtime.CompilerServices.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__InterceptsLocationAttribute": {
+        "System.Void System.Runtime.CompilerServices.<OpenApiXmlCommentSupport_generated>FF25C585C59BA8452C498B9615BD4EAE11975AA96CA72C67C07628A5102155133__InterceptsLocationAttribute::.ctor(System.Int32,System.String)": {
+          "Lines": {
+            "20": 0,
+            "21": 0,
+            "22": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "d:\\GitHub\\YourSpace\\backend\\YourSpace.ApiService\\Services\\AuthService.cs": {
+      "YourSpace.ApiService.Services.AuthService": {
+        "System.Void YourSpace.ApiService.Services.AuthService::.ctor(YourSpace.Data.Repositories.IUserRepository,YourSpace.ApiService.Services.JwtTokenService,Microsoft.Extensions.Logging.ILogger`1<YourSpace.ApiService.Services.AuthService>)": {
+          "Lines": {
+            "17": 6,
+            "18": 6,
+            "19": 6,
+            "20": 6,
+            "21": 6,
+            "22": 6
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.ApiService.Services.AuthService/<LoginAsync>d__5": {
+        "System.Void YourSpace.ApiService.Services.AuthService/<LoginAsync>d__5::MoveNext()": {
+          "Lines": {
+            "76": 3,
+            "78": 3,
+            "79": 3,
+            "80": 0,
+            "81": 0,
+            "84": 3,
+            "85": 3,
+            "87": 2,
+            "88": 1,
+            "89": 1,
+            "93": 1,
+            "94": 1,
+            "95": 1,
+            "96": 1,
+            "97": 1,
+            "98": 1,
+            "99": 1,
+            "100": 1,
+            "101": 1,
+            "102": 1,
+            "103": 1,
+            "104": 1,
+            "105": 1,
+            "106": 1,
+            "107": 1,
+            "109": 1,
+            "110": 1,
+            "112": 1,
+            "114": 2
+          },
+          "Branches": [
+            {
+              "Line": 79,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 79,
+              "Offset": 55,
+              "EndOffset": 75,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 79,
+              "Offset": 78,
+              "EndOffset": 80,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 79,
+              "Offset": 78,
+              "EndOffset": 112,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            },
+            {
+              "Line": 84,
+              "Offset": 253,
+              "EndOffset": 258,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 84,
+              "Offset": 253,
+              "EndOffset": 403,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 87,
+              "Offset": 435,
+              "EndOffset": 437,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 2
+            },
+            {
+              "Line": 87,
+              "Offset": 435,
+              "EndOffset": 469,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 87,
+              "Offset": 474,
+              "EndOffset": 476,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 1
+            },
+            {
+              "Line": 87,
+              "Offset": 474,
+              "EndOffset": 508,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "YourSpace.ApiService.Services.AuthService/<RegisterAsync>d__4": {
+        "System.Void YourSpace.ApiService.Services.AuthService/<RegisterAsync>d__4::MoveNext()": {
+          "Lines": {
+            "25": 3,
+            "27": 3,
+            "29": 3,
+            "30": 0,
+            "31": 0,
+            "33": 3,
+            "34": 1,
+            "35": 1,
+            "37": 1,
+            "38": 0,
+            "39": 0,
+            "42": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1,
+            "46": 1,
+            "47": 1,
+            "48": 1,
+            "49": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 1,
+            "66": 1,
+            "68": 1,
+            "69": 1,
+            "71": 1,
+            "73": 2
+          },
+          "Branches": [
+            {
+              "Line": 29,
+              "Offset": 69,
+              "EndOffset": 71,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 29,
+              "Offset": 87,
+              "EndOffset": 89,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 3
+            },
+            {
+              "Line": 29,
+              "Offset": 69,
+              "EndOffset": 107,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 29,
+              "Offset": 87,
+              "EndOffset": 107,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 29,
+              "Offset": 110,
+              "EndOffset": 112,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 29,
+              "Offset": 110,
+              "EndOffset": 144,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 3
+            },
+            {
+              "Line": 33,
+              "Offset": 278,
+              "EndOffset": 280,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 33,
+              "Offset": 278,
+              "EndOffset": 312,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 37,
+              "Offset": 448,
+              "EndOffset": 450,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 37,
+              "Offset": 448,
+              "EndOffset": 482,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "d:\\GitHub\\YourSpace\\backend\\YourSpace.ApiService\\Services\\JwtTokenService.cs": {
+      "YourSpace.ApiService.Services.JwtTokenService": {
+        "System.String YourSpace.ApiService.Services.JwtTokenService::GenerateToken(YourSpace.Data.Models.User)": {
+          "Lines": {
+            "31": 5,
+            "32": 5,
+            "33": 5,
+            "34": 5,
+            "35": 5,
+            "36": 5,
+            "37": 5,
+            "38": 5,
+            "40": 4,
+            "41": 4,
+            "42": 4,
+            "43": 4,
+            "44": 4,
+            "45": 4,
+            "46": 4,
+            "47": 4,
+            "48": 4,
+            "49": 4,
+            "50": 4
+          },
+          "Branches": []
+        },
+        "System.Void YourSpace.ApiService.Services.JwtTokenService::.ctor(Microsoft.Extensions.Configuration.IConfiguration)": {
+          "Lines": {
+            "19": 9,
+            "20": 9,
+            "21": 9,
+            "22": 9,
+            "23": 9,
+            "24": 9,
+            "25": 9
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 21,
+              "EndOffset": 23,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 21,
+              "Offset": 21,
+              "EndOffset": 35,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 9
+            },
+            {
+              "Line": 22,
+              "Offset": 53,
+              "EndOffset": 55,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 53,
+              "EndOffset": 61,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 9
+            },
+            {
+              "Line": 23,
+              "Offset": 79,
+              "EndOffset": 81,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 79,
+              "EndOffset": 87,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 9
+            },
+            {
+              "Line": 24,
+              "Offset": 111,
+              "EndOffset": 113,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 24,
+              "Offset": 111,
+              "EndOffset": 117,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 9
+            }
+          ]
+        }
+      }
+    },
+    "d:\\GitHub\\YourSpace\\backend\\YourSpace.ApiService\\Services\\PasswordHasher.cs": {
+      "YourSpace.ApiService.Services.PasswordHasher": {
+        "System.String YourSpace.ApiService.Services.PasswordHasher::HashPassword(System.String)": {
+          "Lines": {
+            "14": 9,
+            "15": 9,
+            "16": 9
+          },
+          "Branches": []
+        },
+        "System.Boolean YourSpace.ApiService.Services.PasswordHasher::VerifyPassword(System.String,System.String)": {
+          "Lines": {
+            "22": 7,
+            "23": 7,
+            "24": 6
+          },
+          "Branches": []
+        }
+      }
+    },
+    "d:\\GitHub\\YourSpace\\backend\\YourSpace.ApiService\\Services\\ProfileService.cs": {
+      "YourSpace.ApiService.Services.ProfileService": {
+        "System.String YourSpace.ApiService.Services.ProfileService::SanitizeCss(System.String)": {
+          "Lines": {
+            "85": 1,
+            "86": 1,
+            "88": 1,
+            "90": 1,
+            "92": 1,
+            "94": 1,
+            "95": 1
+          },
+          "Branches": [
+            {
+              "Line": 86,
+              "Offset": 9,
+              "EndOffset": 11,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 86,
+              "Offset": 9,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "YourSpace.ApiService.DTOs.UserProfileDto YourSpace.ApiService.Services.ProfileService::MapToDto(YourSpace.Data.Models.UserProfile)": {
+          "Lines": {
+            "97": 1,
+            "98": 1,
+            "99": 1,
+            "100": 1,
+            "101": 1,
+            "102": 1,
+            "103": 1,
+            "104": 1,
+            "105": 1,
+            "106": 1,
+            "107": 1
+          },
+          "Branches": []
+        },
+        "System.Void YourSpace.ApiService.Services.ProfileService::.ctor(YourSpace.Data.YourSpaceDbContext)": {
+          "Lines": {
+            "16": 4,
+            "17": 4,
+            "18": 4,
+            "19": 4
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.ApiService.Services.ProfileService/<GetProfileByUsernameAsync>d__2": {
+        "System.Void YourSpace.ApiService.Services.ProfileService/<GetProfileByUsernameAsync>d__2::MoveNext()": {
+          "Lines": {
+            "22": 1,
+            "24": 1,
+            "25": 1,
+            "26": 1,
+            "27": 1,
+            "28": 2,
+            "29": 0,
+            "31": 0,
+            "32": 0,
+            "34": 0,
+            "36": 1
+          },
+          "Branches": [
+            {
+              "Line": 28,
+              "Offset": 394,
+              "EndOffset": 396,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 28,
+              "Offset": 394,
+              "EndOffset": 400,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "YourSpace.ApiService.Services.ProfileService/<UpdateProfileAsync>d__3": {
+        "System.Void YourSpace.ApiService.Services.ProfileService/<UpdateProfileAsync>d__3::MoveNext()": {
+          "Lines": {
+            "39": 4,
+            "40": 4,
+            "41": 4,
+            "42": 1,
+            "45": 3,
+            "46": 2,
+            "49": 1,
+            "50": 1,
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "67": 1,
+            "69": 1,
+            "71": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "78": 1,
+            "79": 1
+          },
+          "Branches": [
+            {
+              "Line": 41,
+              "Offset": 314,
+              "EndOffset": 316,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 41,
+              "Offset": 314,
+              "EndOffset": 384,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 45,
+              "Offset": 405,
+              "EndOffset": 407,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 45,
+              "Offset": 405,
+              "EndOffset": 432,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 45,
+              "Offset": 437,
+              "EndOffset": 439,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 2
+            },
+            {
+              "Line": 45,
+              "Offset": 437,
+              "EndOffset": 450,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "d:\\GitHub\\YourSpace\\backend\\YourSpace.ApiService\\Services\\UserService.cs": {
+      "YourSpace.ApiService.Services.UserService": {
+        "System.Void YourSpace.ApiService.Services.UserService::.ctor(YourSpace.Data.Repositories.IUserRepository,Microsoft.Extensions.Logging.ILogger`1<YourSpace.ApiService.Services.UserService>)": {
+          "Lines": {
+            "16": 7,
+            "17": 7,
+            "18": 7,
+            "19": 7,
+            "20": 7
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.ApiService.Services.UserService/<GetAllUsersAsync>d__3": {
+        "System.Void YourSpace.ApiService.Services.UserService/<GetAllUsersAsync>d__3::MoveNext()": {
+          "Lines": {
+            "23": 3,
+            "24": 3,
+            "26": 3,
+            "27": 3,
+            "28": 2,
+            "30": 1,
+            "31": 1,
+            "33": 1,
+            "35": 2
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.ApiService.Services.UserService/<GetUserByIdAsync>d__4": {
+        "System.Void YourSpace.ApiService.Services.UserService/<GetUserByIdAsync>d__4::MoveNext()": {
+          "Lines": {
+            "38": 3,
+            "39": 3,
+            "41": 3,
+            "42": 3,
+            "43": 2,
+            "44": 1,
+            "45": 1,
+            "46": 1,
+            "48": 1,
+            "50": 1,
+            "51": 1,
+            "53": 1,
+            "55": 2
+          },
+          "Branches": [
+            {
+              "Line": 43,
+              "Offset": 215,
+              "EndOffset": 217,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 43,
+              "Offset": 215,
+              "EndOffset": 264,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "YourSpace.ApiService.Services.UserService/<GetUserByUsernameAsync>d__5": {
+        "System.Void YourSpace.ApiService.Services.UserService/<GetUserByUsernameAsync>d__5::MoveNext()": {
+          "Lines": {
+            "58": 1,
+            "59": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 1,
+            "68": 0,
+            "69": 1
+          },
+          "Branches": [
+            {
+              "Line": 62,
+              "Offset": 201,
+              "EndOffset": 203,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 62,
+              "Offset": 201,
+              "EndOffset": 245,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "d:\\GitHub\\YourSpace\\backend\\YourSpace.ApiService\\Mappers\\UserMapper.cs": {
+      "YourSpace.ApiService.Mappers.UserMapper": {
+        "YourSpace.ApiService.DTOs.UserDto YourSpace.ApiService.Mappers.UserMapper::ToDto(YourSpace.Data.Models.User)": {
+          "Lines": {
+            "16": 5,
+            "17": 5,
+            "18": 5,
+            "19": 5,
+            "20": 5,
+            "21": 5,
+            "22": 5,
+            "23": 5,
+            "24": 5,
+            "25": 5
+          },
+          "Branches": [
+            {
+              "Line": 17,
+              "Offset": 66,
+              "EndOffset": 68,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 17,
+              "Offset": 66,
+              "EndOffset": 72,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 17,
+              "Offset": 78,
+              "EndOffset": 80,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 4
+            },
+            {
+              "Line": 17,
+              "Offset": 78,
+              "EndOffset": 87,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 5
+            }
+          ]
+        },
+        "YourSpace.ApiService.DTOs.UserDetailDto YourSpace.ApiService.Mappers.UserMapper::ToDetailDto(YourSpace.Data.Models.User)": {
+          "Lines": {
+            "31": 4,
+            "32": 4,
+            "33": 4,
+            "34": 4,
+            "35": 4,
+            "36": 4,
+            "37": 4,
+            "38": 4,
+            "39": 4,
+            "40": 4,
+            "41": 4,
+            "42": 4
+          },
+          "Branches": [
+            {
+              "Line": 32,
+              "Offset": 66,
+              "EndOffset": 68,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 32,
+              "Offset": 66,
+              "EndOffset": 72,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 32,
+              "Offset": 78,
+              "EndOffset": 80,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 32,
+              "Offset": 78,
+              "EndOffset": 87,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 4
+            },
+            {
+              "Line": 32,
+              "Offset": 100,
+              "EndOffset": 102,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 2
+            },
+            {
+              "Line": 32,
+              "Offset": 100,
+              "EndOffset": 105,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 32,
+              "Offset": 130,
+              "EndOffset": 132,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 32,
+              "Offset": 130,
+              "EndOffset": 136,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 3
+            }
+          ]
+        },
+        "YourSpace.ApiService.DTOs.UserProfileDto YourSpace.ApiService.Mappers.UserMapper::ToProfileDto(YourSpace.Data.Models.UserProfile)": {
+          "Lines": {
+            "48": 4,
+            "49": 4,
+            "50": 4,
+            "51": 4,
+            "52": 4,
+            "53": 4,
+            "54": 4,
+            "55": 4,
+            "56": 4,
+            "57": 4
+          },
+          "Branches": [
+            {
+              "Line": 49,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 49,
+              "Offset": 14,
+              "EndOffset": 22,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            },
+            {
+              "Line": 49,
+              "Offset": 36,
+              "EndOffset": 38,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 49,
+              "Offset": 36,
+              "EndOffset": 44,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 4
+            },
+            {
+              "Line": 49,
+              "Offset": 71,
+              "EndOffset": 73,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 49,
+              "Offset": 71,
+              "EndOffset": 79,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 4
+            },
+            {
+              "Line": 49,
+              "Offset": 93,
+              "EndOffset": 95,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 49,
+              "Offset": 93,
+              "EndOffset": 101,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 4
+            }
+          ]
+        }
+      }
+    },
+    "d:\\GitHub\\YourSpace\\backend\\YourSpace.ApiService\\DTOs\\AuthDtos.cs": {
+      "YourSpace.ApiService.DTOs.CreateUserRequest": {
+        "System.String YourSpace.ApiService.DTOs.CreateUserRequest::get_Username()": {
+          "Lines": {
+            "8": 17
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.CreateUserRequest::get_Email()": {
+          "Lines": {
+            "9": 15
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.CreateUserRequest::get_Password()": {
+          "Lines": {
+            "10": 14
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.ApiService.DTOs.LoginRequest": {
+        "System.String YourSpace.ApiService.DTOs.LoginRequest::get_UsernameOrEmail()": {
+          "Lines": {
+            "18": 15
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.LoginRequest::get_Password()": {
+          "Lines": {
+            "19": 14
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.ApiService.DTOs.AuthResponse": {
+        "System.Boolean YourSpace.ApiService.DTOs.AuthResponse::get_Success()": {
+          "Lines": {
+            "27": 16
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.AuthResponse::get_Message()": {
+          "Lines": {
+            "28": 12
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.AuthResponse::get_Token()": {
+          "Lines": {
+            "29": 4
+          },
+          "Branches": []
+        },
+        "YourSpace.ApiService.DTOs.UserDto YourSpace.ApiService.DTOs.AuthResponse::get_User()": {
+          "Lines": {
+            "30": 2
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.ApiService.DTOs.UpdateProfileRequest": {
+        "System.String YourSpace.ApiService.DTOs.UpdateProfileRequest::get_DisplayName()": {
+          "Lines": {
+            "38": 0
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.UpdateProfileRequest::get_Bio()": {
+          "Lines": {
+            "39": 0
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.UpdateProfileRequest::get_AvatarUrl()": {
+          "Lines": {
+            "40": 0
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.UpdateProfileRequest::get_CustomHtml()": {
+          "Lines": {
+            "41": 0
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.UpdateProfileRequest::get_CustomCss()": {
+          "Lines": {
+            "42": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "d:\\GitHub\\YourSpace\\backend\\YourSpace.ApiService\\DTOs\\ProfileDtos.cs": {
+      "YourSpace.ApiService.DTOs.UserProfileDto": {
+        "System.Int32 YourSpace.ApiService.DTOs.UserProfileDto::get_Id()": {
+          "Lines": {
+            "8": 1
+          },
+          "Branches": []
+        },
+        "System.Int32 YourSpace.ApiService.DTOs.UserProfileDto::get_UserId()": {
+          "Lines": {
+            "9": 1
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.UserProfileDto::get_DisplayName()": {
+          "Lines": {
+            "10": 14
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.UserProfileDto::get_Bio()": {
+          "Lines": {
+            "11": 15
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.UserProfileDto::get_CustomHtml()": {
+          "Lines": {
+            "12": 15
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.UserProfileDto::get_CustomCss()": {
+          "Lines": {
+            "13": 17
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.UserProfileDto::get_AvatarUrl()": {
+          "Lines": {
+            "14": 7
+          },
+          "Branches": []
+        },
+        "System.DateTime YourSpace.ApiService.DTOs.UserProfileDto::get_UpdatedAt()": {
+          "Lines": {
+            "15": 1
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.ApiService.DTOs.UpdateProfileDto": {
+        "System.String YourSpace.ApiService.DTOs.UpdateProfileDto::get_DisplayName()": {
+          "Lines": {
+            "23": 12
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.UpdateProfileDto::get_Bio()": {
+          "Lines": {
+            "24": 12
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.UpdateProfileDto::get_CustomHtml()": {
+          "Lines": {
+            "25": 15
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.UpdateProfileDto::get_CustomCss()": {
+          "Lines": {
+            "26": 14
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.UpdateProfileDto::get_AvatarUrl()": {
+          "Lines": {
+            "27": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "d:\\GitHub\\YourSpace\\backend\\YourSpace.ApiService\\DTOs\\UserDtos.cs": {
+      "YourSpace.ApiService.DTOs.UserDto": {
+        "System.Int32 YourSpace.ApiService.DTOs.UserDto::get_Id()": {
+          "Lines": {
+            "9": 13
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.UserDto::get_Username()": {
+          "Lines": {
+            "10": 27
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.UserDto::get_Email()": {
+          "Lines": {
+            "11": 26
+          },
+          "Branches": []
+        },
+        "System.DateTime YourSpace.ApiService.DTOs.UserDto::get_CreatedAt()": {
+          "Lines": {
+            "12": 13
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.ApiService.DTOs.UserDto::get_DisplayName()": {
+          "Lines": {
+            "13": 28
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.ApiService.DTOs.UserDetailDto": {
+        "YourSpace.ApiService.DTOs.UserProfileDto YourSpace.ApiService.DTOs.UserDetailDto::get_Profile()": {
+          "Lines": {
+            "18": 7
+          },
+          "Branches": []
+        },
+        "System.Int32 YourSpace.ApiService.DTOs.UserDetailDto::get_PostsCount()": {
+          "Lines": {
+            "19": 6
+          },
+          "Branches": []
+        }
+      }
+    },
+    "d:\\GitHub\\YourSpace\\backend\\YourSpace.ApiService\\Controllers\\AuthController.cs": {
+      "YourSpace.ApiService.Controllers.AuthController": {
+        "System.Void YourSpace.ApiService.Controllers.AuthController::.ctor(YourSpace.ApiService.Services.IAuthService,Microsoft.Extensions.Logging.ILogger`1<YourSpace.ApiService.Controllers.AuthController>)": {
+          "Lines": {
+            "17": 7,
+            "18": 7,
+            "19": 7,
+            "20": 7,
+            "21": 7
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.ApiService.Controllers.AuthController/<Login>d__4": {
+        "System.Void YourSpace.ApiService.Controllers.AuthController/<Login>d__4::MoveNext()": {
+          "Lines": {
+            "48": 3,
+            "50": 3,
+            "51": 3,
+            "52": 2,
+            "53": 1,
+            "54": 1,
+            "56": 1,
+            "57": 1,
+            "58": 1,
+            "59": 1,
+            "61": 3
+          },
+          "Branches": [
+            {
+              "Line": 52,
+              "Offset": 178,
+              "EndOffset": 180,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 52,
+              "Offset": 178,
+              "EndOffset": 208,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "YourSpace.ApiService.Controllers.AuthController/<Register>d__3": {
+        "System.Void YourSpace.ApiService.Controllers.AuthController/<Register>d__3::MoveNext()": {
+          "Lines": {
+            "28": 4,
+            "30": 4,
+            "31": 4,
+            "32": 3,
+            "33": 1,
+            "34": 1,
+            "36": 2,
+            "37": 2,
+            "38": 2,
+            "39": 2,
+            "41": 4
+          },
+          "Branches": [
+            {
+              "Line": 32,
+              "Offset": 178,
+              "EndOffset": 180,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 32,
+              "Offset": 178,
+              "EndOffset": 208,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "d:\\GitHub\\YourSpace\\backend\\YourSpace.ApiService\\Controllers\\ProfilesController.cs": {
+      "YourSpace.ApiService.Controllers.ProfilesController": {
+        "System.Void YourSpace.ApiService.Controllers.ProfilesController::.ctor(YourSpace.ApiService.Services.IProfileService)": {
+          "Lines": {
+            "16": 8,
+            "17": 8,
+            "18": 8,
+            "19": 8
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.ApiService.Controllers.ProfilesController/<GetProfile>d__2": {
+        "System.Void YourSpace.ApiService.Controllers.ProfilesController/<GetProfile>d__2::MoveNext()": {
+          "Lines": {
+            "27": 3,
+            "29": 3,
+            "30": 3,
+            "31": 3,
+            "32": 1,
+            "34": 1,
+            "35": 1,
+            "37": 1,
+            "39": 3
+          },
+          "Branches": [
+            {
+              "Line": 31,
+              "Offset": 173,
+              "EndOffset": 175,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 31,
+              "Offset": 173,
+              "EndOffset": 204,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "YourSpace.ApiService.Controllers.ProfilesController/<UpdateProfile>d__3": {
+        "System.Void YourSpace.ApiService.Controllers.ProfilesController/<UpdateProfile>d__3::MoveNext()": {
+          "Lines": {
+            "47": 5,
+            "49": 5,
+            "51": 5,
+            "52": 2,
+            "53": 3,
+            "54": 3,
+            "55": 1,
+            "57": 1,
+            "58": 1,
+            "60": 1,
+            "62": 5
+          },
+          "Branches": [
+            {
+              "Line": 51,
+              "Offset": 49,
+              "EndOffset": 51,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 51,
+              "Offset": 49,
+              "EndOffset": 55,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 51,
+              "Offset": 76,
+              "EndOffset": 78,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 51,
+              "Offset": 76,
+              "EndOffset": 100,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            },
+            {
+              "Line": 54,
+              "Offset": 256,
+              "EndOffset": 258,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 54,
+              "Offset": 256,
+              "EndOffset": 287,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "d:\\GitHub\\YourSpace\\backend\\YourSpace.ApiService\\Controllers\\UsersController.cs": {
+      "YourSpace.ApiService.Controllers.UsersController": {
+        "System.Void YourSpace.ApiService.Controllers.UsersController::.ctor(YourSpace.ApiService.Services.IUserService,Microsoft.Extensions.Logging.ILogger`1<YourSpace.ApiService.Controllers.UsersController>)": {
+          "Lines": {
+            "26": 5,
+            "27": 5,
+            "28": 5,
+            "29": 5,
+            "30": 5
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.ApiService.Controllers.UsersController/<GetUser>d__4": {
+        "System.Void YourSpace.ApiService.Controllers.UsersController/<GetUser>d__4::MoveNext()": {
+          "Lines": {
+            "57": 3,
+            "59": 3,
+            "60": 3,
+            "61": 2,
+            "62": 1,
+            "63": 1,
+            "65": 1,
+            "67": 1,
+            "68": 1,
+            "69": 1,
+            "70": 1,
+            "72": 3
+          },
+          "Branches": [
+            {
+              "Line": 61,
+              "Offset": 173,
+              "EndOffset": 175,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 61,
+              "Offset": 173,
+              "EndOffset": 208,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "YourSpace.ApiService.Controllers.UsersController/<GetUsers>d__3": {
+        "System.Void YourSpace.ApiService.Controllers.UsersController/<GetUsers>d__3::MoveNext()": {
+          "Lines": {
+            "38": 2,
+            "40": 2,
+            "41": 2,
+            "42": 1,
+            "44": 1,
+            "45": 1,
+            "46": 1,
+            "47": 1,
+            "49": 2
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "YourSpace.Data.dll": {
+    "D:\\GitHub\\YourSpace\\backend\\YourSpace.Data\\YourSpaceDbContext.cs": {
+      "YourSpace.Data.YourSpaceDbContext": {
+        "Microsoft.EntityFrameworkCore.DbSet`1<YourSpace.Data.Models.User> YourSpace.Data.YourSpaceDbContext::get_Users()": {
+          "Lines": {
+            "20": 52
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<YourSpace.Data.Models.UserProfile> YourSpace.Data.YourSpaceDbContext::get_UserProfiles()": {
+          "Lines": {
+            "25": 28
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<YourSpace.Data.Models.Post> YourSpace.Data.YourSpaceDbContext::get_Posts()": {
+          "Lines": {
+            "30": 22
+          },
+          "Branches": []
+        },
+        "System.Void YourSpace.Data.YourSpaceDbContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "36": 1,
+            "37": 1,
+            "40": 1,
+            "41": 1,
+            "42": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1,
+            "46": 1,
+            "47": 1,
+            "48": 1,
+            "49": 1,
+            "50": 1,
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "55": 2,
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 2,
+            "68": 1,
+            "69": 1,
+            "70": 1,
+            "71": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "78": 1,
+            "79": 1,
+            "80": 1,
+            "81": 2,
+            "82": 1
+          },
+          "Branches": []
+        },
+        "System.Void YourSpace.Data.YourSpaceDbContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<YourSpace.Data.YourSpaceDbContext>)": {
+          "Lines": {
+            "13": 21,
+            "14": 21,
+            "15": 21
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\YourSpace\\backend\\YourSpace.Data\\YourSpaceDbContextFactory.cs": {
+      "YourSpace.Data.YourSpaceDbContextFactory": {
+        "YourSpace.Data.YourSpaceDbContext YourSpace.Data.YourSpaceDbContextFactory::CreateDbContext(System.String[])": {
+          "Lines": {
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "36": 0,
+            "37": 0,
+            "39": 0,
+            "40": 0,
+            "42": 0,
+            "43": 0
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 26,
+              "EndOffset": 28,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 26,
+              "EndOffset": 32,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 15,
+              "Offset": 39,
+              "EndOffset": 41,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 15,
+              "Offset": 39,
+              "EndOffset": 54,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 57,
+              "EndOffset": 59,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 66,
+              "EndOffset": 68,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 66,
+              "EndOffset": 72,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 57,
+              "EndOffset": 79,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 21,
+              "Offset": 84,
+              "EndOffset": 86,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 21,
+              "Offset": 84,
+              "EndOffset": 100,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 25,
+              "Offset": 159,
+              "EndOffset": 161,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 25,
+              "Offset": 159,
+              "EndOffset": 163,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 36,
+              "Offset": 224,
+              "EndOffset": 226,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 36,
+              "Offset": 224,
+              "EndOffset": 232,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 26,
+              "Offset": 6,
+              "EndOffset": 8,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 26,
+              "Offset": 6,
+              "EndOffset": 16,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "D:\\GitHub\\YourSpace\\backend\\YourSpace.Data\\Repositories\\UserRepository.cs": {
+      "YourSpace.Data.Repositories.UserRepository": {
+        "System.Void YourSpace.Data.Repositories.UserRepository::.ctor(YourSpace.Data.YourSpaceDbContext)": {
+          "Lines": {
+            "14": 17,
+            "15": 17,
+            "16": 17,
+            "17": 17
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.Data.Repositories.UserRepository/<CreateUserAsync>d__6": {
+        "System.Void YourSpace.Data.Repositories.UserRepository/<CreateUserAsync>d__6::MoveNext()": {
+          "Lines": {
+            "53": 1,
+            "54": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.Data.Repositories.UserRepository/<DeleteUserAsync>d__8": {
+        "System.Void YourSpace.Data.Repositories.UserRepository/<DeleteUserAsync>d__8::MoveNext()": {
+          "Lines": {
+            "67": 2,
+            "68": 2,
+            "69": 2,
+            "70": 1,
+            "71": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 2
+          },
+          "Branches": [
+            {
+              "Line": 69,
+              "Offset": 198,
+              "EndOffset": 200,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 69,
+              "Offset": 198,
+              "EndOffset": 208,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "YourSpace.Data.Repositories.UserRepository/<EmailExistsAsync>d__10": {
+        "System.Void YourSpace.Data.Repositories.UserRepository/<EmailExistsAsync>d__10::MoveNext()": {
+          "Lines": {
+            "86": 2,
+            "87": 2,
+            "88": 2,
+            "89": 2
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.Data.Repositories.UserRepository/<GetAllUsersAsync>d__2": {
+        "System.Void YourSpace.Data.Repositories.UserRepository/<GetAllUsersAsync>d__2::MoveNext()": {
+          "Lines": {
+            "20": 1,
+            "21": 1,
+            "22": 1,
+            "23": 1,
+            "24": 1,
+            "25": 1
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.Data.Repositories.UserRepository/<GetUserByEmailAsync>d__5": {
+        "System.Void YourSpace.Data.Repositories.UserRepository/<GetUserByEmailAsync>d__5::MoveNext()": {
+          "Lines": {
+            "45": 2,
+            "46": 2,
+            "47": 2,
+            "48": 2,
+            "49": 2,
+            "50": 2
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.Data.Repositories.UserRepository/<GetUserByIdAsync>d__3": {
+        "System.Void YourSpace.Data.Repositories.UserRepository/<GetUserByIdAsync>d__3::MoveNext()": {
+          "Lines": {
+            "28": 4,
+            "29": 4,
+            "30": 4,
+            "31": 4,
+            "32": 4,
+            "33": 4,
+            "34": 4
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.Data.Repositories.UserRepository/<GetUserByUsernameAsync>d__4": {
+        "System.Void YourSpace.Data.Repositories.UserRepository/<GetUserByUsernameAsync>d__4::MoveNext()": {
+          "Lines": {
+            "37": 2,
+            "38": 2,
+            "39": 2,
+            "40": 2,
+            "41": 2,
+            "42": 2
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.Data.Repositories.UserRepository/<UpdateUserAsync>d__7": {
+        "System.Void YourSpace.Data.Repositories.UserRepository/<UpdateUserAsync>d__7::MoveNext()": {
+          "Lines": {
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1
+          },
+          "Branches": []
+        }
+      },
+      "YourSpace.Data.Repositories.UserRepository/<UsernameExistsAsync>d__9": {
+        "System.Void YourSpace.Data.Repositories.UserRepository/<UsernameExistsAsync>d__9::MoveNext()": {
+          "Lines": {
+            "80": 2,
+            "81": 2,
+            "82": 2,
+            "83": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\YourSpace\\backend\\YourSpace.Data\\Models\\Post.cs": {
+      "YourSpace.Data.Models.Post": {
+        "System.Int32 YourSpace.Data.Models.Post::get_Id()": {
+          "Lines": {
+            "8": 2
+          },
+          "Branches": []
+        },
+        "System.Int32 YourSpace.Data.Models.Post::get_UserId()": {
+          "Lines": {
+            "13": 3
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.Data.Models.Post::get_Content()": {
+          "Lines": {
+            "18": 4
+          },
+          "Branches": []
+        },
+        "System.DateTime YourSpace.Data.Models.Post::get_CreatedAt()": {
+          "Lines": {
+            "23": 7
+          },
+          "Branches": []
+        },
+        "System.Int32 YourSpace.Data.Models.Post::get_LikesCount()": {
+          "Lines": {
+            "28": 4
+          },
+          "Branches": []
+        },
+        "YourSpace.Data.Models.User YourSpace.Data.Models.Post::get_User()": {
+          "Lines": {
+            "33": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\YourSpace\\backend\\YourSpace.Data\\Models\\User.cs": {
+      "YourSpace.Data.Models.User": {
+        "System.Int32 YourSpace.Data.Models.User::get_Id()": {
+          "Lines": {
+            "8": 37
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.Data.Models.User::get_Username()": {
+          "Lines": {
+            "13": 57
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.Data.Models.User::get_Email()": {
+          "Lines": {
+            "18": 42
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.Data.Models.User::get_PasswordHash()": {
+          "Lines": {
+            "23": 28
+          },
+          "Branches": []
+        },
+        "System.DateTime YourSpace.Data.Models.User::get_CreatedAt()": {
+          "Lines": {
+            "28": 68
+          },
+          "Branches": []
+        },
+        "YourSpace.Data.Models.UserProfile YourSpace.Data.Models.User::get_Profile()": {
+          "Lines": {
+            "33": 24
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<YourSpace.Data.Models.Post> YourSpace.Data.Models.User::get_Posts()": {
+          "Lines": {
+            "38": 43
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\YourSpace\\backend\\YourSpace.Data\\Models\\UserProfile.cs": {
+      "YourSpace.Data.Models.UserProfile": {
+        "System.Int32 YourSpace.Data.Models.UserProfile::get_Id()": {
+          "Lines": {
+            "8": 5
+          },
+          "Branches": []
+        },
+        "System.Int32 YourSpace.Data.Models.UserProfile::get_UserId()": {
+          "Lines": {
+            "13": 5
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.Data.Models.UserProfile::get_DisplayName()": {
+          "Lines": {
+            "18": 30
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.Data.Models.UserProfile::get_Bio()": {
+          "Lines": {
+            "23": 25
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.Data.Models.UserProfile::get_CustomHtml()": {
+          "Lines": {
+            "29": 21
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.Data.Models.UserProfile::get_CustomCss()": {
+          "Lines": {
+            "34": 21
+          },
+          "Branches": []
+        },
+        "System.String YourSpace.Data.Models.UserProfile::get_AvatarUrl()": {
+          "Lines": {
+            "39": 11
+          },
+          "Branches": []
+        },
+        "System.DateTime YourSpace.Data.Models.UserProfile::get_UpdatedAt()": {
+          "Lines": {
+            "44": 21
+          },
+          "Branches": []
+        },
+        "YourSpace.Data.Models.User YourSpace.Data.Models.UserProfile::get_User()": {
+          "Lines": {
+            "49": 11
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\YourSpace\\backend\\YourSpace.Data\\Migrations\\20260210182038_InitialCreate.cs": {
+      "YourSpace.Data.Migrations.InitialCreate": {
+        "System.Void YourSpace.Data.Migrations.InitialCreate::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0
+          },
+          "Branches": []
+        },
+        "System.Void YourSpace.Data.Migrations.InitialCreate::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "113": 0,
+            "114": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\YourSpace\\backend\\YourSpace.Data\\Migrations\\20260210182038_InitialCreate.Designer.cs": {
+      "YourSpace.Data.Migrations.InitialCreate": {
+        "System.Void YourSpace.Data.Migrations.InitialCreate::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "20": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "26": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0,
+            "134": 0,
+            "135": 0,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "145": 0,
+            "146": 0,
+            "147": 0,
+            "148": 0,
+            "149": 0,
+            "151": 0,
+            "152": 0,
+            "153": 0,
+            "154": 0,
+            "155": 0,
+            "156": 0,
+            "157": 0,
+            "158": 0,
+            "159": 0,
+            "160": 0,
+            "162": 0,
+            "163": 0,
+            "164": 0,
+            "165": 0,
+            "166": 0,
+            "167": 0,
+            "169": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\YourSpace\\backend\\YourSpace.Data\\Migrations\\YourSpaceDbContextModelSnapshot.cs": {
+      "YourSpace.Data.Migrations.YourSpaceDbContextModelSnapshot": {
+        "System.Void YourSpace.Data.Migrations.YourSpaceDbContextModelSnapshot::BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "17": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "23": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0,
+            "134": 0,
+            "135": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "145": 0,
+            "146": 0,
+            "148": 0,
+            "149": 0,
+            "150": 0,
+            "151": 0,
+            "152": 0,
+            "153": 0,
+            "154": 0,
+            "155": 0,
+            "156": 0,
+            "157": 0,
+            "159": 0,
+            "160": 0,
+            "161": 0,
+            "162": 0,
+            "163": 0,
+            "164": 0,
+            "166": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}

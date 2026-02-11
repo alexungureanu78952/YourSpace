@@ -56,14 +56,12 @@ builder.Services.AddDbContext<YourSpaceDbContext>(options =>
 // Dependency Injection - Repositories (Data Access Layer)
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
+
 // Dependency Injection - Services (Business Logic Layer)
-
-// JWT Token Service
 builder.Services.AddSingleton<JwtTokenService>();
-
-// Auth Service
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IProfileService, ProfileService>();
 
 // Adăugare controllere pentru API
 builder.Services.AddControllers();

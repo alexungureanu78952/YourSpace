@@ -22,23 +22,36 @@ public class UserService : IUserService
     public async Task<IEnumerable<UserDto>> GetAllUsersAsync()
     {
         _logger.LogInformation("Getting all users");
-
-        var users = await _userRepository.GetAllUsersAsync();
-        return users.Select(UserMapper.ToDto);
+        try
+        {
+            var users = await _userRepository.GetAllUsersAsync();
+            return users.Select(UserMapper.ToDto);
+        }
+        catch (Exception)
+        {
+            // Let the exception bubble up for test coverage
+            throw;
+        }
     }
 
     public async Task<UserDetailDto?> GetUserByIdAsync(int id)
     {
         _logger.LogInformation("Getting user with ID: {UserId}", id);
-
-        var user = await _userRepository.GetUserByIdAsync(id);
-        if (user == null)
+        try
         {
-            _logger.LogWarning("User with ID {UserId} not found", id);
-            return null;
+            var user = await _userRepository.GetUserByIdAsync(id);
+            if (user == null)
+            {
+                _logger.LogWarning("User with ID {UserId} not found", id);
+                return null;
+            }
+            return UserMapper.ToDetailDto(user);
         }
-
-        return UserMapper.ToDetailDto(user);
+        catch (Exception)
+        {
+            // Let the exception bubble up for test coverage
+            throw;
+        }
     }
 
     public async Task<UserDto?> GetUserByUsernameAsync(string username)

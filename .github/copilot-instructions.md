@@ -1,3 +1,7 @@
+# 7. Test-Driven Development (TDD) Enforcement
+- **Mandatory TDD**: All new features, bug fixes, and refactors MUST begin with a failing unit test. Production code may only be written or changed to make a failing test pass. No code is accepted without a corresponding test written first.
+- **TDD Workflow**: The workflow is strictly: (1) Write a failing test, (2) Write/modify code to make the test pass, (3) Refactor while keeping tests green. All code reviews and merges must verify this sequence.
+- **CI Enforcement**: CI pipelines must reject any PR that adds or changes code without a corresponding test that was written first and shown to fail before the code change.
 # Strict Engineering Standards for Social Media Platform (Aspire, .NET, Next.js)
 
 You are a Senior Software Architect. All code generation and design suggestions must adhere to the following professional standards.
@@ -46,4 +50,11 @@ You are a Senior Software Architect. All code generation and design suggestions 
 ## 5. Interaction Protocol
 - If a user request encourages "bad" practices (e.g., "put logic in the controller"), you MUST point out the violation and provide the architecturally sound alternative first.
 - Always provide code that includes XML comments for public methods and proper Unit Test stubs (xUnit).
+
+## 6. Unit Testing & Testability
+- **Mandatory Unit Testing**: All new features, bug fixes, and refactors MUST include corresponding unit tests. Code without tests will not be accepted.
+- **Testable Architecture**: Design all code (backend and frontend) to be easily testable. Avoid static dependencies, tightly coupled logic, or hidden side effects. Use dependency injection and interfaces for all external dependencies.
+- **Backend**: Use xUnit for .NET. All services, repositories, and controllers must have unit tests. Mock external dependencies (e.g., database, APIs) using Moq or similar libraries.
+- **Frontend**: Use Jest and React Testing Library for all React/Next.js components, hooks, and utilities. All business logic and UI components must have test coverage.
+- **CI Enforcement**: Tests must run and pass in CI before merging. Coverage reports should be generated and reviewed regularly.
 - **Documentation Sync Rule:** Whenever you implement or refactor a feature, you MUST update all relevant markdown documentation files (README.md, PROGRESS.md, etc.) to reflect the current state and features of the repository. This ensures the repo presentation is always up to date for new contributors.
