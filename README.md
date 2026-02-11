@@ -9,7 +9,8 @@ O platformă social media modernă inspirată de MySpace, unde utilizatorii îș
 - **Limbaj**: C#
 - **Features**: 
   - API REST pentru profiluri utilizatori
-  - Sistem de autentificare
+  - Sistem de autentificare (JWT, BCrypt, pagini frontend, context global, UserMenu, Navbar, redirect dacă ești logat)
+  - Endpoint-uri protejate cu JWT (ex: /api/users)
   - Chat real-time (SignalR)
   - Feed social
 
@@ -56,7 +57,48 @@ npm run dev
 ## Roadmap
 
 - [x] Setup inițial proiect
-- [ ] Autentificare utilizatori
+  - [x] Autentificare utilizatori (backend + frontend complet: JWT, BCrypt, endpoints REST, pagini login/register, context global, UserMenu, Navbar, redirect dacă ești logat)
+    - POST /api/auth/register
+    - POST /api/auth/login
+    - Token JWT returnat la succes, folosit pentru autentificare stateless
+    - Endpoint-urile /api/users sunt protejate cu JWT (trebuie header Authorization: Bearer <token>)
+    - Parolele sunt hash-uite cu BCrypt
+    - Redirect automat dacă ești logat
+    - Exemple request/response:
+      - Register:
+        ```json
+        {
+          "username": "ana",
+          "email": "ana@email.com",
+          "password": "parola123"
+        }
+        ```
+      - Login:
+        ```json
+        {
+          "usernameOrEmail": "ana",
+          "password": "parola123"
+        }
+        ```
+      - Response (ambele):
+        ```json
+        {
+          "success": true,
+          "message": "Cont creat cu succes.",
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+          "user": {
+            "id": 1,
+            "username": "ana",
+            "email": "ana@email.com",
+            "createdAt": "...",
+            "displayName": "ana"
+          }
+        }
+        ```
+    - Exemplu request protejat JWT:
+      ```bash
+      curl -H "Authorization: Bearer <token>" http://localhost:5000/api/users
+    ```
 - [ ] Profiluri customizabile
 - [ ] Feed social
 - [ ] Chat real-time

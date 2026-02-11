@@ -210,9 +210,10 @@ curl http://localhost:5000/api/health
 # Response: {"status":"healthy","timestamp":"2026-02-10T..."}
 ```
 
-### Test Users Endpoint
+### Test Users Endpoint (JWT Protected)
 ```bash
-curl http://localhost:5000/api/users
+# După ce ai obținut un token JWT de la /api/auth/login sau /api/auth/register:
+curl -H "Authorization: Bearer <token>" http://localhost:5000/api/users
 # Response: []  (empty array - no users yet)
 ```
 

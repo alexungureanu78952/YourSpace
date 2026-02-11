@@ -49,10 +49,10 @@ http://localhost:3000
 | Backend Solution | ✅ Complete | Builds successfully |
 | Frontend App | ✅ Complete | Builds successfully |
 | Database Schema | ✅ Ready | Migrations pending |
-| API Endpoints | ✅ Started | 2 endpoints (Users GET) |
+| API Endpoints | ✅ Started | 2 endpoints (Users GET, protejate JWT) |
 | Home Page | ✅ Done | Landing page |
-| Authentication | ⏳ Next | Critical for Faza 2 |
-| Profiles | ⏳ Next | Custom HTML/CSS feature |
+| Authentication | ✅ Complete | Auth backend + frontend |
+| Profiles | ⏳ Next | Custom HTML/CSS feature (urmează) |
 | Feed | ⏳ Next | Social media feed |
 | Chat | ⏳ Later | Real-time messaging |
 | AI Assistant | ⏳ Future | Code generation |
@@ -67,17 +67,17 @@ http://localhost:3000
 4. **TypeScript** - Type safety frontend & backend
 5. **Full-Stack Architecture** - Separate backend/frontend
 6. **Database Relationships** - 1:1, 1:many with cascade delete
-7. **Security First** - No PasswordHash in API, CORS configured
+7. **Security First** - No PasswordHash in API, CORS configurat, endpoint-uri protejate cu JWT
 
 ---
 
 ## ✨ Pași Următori (Recomandați)
 
 ### Faza 2: Autentificare (1-2 zile)
-- [ ] Register/Login endpoints
-- [ ] JWT tokens
-- [ ] Password hashing
-- [ ] Frontend auth pages
+- [x] Register/Login endpoints
+- [x] JWT tokens
+- [x] Password hashing
+- [x] Frontend auth pages (login/register, context, UserMenu, Navbar, redirect)
 
 ### Faza 3: Profiluri (2-3 zile)
 - [ ] Custom HTML/CSS support

@@ -172,6 +172,13 @@ builder.Services.AddCors(options =>
 - Endpoint `POST /api/auth/login` - Login cu JWT
 - Password hashing cu BCrypt
 - JWT token validation
+- Endpoint-urile `/api/users` sunt protejate cu JWT (trebuie header Authorization: Bearer <token>)
+### Testare endpoint protejat JWT
+```bash
+# După ce ai obținut un token JWT de la /api/auth/login sau /api/auth/register:
+curl -H "Authorization: Bearer <token>" http://localhost:5000/api/users
+# Response: []  (empty array - no users yet)
+```
 
 ### 2️⃣ **Profiluri Customizabile**
 - Endpoint `PUT /api/users/{id}/profile` - Update profil

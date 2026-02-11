@@ -16,7 +16,34 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+## Autentificare (complet)
+
+- Paginile de autentificare:
+  - `/auth/login` — Login utilizator
+  - `/auth/register` — Înregistrare cont nou
+- Starea de autentificare (user/token) este partajată global prin `AuthContext` (DRY, fără props chain).
+- Navbar-ul global afișează UserMenu cu numele utilizatorului și buton de logout dacă ești autentificat.
+- Redirect automat către homepage dacă ești deja logat și accesezi /auth/login sau /auth/register.
+
+### Flux complet
+1. Înregistrează un cont nou la `/auth/register` (vei fi autentificat automat).
+2. Autentifică-te la `/auth/login` dacă ai deja cont.
+3. Tokenul JWT și user info sunt salvate în localStorage și accesibile global.
+4. UserMenu din Navbar permite logout instant.
+5. Nu poți accesa paginile de login/register dacă ești deja logat.
+
+### Exemplu request (după login)
+```js
+const token = localStorage.getItem('token');
+fetch('http://localhost:5000/api/users', {
+  headers: { 'Authorization': `Bearer ${token}` }
+});
+```
+
+### Note
+- Pentru logout, folosește butonul din UserMenu (șterge tokenul și user info din localStorage).
+- Pentru protecție reală, folosește HttpOnly cookies (vezi roadmap).
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 

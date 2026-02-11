@@ -1,9 +1,35 @@
+
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using Microsoft.EntityFrameworkCore;
 using YourSpace.ApiService.Services;
 using YourSpace.Data;
 using YourSpace.Data.Repositories;
 
+
 var builder = WebApplication.CreateBuilder(args);
+
+// JWT Authentication
+var jwtConfig = builder.Configuration.GetSection("Jwt");
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = jwtConfig["Issuer"],
+        ValidAudience = jwtConfig["Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtConfig["Secret"]!))
+    };
+});
 
 // Configurare servicii
 builder.Services.AddOpenApi();
@@ -51,7 +77,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors("AllowFrontend");
+
+app.UseAuthentication();
 app.UseHttpsRedirection();
+app.UseAuthorization();
 app.MapControllers();
 
 // Endpoint de test pentru a verifica că API-ul funcționează

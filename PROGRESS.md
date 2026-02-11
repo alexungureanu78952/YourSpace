@@ -35,8 +35,8 @@
 
 #### API Controllers
 - `UsersController.cs`:
-  - `GET /api/users` - Lista toți utilizatorii
-  - `GET /api/users/{id}` - Detalii utilizator cu profil și postări
+   - `GET /api/users` - Lista toți utilizatorii (**PROTEJAT JWT**)
+   - `GET /api/users/{id}` - Detalii utilizator cu profil și postări (**PROTEJAT JWT**)
 
 #### Configurare API
 - CORS activat pentru frontend (localhost:3000)
@@ -55,6 +55,9 @@ dotnet run --project YourSpace.ApiService
 
 # Testare health check
 curl http://localhost:5000/api/health
+
+# Testare endpoint protejat JWT (după login/register):
+curl -H "Authorization: Bearer <token>" http://localhost:5000/api/users
 ```
 
 ## Pas 3: ✅ Frontend Next.js
@@ -90,20 +93,24 @@ npm run dev
 
 ## Pas 4: 🚀 Următorii Pași
 
+
 ### Imediat (Prioritate Alta):
-1. **Autentificare Utilizatori**
-   - Register/Login endpoints
-   - JWT tokens
-   - Password hashing (BCrypt)
+1. **Autentificare Utilizatori** ✅ (complet)
+   - Register/Login endpoints (`POST /api/auth/register`, `POST /api/auth/login`)
+   - JWT tokens (stateless authentication, token returnat la login/register)
+   - Password hashing (BCrypt, parolele nu se stochează niciodată în clar)
+   - Validare request și răspuns cu DTO-uri dedicate
+   - Endpoint-urile /api/users sunt protejate cu JWT (trebuie header Authorization: Bearer <token>)
+   - Exemple request/response și flux complet în README.md
+   - Pagini frontend: login/register, context global, UserMenu, Navbar, redirect dacă ești logat
 
-2. **Pagini Frontend**
-   - Login/Register pages
+2. **Profiluri Customizabile** (NEXT)
    - Profile page cu editor HTML/CSS custom
-   - Feed page cu postări
-
-3. **Endpoints API Pentru Profiluri**
    - PUT /api/users/{id}/profile - Actualizare profil custom
    - GET /api/profiles/{username} - Vizualizare profil public
+
+3. **Feed Page**
+   - Feed page cu postări
 
 ### Mediu Termen:
 1. **Chat Real-time**

@@ -12,15 +12,23 @@ export default function Home() {
         </div>
 
         <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8">
+          <div className="flex justify-center mb-8">
+            <a
+              href="/auth/login"
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg text-lg shadow transition"
+            >
+              Autentificare / Înregistrare
+            </a>
+          </div>
           <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-white">
             Bine ai venit! 🎉
           </h2>
-          
+
           <div className="space-y-6 text-gray-700 dark:text-gray-300">
             <p className="text-lg">
               Aceasta este platforma <strong>YourSpace</strong> - un proiect social media modern care îți permite să:
             </p>
-            
+
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>Creezi un profil complet personalizabil cu HTML/CSS custom</li>
               <li>Comunici cu prietenii prin chat în timp real</li>
@@ -55,7 +63,7 @@ export default function Home() {
 
             <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                <strong>Status:</strong> Backend și frontend configurate ✅ | 
+                <strong>Status:</strong> Backend și frontend configurate ✅ |
                 Următorii pași: Autentificare utilizatori, profiluri customizabile, feed social
               </p>
             </div>

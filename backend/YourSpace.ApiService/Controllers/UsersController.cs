@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using YourSpace.ApiService.DTOs;
 using YourSpace.ApiService.Services;
 
@@ -9,8 +10,14 @@ namespace YourSpace.ApiService.Controllers;
 /// Responsabilitate: doar HTTP handling și routing
 /// Business logic delegată la UserService
 /// </summary>
+/// <summary>
+/// Controller pentru gestionarea utilizatorilor
+/// Responsabilitate: doar HTTP handling și routing
+/// Business logic delegată la UserService
+/// </summary>
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class UsersController : ControllerBase
 {
     private readonly IUserService _userService;
