@@ -82,10 +82,10 @@ public class MessagesController : ControllerBase
                 return Unauthorized(new { message = "Unauthorized" });
 
             var messages = await _messageService.GetMessagesWithUserAsync(userId, otherUserId);
-            
+
             // Marchează mesajele ca citite
             await _messageService.MarkMessagesAsReadAsync(userId, otherUserId);
-            
+
             return Ok(messages);
         }
         catch (Exception ex)

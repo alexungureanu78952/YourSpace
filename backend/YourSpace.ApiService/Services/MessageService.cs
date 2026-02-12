@@ -36,7 +36,7 @@ public class MessageService : IMessageService
     public async Task<List<ConversationDto>> GetConversationsAsync(int userId)
     {
         var messages = await _messageRepository.GetConversationsAsync(userId);
-        
+
         // Grupează după cealaltă persoană din conversație
         var conversations = messages
             .GroupBy(m => m.SenderId == userId ? m.ReceiverId : m.SenderId)
@@ -50,11 +50,11 @@ public class MessageService : IMessageService
             .Select(c => new ConversationDto
             {
                 OtherUserId = c.OtherUserId,
-                OtherUsername = c.LastMessage.SenderId == userId 
-                    ? c.LastMessage.Receiver.Username 
+                OtherUsername = c.LastMessage.SenderId == userId
+                    ? c.LastMessage.Receiver.Username
                     : c.LastMessage.Sender.Username,
-                OtherUserAvatar = c.LastMessage.SenderId == userId 
-                    ? c.LastMessage.Receiver.Profile?.AvatarUrl 
+                OtherUserAvatar = c.LastMessage.SenderId == userId
+                    ? c.LastMessage.Receiver.Profile?.AvatarUrl
                     : c.LastMessage.Sender.Profile?.AvatarUrl,
                 LastMessageContent = c.LastMessage.Content,
                 LastMessageTime = c.LastMessage.SentAt,

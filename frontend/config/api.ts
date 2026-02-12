@@ -8,6 +8,11 @@ export const API_ENDPOINTS = {
   users: `${API_BASE_URL}/api/users`,
   userDetail: (id: number) => `${API_BASE_URL}/api/users/${id}`,
   health: `${API_BASE_URL}/api/health`,
+  messages: {
+    send: `${API_BASE_URL}/api/messages`,
+    conversations: `${API_BASE_URL}/api/messages/conversations`,
+    withUser: (userId: number) => `${API_BASE_URL}/api/messages/${userId}`,
+  },
 };
 
 

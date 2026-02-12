@@ -11,17 +11,17 @@ public interface IMessageService
     /// Trimite un mesaj către un alt utilizator
     /// </summary>
     Task<MessageDto> SendMessageAsync(int senderId, SendMessageRequest request);
-    
+
     /// <summary>
     /// Obține toate conversațiile utilizatorului curent (cu preview)
     /// </summary>
     Task<List<ConversationDto>> GetConversationsAsync(int userId);
-    
+
     /// <summary>
     /// Obține toate mesajele dintr-o conversație cu un alt utilizator
     /// </summary>
     Task<List<MessageDto>> GetMessagesWithUserAsync(int userId, int otherUserId);
-    
+
     /// <summary>
     /// Marchează mesajele ca citite
     /// </summary>

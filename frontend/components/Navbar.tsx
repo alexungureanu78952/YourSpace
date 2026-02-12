@@ -12,6 +12,9 @@ export default function Navbar() {
                 <Link href="/" className="text-2xl font-bold text-white">YourSpace</Link>
                 <Link href="/feed" className="text-white/80 hover:text-white">Feed</Link>
                 <Link href="/profiles" className="text-white/80 hover:text-white">Profiluri</Link>
+                {user && (
+                    <Link href="/messages" className="text-white/80 hover:text-white">Messages</Link>
+                )}
             </div>
             <div className="flex items-center gap-4">
                 {!user && (

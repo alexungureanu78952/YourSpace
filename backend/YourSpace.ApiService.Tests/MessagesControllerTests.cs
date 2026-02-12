@@ -29,7 +29,7 @@ namespace YourSpace.ApiService.Tests
                 .ReturnsAsync(new MessageDto { Id = 1, SenderId = senderId, ReceiverId = receiverId, Content = "Hello" });
             var logger = new Mock<ILogger<MessagesController>>();
             var ctrl = new MessagesController(mock.Object, logger.Object);
-            
+
             // Simulează user autentificat
             var claims = new[] { new Claim("sub", senderId.ToString()) };
             ctrl.ControllerContext = new ControllerContext
@@ -39,19 +39,19 @@ namespace YourSpace.ApiService.Tests
                     User = new ClaimsPrincipal(new ClaimsIdentity(claims, "mock"))
                 }
             };
-            
+
             var req = new SendMessageRequest { ReceiverId = receiverId, Content = "Hello" };
-            
+
             // Act
             var result = await ctrl.SendMessage(req);
-            
+
             // Assert
             var ok = Assert.IsType<OkObjectResult>(result.Result);
             var message = Assert.IsType<MessageDto>(ok.Value);
             Assert.Equal(1, message.Id);
             Assert.Equal("Hello", message.Content);
         }
-        
+
         [Fact]
         public async Task GetConversations_ReturnsListOfConversations()
         {
@@ -65,7 +65,7 @@ namespace YourSpace.ApiService.Tests
                 });
             var logger = new Mock<ILogger<MessagesController>>();
             var ctrl = new MessagesController(mock.Object, logger.Object);
-            
+
             var claims = new[] { new Claim("sub", userId.ToString()) };
             ctrl.ControllerContext = new ControllerContext
             {
@@ -74,10 +74,10 @@ namespace YourSpace.ApiService.Tests
                     User = new ClaimsPrincipal(new ClaimsIdentity(claims, "mock"))
                 }
             };
-            
+
             // Act
             var result = await ctrl.GetConversations();
-            
+
             // Assert
             var ok = Assert.IsType<OkObjectResult>(result.Result);
             var conversations = Assert.IsType<List<ConversationDto>>(ok.Value);
@@ -85,7 +85,7 @@ namespace YourSpace.ApiService.Tests
             Assert.Equal(2, conversations[0].OtherUserId);
             Assert.Equal(3, conversations[0].UnreadCount);
         }
-        
+
         [Fact]
         public async Task GetMessages_ReturnsMessagesWithOtherUser()
         {
@@ -101,7 +101,7 @@ namespace YourSpace.ApiService.Tests
                 });
             var logger = new Mock<ILogger<MessagesController>>();
             var ctrl = new MessagesController(mock.Object, logger.Object);
-            
+
             var claims = new[] { new Claim("sub", userId.ToString()) };
             ctrl.ControllerContext = new ControllerContext
             {
@@ -110,10 +110,10 @@ namespace YourSpace.ApiService.Tests
                     User = new ClaimsPrincipal(new ClaimsIdentity(claims, "mock"))
                 }
             };
-            
+
             // Act
             var result = await ctrl.GetMessages(otherUserId);
-            
+
             // Assert
             var ok = Assert.IsType<OkObjectResult>(result.Result);
             var messages = Assert.IsType<List<MessageDto>>(ok.Value);

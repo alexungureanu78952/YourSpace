@@ -58,12 +58,19 @@ const UserProfile: React.FC<UserProfileProps> = ({ user }) => {
                 <style dangerouslySetInnerHTML={{ __html: profile.customCss }} />
             )}
 
-            {isOwnProfile && (
+            {isOwnProfile ? (
                 <button
                     className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
                     onClick={() => window.location.href = '/profile/edit'}
                 >
                     Edit Profile
+                </button>
+            ) : (
+                <button
+                    className="mt-4 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded"
+                    onClick={() => window.location.href = `/messages/${user.id}`}
+                >
+                    Send Message
                 </button>
             )}
         </div>
