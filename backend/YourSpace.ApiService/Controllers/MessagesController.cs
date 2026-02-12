@@ -40,11 +40,11 @@ public class MessagesController : ControllerBase
                 return Unauthorized(new { message = "Unauthorized" });
 
             var message = await _messageService.SendMessageAsync(senderId, request);
-            
+
             // Notifică destinatarul prin SignalR
             await _chatHub.Clients.Group($"user_{request.ReceiverId}").SendAsync("ReceiveMessage", message);
             _logger.LogInformation($"SignalR notification sent to user_{request.ReceiverId}");
-            
+
             return Ok(message);
         }
         catch (Exception ex)

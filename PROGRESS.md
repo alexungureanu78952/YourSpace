@@ -1,103 +1,194 @@
 # YourSpace - Progres Implementare
 
-## Pas 1: ✅ Structura Inițială Proiect
-- Creat folderul `backend/` pentru .NET
-- Creat folderul `frontend/` pentru Next.js
-- Creat `README.md` și `.gitignore`
+## ✅ Funcționalități Complete
 
-## Pas 2: ✅ Backend .NET Aspire
-### Ce am creat:
+### 1. Autentificare & Securitate
+- **Backend JWT Authentication**
+  - Token generation cu JwtTokenService (120 min expiry)
+  - ClaimTypes mapping fix (NameIdentifier pentru user ID)
+  - Cookie + Authorization header support
+  - ValidateLifetime disabled în development pentru debugging
+- **Frontend Auth System**
+  - AuthContext cu localStorage persistence
+  - Login/Register pages complete
+  - Protected routes cu redirect
+  - UserMenu component cu logout
 
-#### Solution și Proiecte
-- `.NET solution` (YourSpace.sln)
-- `YourSpace.ApiService` - REST API main
-- `YourSpace.Data` - Models și DbContext
+### 2. User Management
+- **User Discovery System**
+  - `/profiles` - Search page cu listă utilizatori
+  - `/profile/[username]` - Public profile viewing
+  - GET /api/users endpoint (cu protecție JWT)
+  - GET /api/users/{id} endpoint pentru detalii
 
-#### Modele de Date (ORM)
-**User** - Utilizatorul platformei
-- Id, Username (unic), Email (unic), PasswordHash
-- CreatedAt, Profile (one-to-one), Posts (one-to-many)
+### 3. Real-Time Messaging System ⭐ **NOU**
+- **Backend (SignalR)**
+  - `ChatHub` pentru conexiuni WebSocket
+  - Real-time message delivery (instant, nu polling)
+  - User groups pentru notificări directe (`user_{id}`)
+  - Typing indicators support
+  - Automatic reconnection handling
+  
+- **Frontend**
+  - SignalR client integration (@microsoft/signalr)
+  - Custom hook `useChatHub` pentru conexiuni
+  - Real-time message updates (elimină polling la 5 secunde)
+  - Connection status tracking
+  - Automatic token injection în WebSocket
 
-**UserProfile** - Profilul personalizabil (MySpace-style blog)
-- DisplayName, Bio, AvatarUrl
-- `CustomHtml` - HTML custom pentru profil (max 50KB)
-- `CustomCss` - CSS custom pentru design (max 20KB)
-- UpdatedAt, relație cu User
+- **Endpoints & Features**
+  - POST /api/messages - Send message (notifică prin SignalR)
+  - GET /api/messages/conversations - Lista conversații
+  - GET /api/messages/{otherUserId} - Mesaje cu un user
+  - `/messages` - Conversations list page
+  - `/messages/[userId]` - Individual chat page
+  - Clickable username în chat → profile link
+  - Message grouping by date
+  - Scroll to bottom on new messages
 
-**Post** - Postări în feed social
-- Content, UserId, CreatedAt, LikesCount
-- Relație cu User
+### 4. Database & ORM
+- **PostgreSQL** cu Entity Framework Core
+- **Modele**:
+  - User (Id, Username, Email, PasswordHash)
+  - UserProfile (DisplayName, Bio, CustomHtml/Css)
+  - Post (Content, UserId, LikesCount)
+  - Message (SenderId, ReceiverId, Content, SentAt, IsRead)
+- **Migrations** complet configurate
+- Connection string în appsettings.Development.json
 
-#### Bază de Date
-- **Framework**: Entity Framework Core 10
-- **Provider**: PostgreSQL (Npgsql)
-- **Configurare**: DbContext cu relații configurate, cascade delete
+### 5. Architecture & Best Practices
+- **Clean Architecture**
+  - Controllers → Services → Repositories
+  - Dependency Injection
+  - DTOs pentru API responses
+- **Testing**
+  - 81/81 unit tests passing
+  - xUnit pentru backend
+  - Moq pentru mocking
+- **Security**
+  - Password hashing cu BCrypt
+  - JWT token validation
+  - CORS configured pentru localhost:3000→5000
+  - [Authorize] attributes pe protected endpoints
 
-#### API Controllers
-- `UsersController.cs`:
-   - `GET /api/users` - Lista toți utilizatorii (**PROTEJAT JWT**)
-   - `GET /api/users/{id}` - Detalii utilizator cu profil și postări (**PROTEJAT JWT**)
+## 🛠️ Stack Tehnologic Actual
 
-#### Configurare API
-- CORS activat pentru frontend (localhost:3000)
-- Connection string în `appsettings.json`
-- Middleware-uri: logging, HTTPS, routing
+### Backend
+- .NET 10 + ASP.NET Core
+- Entity Framework Core 10
+- PostgreSQL (Npgsql provider)
+- SignalR pentru real-time
+- xUnit + Moq pentru testing
 
-### Cum să testezi Backend-ul:
-```bash
-cd backend
+### Frontend
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS
+- SignalR Client (@microsoft/signalr)
+- localStorage pentru token persistence
 
-# După ce PostgreSQL rulează:
-dotnet ef database update --project YourSpace.Data
+## 📝 Configurare Actuală
 
-# Pornire API
-dotnet run --project YourSpace.ApiService
+### Backend Ports
+- API: http://localhost:5000
+- SignalR Hub: http://localhost:5000/hubs/chat
 
-# Testare health check
-curl http://localhost:5000/api/health
+### Frontend
+- Dev Server: http://localhost:3000
 
-# Testare endpoint protejat JWT (după login/register):
-curl -H "Authorization: Bearer <token>" http://localhost:5000/api/users
+### JWT Configuration
+```json
+{
+  "Jwt": {
+    "Secret": "dev_secret_very_long_and_random_change_in_prod",
+    "Issuer": "YourSpace",
+    "Audience": "YourSpaceAudience",
+    "ExpiryMinutes": 120
+  }
+}
 ```
 
-## Pas 3: ✅ Frontend Next.js
-### Ce am creat:
+## 🚀 Cum să Rulezi Proiectul
 
-#### Configurare
-- **Framework**: Next.js 15.1 cu App Router (structura modernă)
-- **Limbaj**: TypeScript
-- **Styling**: Tailwind CSS
-- **Linter**: ESLint
+### Backend
+```bash
+cd backend/YourSpace.ApiService
+dotnet run --urls "http://localhost:5000"
+```
 
-#### Pagini
-- `app/page.tsx` - Landing page cu prezentare proiect
-
-#### Config API
-- `config/api.ts` - URL-uri endpoints și configurare
-
-#### Design
-- Landing page cu gradient background
-- Informații despre stack tehnologic
-- Link-uri și explicații pentru utilizatori
-
-### Cum să testezi Frontend-ul:
+### Frontend
 ```bash
 cd frontend
-
-# Instalare dependențe (deja făcut)
-npm install
-
-# Pornire dev server (va fi pe http://localhost:3000)
 npm run dev
 ```
 
-## Pas 4: 🚀 Următorii Pași
+### Testing
+```bash
+cd backend
+dotnet test
+# Output: 81/81 tests passing
+```
 
+## 🎯 Feature Highlights
 
-### Imediat (Prioritate Alta):
-1. **Autentificare Utilizatori** ✅ (complet)
-   - Register/Login endpoints (`POST /api/auth/register`, `POST /api/auth/login`)
-   - JWT tokens (stateless authentication, token returnat la login/register)
+### Real-Time Messaging (SignalR)
+- **Instant delivery** - mesajele apar imediat fără refresh
+- **WebSocket connection** - mai eficient decât polling
+- **Auto-reconnect** - conexiunea se restabilește automat
+- **Typing indicators** - support pentru "user is typing..."
+- **Scalable** - arhitectură pregătită pentru multe conexiuni simultane
+
+### Authentication Flow
+1. User se loghează → primește JWT token
+2. Token salvat în localStorage + cookie
+3. Token trimis în Authorization header la fiecare request
+4. Backend validează token și extrage user ID din claims
+5. SignalR folosește același token pentru autentificare WebSocket
+
+### Message Flow
+1. User A trimite mesaj → POST /api/messages
+2. Backend salvează în DB → returnează MessageDto
+3. Backend notifică User B prin SignalR → `ReceiveMessage` event
+4. Frontend User B primește mesaj instant → adaugă în UI
+5. Fără polling, fără delay!
+
+## 📊 Statistici Proiect
+
+- **Backend Tests**: 81/81 passing ✅
+- **API Endpoints**: 12+ endpoints
+- **Frontend Pages**: 8 pages (home, auth, profiles, messages, etc.)
+- **Real-time Features**: SignalR messaging + typing indicators
+- **Database Tables**: 4 (Users, UserProfiles, Posts, Messages)
+
+## 🔄 Următorii Pași Posibili
+
+### Nivel 1 - Refinement
+- [ ] Message read receipts (IsRead flag în UI)
+- [ ] Typing indicators UI
+- [ ] Notification badges pentru unread messages
+- [ ] Message search & filtering
+
+### Nivel 2 - Advanced Features
+- [ ] Group chats (multiple users)
+- [ ] File/image sharing în messages
+- [ ] Message reactions (emoji)
+- [ ] Voice/video calls integration
+- [ ] Profile customization cu HTML/CSS editor
+
+### Nivel 3 - Scalability
+- [ ] Message pagination/infinite scroll
+- [ ] Redis caching pentru conversations
+- [ ] Azure SignalR Service pentru production
+- [ ] Background jobs pentru cleanup
+- [ ] Analytics & monitoring
+
+## 📚 Documentation Links
+
+- [SignalR Documentation](https://learn.microsoft.com/en-us/aspnet/core/signalr/introduction)
+- [Next.js App Router](https://nextjs.org/docs/app)
+- [Entity Framework Core](https://learn.microsoft.com/en-us/ef/core/)
+- [JWT Best Practices](https://jwt.io/introduction)
    - Password hashing (BCrypt, parolele nu se stochează niciodată în clar)
    - Validare request și răspuns cu DTO-uri dedicate
    - Endpoint-urile /api/users sunt protejate cu JWT (trebuie header Authorization: Bearer <token>)

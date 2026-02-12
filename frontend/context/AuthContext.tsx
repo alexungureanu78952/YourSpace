@@ -28,7 +28,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         const storedUser = typeof window !== "undefined" ? localStorage.getItem("user") : null;
         console.log('🔍 [AuthContext] localStorage token:', storedToken ? `${storedToken.substring(0, 20)}...` : 'NULL');
         console.log('🔍 [AuthContext] localStorage user:', storedUser ? 'EXISTS' : 'NULL');
-        
+
         if (storedToken && storedUser) {
             try {
                 setToken(storedToken);
@@ -52,7 +52,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         localStorage.setItem("token", jwt);
         localStorage.setItem("user", JSON.stringify(userObj));
         console.log('✅ [AuthContext] Saved to localStorage');
-        
+
         // Verify save
         const verified = localStorage.getItem("token");
         console.log('🔍 [AuthContext] Verification - token in localStorage:', verified ? 'EXISTS' : 'FAILED');

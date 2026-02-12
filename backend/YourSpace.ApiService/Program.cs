@@ -68,12 +68,12 @@ builder.Services.AddAuthentication(options =>
         {
             var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Program>>();
             logger.LogError($"❌ JWT Authentication FAILED: {context.Exception.GetType().Name} - {context.Exception.Message}");
-            
+
             if (context.Exception is SecurityTokenExpiredException)
             {
                 logger.LogError("Token has expired!");
             }
-            
+
             return Task.CompletedTask;
         }
     };
