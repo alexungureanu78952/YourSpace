@@ -7,10 +7,14 @@ interface UserProfileProps {
         username: string;
         displayName: string;
         email: string;
-        bio?: string;
-        avatarUrl?: string;
-        theme?: string;
         createdAt: string;
+        profile?: {
+            displayName?: string;
+            bio?: string;
+            avatarUrl?: string;
+            customHtml?: string;
+            customCss?: string;
+        };
     };
 }
 
@@ -20,21 +24,40 @@ interface UserProfileProps {
 const UserProfile: React.FC<UserProfileProps> = ({ user }) => {
     const { user: currentUser } = useAuth();
     const isOwnProfile = currentUser && currentUser.id === user.id;
+    const profile = user.profile || {};
+    const displayName = profile.displayName || user.displayName || user.username;
+    const bio = profile.bio || '';
+    const avatarUrl = profile.avatarUrl || '/default-avatar.png';
+    
+    const [imgSrc, setImgSrc] = React.useState(avatarUrl);
+    
     return (
-        <div className={`rounded-lg shadow-lg p-6 ${user.theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
+        <div className="rounded-lg shadow-lg p-6 bg-white text-black">
             <div className="flex items-center gap-4 mb-4">
                 <img
-                    src={user.avatarUrl || '/default-avatar.png'}
+                    src={imgSrc}
                     alt="avatar"
                     className="w-16 h-16 rounded-full border"
+                    onError={() => setImgSrc('/default-avatar.png')}
                 />
                 <div>
-                    <h2 className="text-2xl font-bold">{user.displayName || user.username}</h2>
+                    <h2 className="text-2xl font-bold">{displayName}</h2>
                     <p className="text-sm text-gray-400">@{user.username}</p>
                 </div>
             </div>
-            {user.bio && <p className="mb-2">{user.bio}</p>}
+            {bio && <p className="mb-2">{bio}</p>}
             <p className="text-xs text-gray-500">Joined: {new Date(user.createdAt).toLocaleDateString()}</p>
+            
+            {/* Custom HTML Section */}
+            {profile.customHtml && (
+                <div className="mt-4 p-4 border rounded" dangerouslySetInnerHTML={{ __html: profile.customHtml }} />
+            )}
+            
+            {/* Custom CSS */}
+            {profile.customCss && (
+                <style dangerouslySetInnerHTML={{ __html: profile.customCss }} />
+            )}
+            
             {isOwnProfile && (
                 <button
                     className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"

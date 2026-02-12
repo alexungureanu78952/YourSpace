@@ -48,11 +48,14 @@ public static class UserMapper
     {
         return new UserProfileDto
         {
+            Id = profile.Id,
+            UserId = profile.UserId,
             DisplayName = profile.DisplayName ?? string.Empty,
             Bio = profile.Bio ?? string.Empty,
             AvatarUrl = profile.AvatarUrl,
             CustomHtml = profile.CustomHtml ?? string.Empty,
-            CustomCss = profile.CustomCss ?? string.Empty
+            CustomCss = profile.CustomCss ?? string.Empty,
+            UpdatedAt = profile.UpdatedAt
         };
     }
 }

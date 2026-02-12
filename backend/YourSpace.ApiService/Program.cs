@@ -29,6 +29,20 @@ builder.Services.AddAuthentication(options =>
         ValidAudience = jwtConfig["Audience"],
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtConfig["Secret"]!))
     };
+
+    // Citește JWT din cookie "token" pentru autentificare
+    options.Events = new JwtBearerEvents
+    {
+        OnMessageReceived = context =>
+        {
+            // Caută token în cookie "token"
+            if (context.Request.Cookies.ContainsKey("token"))
+            {
+                context.Token = context.Request.Cookies["token"];
+            }
+            return Task.CompletedTask;
+        }
+    };
 });
 
 // Configurare servicii

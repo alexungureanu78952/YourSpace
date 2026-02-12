@@ -53,6 +53,21 @@ public class UserRepository : IUserRepository
     {
         _context.Users.Add(user);
         await _context.SaveChangesAsync();
+
+        // Creează automat profilul pentru userul nou
+        var profile = new UserProfile
+        {
+            UserId = user.Id,
+            DisplayName = user.Username,
+            Bio = "",
+            CustomHtml = "",
+            CustomCss = "",
+            AvatarUrl = null,
+            UpdatedAt = DateTime.UtcNow
+        };
+        _context.UserProfiles.Add(profile);
+        await _context.SaveChangesAsync();
+
         return user;
     }
 

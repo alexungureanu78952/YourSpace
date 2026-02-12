@@ -112,16 +112,43 @@ public class ProfileService : IProfileService
     public async Task<ProfileDto?> UpdateProfileAsync(int userId, EditProfileRequest request)
     {
         var profile = await _db.UserProfiles.FirstOrDefaultAsync(p => p.UserId == userId);
-        if (profile == null) return null;
-        // Validare și sanitizare
-        if (request.Html.Length > 50_000 || request.Css.Length > 20_000)
-            throw new ArgumentException("Html sau Css depășește limita de dimensiune.");
-        var htmlSanitizer = new Ganss.Xss.HtmlSanitizer();
-        var sanitizedHtml = htmlSanitizer.Sanitize(request.Html);
-        var sanitizedCss = SanitizeCss(request.Css);
-        profile.AvatarUrl = request.AvatarUrl;
-        profile.CustomHtml = sanitizedHtml;
-        profile.CustomCss = sanitizedCss;
+
+        // Creează profilul dacă nu există
+        if (profile == null)
+        {
+            profile = new UserProfile
+            {
+                UserId = userId,
+                DisplayName = "",
+                Bio = "",
+                CustomHtml = "",
+                CustomCss = "",
+                AvatarUrl = null,
+                UpdatedAt = DateTime.UtcNow
+            };
+            _db.UserProfiles.Add(profile);
+        }
+
+        // Validare și sanitizare doar pentru câmpuri non-goale
+        if (!string.IsNullOrEmpty(request.Html))
+        {
+            if (request.Html.Length > 50_000)
+                throw new ArgumentException("Html depășește limita de dimensiune.");
+            var htmlSanitizer = new Ganss.Xss.HtmlSanitizer();
+            profile.CustomHtml = htmlSanitizer.Sanitize(request.Html);
+        }
+        if (!string.IsNullOrEmpty(request.Css))
+        {
+            if (request.Css.Length > 20_000)
+                throw new ArgumentException("Css depășește limita de dimensiune.");
+            profile.CustomCss = SanitizeCss(request.Css);
+        }
+        if (!string.IsNullOrEmpty(request.AvatarUrl))
+            profile.AvatarUrl = request.AvatarUrl;
+        if (!string.IsNullOrEmpty(request.DisplayName))
+            profile.DisplayName = request.DisplayName;
+        if (!string.IsNullOrEmpty(request.Bio))
+            profile.Bio = request.Bio;
         profile.UpdatedAt = DateTime.UtcNow;
         await _db.SaveChangesAsync();
         return new ProfileDto

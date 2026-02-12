@@ -10,6 +10,8 @@ namespace YourSpace.ApiService.DTOs
         public string? AvatarUrl { get; set; }
         public string Html { get; set; } = string.Empty;
         public string Css { get; set; } = string.Empty;
+        public string DisplayName { get; set; } = string.Empty;
+        public string Bio { get; set; } = string.Empty;
     }
 
     /// <summary>
