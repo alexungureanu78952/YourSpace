@@ -96,5 +96,28 @@ namespace YourSpace.ApiService.Controllers
                 return StatusCode(500, new { message = "A apărut o eroare la preluarea userului curent." });
             }
         }
+
+        /// <summary>
+        /// Obține un utilizator specific după username
+        /// GET /api/users/by-username/johndoe
+        /// </summary>
+        [HttpGet("by-username/{username}")]
+        public async Task<ActionResult<UserDto>> GetUserByUsername(string username)
+        {
+            try
+            {
+                var user = await _userService.GetUserByUsernameAsync(username);
+                if (user == null)
+                {
+                    return NotFound(new { message = "Utilizatorul nu a fost găsit" });
+                }
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error in GetUserByUsername for username {username}");
+                return StatusCode(500, new { message = "A apărut o eroare la preluarea utilizatorului." });
+            }
+        }
     }
 }

@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using YourSpace.ApiService.DTOs;
+using YourSpace.ApiService.Hubs;
 using YourSpace.ApiService.Services;
 
 namespace YourSpace.ApiService.Controllers;
@@ -15,11 +17,13 @@ public class MessagesController : ControllerBase
 {
     private readonly IMessageService _messageService;
     private readonly ILogger<MessagesController> _logger;
+    private readonly IHubContext<ChatHub> _chatHub;
 
-    public MessagesController(IMessageService messageService, ILogger<MessagesController> logger)
+    public MessagesController(IMessageService messageService, ILogger<MessagesController> logger, IHubContext<ChatHub> chatHub)
     {
         _messageService = messageService;
         _logger = logger;
+        _chatHub = chatHub;
     }
 
     /// <summary>
@@ -31,11 +35,16 @@ public class MessagesController : ControllerBase
     {
         try
         {
-            var userIdClaim = User.FindFirst("sub")?.Value;
+            var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
             if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out var senderId))
                 return Unauthorized(new { message = "Unauthorized" });
 
             var message = await _messageService.SendMessageAsync(senderId, request);
+            
+            // Notifică destinatarul prin SignalR
+            await _chatHub.Clients.Group($"user_{request.ReceiverId}").SendAsync("ReceiveMessage", message);
+            _logger.LogInformation($"SignalR notification sent to user_{request.ReceiverId}");
+            
             return Ok(message);
         }
         catch (Exception ex)
@@ -54,10 +63,25 @@ public class MessagesController : ControllerBase
     {
         try
         {
-            var userIdClaim = User.FindFirst("sub")?.Value;
-            if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out var userId))
-                return Unauthorized(new { message = "Unauthorized" });
+            _logger.LogInformation("=== GetConversations called ===");
+            _logger.LogInformation($"User.Identity.IsAuthenticated: {User.Identity?.IsAuthenticated}");
+            _logger.LogInformation($"User claims count: {User.Claims.Count()}");
 
+            foreach (var claim in User.Claims)
+            {
+                _logger.LogInformation($"Claim: {claim.Type} = {claim.Value}");
+            }
+
+            var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            _logger.LogInformation($"User ID claim (NameIdentifier): {userIdClaim ?? "NULL"}");
+
+            if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out var userId))
+            {
+                _logger.LogError("Failed to get user ID from claims");
+                return Unauthorized(new { message = "Unauthorized" });
+            }
+
+            _logger.LogInformation($"✓ User ID parsed: {userId}");
             var conversations = await _messageService.GetConversationsAsync(userId);
             return Ok(conversations);
         }
@@ -77,7 +101,7 @@ public class MessagesController : ControllerBase
     {
         try
         {
-            var userIdClaim = User.FindFirst("sub")?.Value;
+            var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
             if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out var userId))
                 return Unauthorized(new { message = "Unauthorized" });
 

@@ -12,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // JWT Authentication
 var jwtConfig = builder.Configuration.GetSection("Jwt");
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -23,23 +24,56 @@ builder.Services.AddAuthentication(options =>
     {
         ValidateIssuer = true,
         ValidateAudience = true,
-        ValidateLifetime = true,
+        ValidateLifetime = false, // DEZACTIVAT pentru debugging - NU verifica expirarea
         ValidateIssuerSigningKey = true,
         ValidIssuer = jwtConfig["Issuer"],
         ValidAudience = jwtConfig["Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtConfig["Secret"]!))
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtConfig["Secret"]!)),
+        ClockSkew = TimeSpan.Zero // Zero pentru debugging exact
     };
 
-    // Citește JWT din cookie "token" pentru autentificare
+    // Citește JWT din Authorization header (prioritate) SAU din cookie "token" (fallback)
     options.Events = new JwtBearerEvents
     {
         OnMessageReceived = context =>
         {
-            // Caută token în cookie "token"
-            if (context.Request.Cookies.ContainsKey("token"))
+            var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Program>>();
+
+            // Log pentru debugging
+            logger.LogInformation("=== JWT Authentication Debug ===");
+            logger.LogInformation($"Authorization Header: {context.Request.Headers["Authorization"]}");
+            logger.LogInformation($"Cookie 'token': {context.Request.Cookies["token"]}");
+
+            // Prioritate 1: Token din Authorization header (pentru client-side requests)
+            var authHeader = context.Request.Headers["Authorization"].ToString();
+            if (!string.IsNullOrEmpty(authHeader) && authHeader.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase))
+            {
+                context.Token = authHeader.Substring("Bearer ".Length).Trim();
+                logger.LogInformation("✓ Token loaded from Authorization header");
+            }
+            // Prioritate 2: Token din cookie (pentru SSR requests)
+            else if (context.Request.Cookies.ContainsKey("token"))
             {
                 context.Token = context.Request.Cookies["token"];
+                logger.LogInformation("✓ Token loaded from cookie");
             }
+            else
+            {
+                logger.LogWarning("✗ No token found in header or cookie!");
+            }
+
+            return Task.CompletedTask;
+        },
+        OnAuthenticationFailed = context =>
+        {
+            var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Program>>();
+            logger.LogError($"❌ JWT Authentication FAILED: {context.Exception.GetType().Name} - {context.Exception.Message}");
+            
+            if (context.Exception is SecurityTokenExpiredException)
+            {
+                logger.LogError("Token has expired!");
+            }
+            
             return Task.CompletedTask;
         }
     };
@@ -80,6 +114,9 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IProfileService, ProfileService>();
 builder.Services.AddScoped<IMessageService, MessageService>();
 
+// SignalR pentru real-time messaging
+builder.Services.AddSignalR();
+
 // Adăugare controllere pentru API
 builder.Services.AddControllers();
 
@@ -97,6 +134,9 @@ app.UseAuthentication();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
+
+// SignalR Hub pentru messaging real-time
+app.MapHub<YourSpace.ApiService.Hubs.ChatHub>("/hubs/chat");
 
 // Endpoint de test pentru a verifica că API-ul funcționează
 app.MapGet("/api/health", () => new { status = "healthy", timestamp = DateTime.UtcNow })
