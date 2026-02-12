@@ -1,4 +1,3 @@
-
 using Xunit;
 using Moq;
 using Microsoft.AspNetCore.Mvc;
@@ -8,9 +7,11 @@ using YourSpace.ApiService.Services;
 using YourSpace.ApiService.DTOs;
 using Microsoft.Extensions.Logging;
 
-
 namespace YourSpace.ApiService.Tests
 {
+    /// <summary>
+    /// Unit tests for AuthController. Ensures TDD and coverage for login, register, and JWT cookie logic.
+    /// </summary>
     public class AuthControllerTests
     {
         [Fact]
@@ -93,6 +94,32 @@ namespace YourSpace.ApiService.Tests
             Assert.IsType<ObjectResult>(result.Result);
             var obj = (ObjectResult)result.Result;
             Assert.Equal(500, obj.StatusCode);
+        }
+
+        [Fact]
+        public async Task Login_SetsJwtCookie_WhenSuccess()
+        {
+            // Arrange
+            var token = "mock.jwt.token";
+            var mock = new Mock<IAuthService>();
+            mock.Setup(s => s.LoginAsync(It.IsAny<LoginRequest>())).ReturnsAsync(new AuthResponse { Success = true, Token = token });
+            var logger = new Mock<ILogger<AuthController>>();
+            var ctrl = new AuthController(mock.Object, logger.Object);
+            // Set up a valid HttpContext to allow cookie setting
+            var httpContext = new Microsoft.AspNetCore.Http.DefaultHttpContext();
+            ctrl.ControllerContext = new ControllerContext { HttpContext = httpContext };
+
+            // Act
+            var result = await ctrl.Login(new LoginRequest());
+
+            // Assert
+            var ok = Assert.IsType<OkObjectResult>(result.Result);
+            Assert.Equal(200, ok.StatusCode);
+            Assert.IsType<AuthResponse>(ok.Value);
+            // Check that the Set-Cookie header was set for the JWT
+            Assert.True(httpContext.Response.Headers.ContainsKey("Set-Cookie"));
+            var setCookie = httpContext.Response.Headers["Set-Cookie"].ToString();
+            Assert.Contains("token=mock.jwt.token", setCookie);
         }
     }
 }

@@ -10,4 +10,24 @@ export const API_ENDPOINTS = {
   health: `${API_BASE_URL}/api/health`,
 };
 
+
+/**
+ * Returnează user-ul curent din localStorage (CSR) sau undefined dacă nu e autentificat.
+ * Pentru SSR, va trebui adaptat la infrastructura reală (cookie/jwt etc).
+ */
+export async function getCurrentUser() {
+  if (typeof window !== 'undefined') {
+    const userStr = localStorage.getItem('user');
+    if (userStr) {
+      try {
+        return JSON.parse(userStr);
+      } catch {
+        return undefined;
+      }
+    }
+  }
+  // SSR: fallback mock (ar trebui înlocuit cu fetch la backend sau cookies)
+  return undefined;
+}
+
 export default API_BASE_URL;

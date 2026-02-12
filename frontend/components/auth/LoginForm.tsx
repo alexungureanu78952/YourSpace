@@ -29,6 +29,7 @@ export default function LoginForm() {
                     usernameOrEmail: state.usernameOrEmail,
                     password: state.password,
                 }),
+                credentials: "include", // permite browserului să accepte cookie-ul JWT
             });
             const data = await res.json();
             if (!res.ok) throw new Error(data.message || "Login failed");

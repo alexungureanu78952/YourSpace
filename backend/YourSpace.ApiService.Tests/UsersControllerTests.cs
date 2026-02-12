@@ -72,5 +72,60 @@ namespace YourSpace.ApiService.Tests
             var obj = (ObjectResult)result.Result;
             Assert.Equal(500, obj.StatusCode);
         }
+        [Fact]
+        public async Task GetCurrentUser_ReturnsUser_WhenTokenValid()
+        {
+            // Arrange
+            var userId = 42;
+            var userDto = new UserDetailDto { Id = userId, Username = "testuser", Email = "test@email.com" };
+            var userService = new Mock<IUserService>();
+            userService.Setup(s => s.GetUserByIdAsync(userId)).ReturnsAsync(userDto);
+            var logger = new Mock<ILogger<UsersController>>();
+            var controller = new UsersController(userService.Object, logger.Object);
+            var claims = new[] { new System.Security.Claims.Claim("sub", userId.ToString()) };
+            var identity = new System.Security.Claims.ClaimsIdentity(claims, "TestAuth");
+            controller.ControllerContext = new Microsoft.AspNetCore.Mvc.ControllerContext
+            {
+                HttpContext = new Microsoft.AspNetCore.Http.DefaultHttpContext { User = new System.Security.Claims.ClaimsPrincipal(identity) }
+            };
+            // Act
+            var result = await controller.GetCurrentUser();
+            // Assert
+            var ok = Assert.IsType<OkObjectResult>(result.Result);
+            var returned = Assert.IsType<UserDetailDto>(ok.Value);
+            Assert.Equal(userId, returned.Id);
+            Assert.Equal("testuser", returned.Username);
+        }
+
+        [Fact]
+        public async Task GetCurrentUser_ReturnsUnauthorized_WhenNoClaim()
+        {
+            var userService = new Mock<IUserService>();
+            var logger = new Mock<ILogger<UsersController>>();
+            var controller = new UsersController(userService.Object, logger.Object);
+            controller.ControllerContext = new Microsoft.AspNetCore.Mvc.ControllerContext
+            {
+                HttpContext = new Microsoft.AspNetCore.Http.DefaultHttpContext { User = new System.Security.Claims.ClaimsPrincipal() }
+            };
+            var result = await controller.GetCurrentUser();
+            Assert.IsType<UnauthorizedObjectResult>(result.Result);
+        }
+
+        [Fact]
+        public async Task GetCurrentUser_ReturnsNotFound_WhenUserMissing()
+        {
+            var userService = new Mock<IUserService>();
+            userService.Setup(s => s.GetUserByIdAsync(It.IsAny<int>())).ReturnsAsync((UserDetailDto)null);
+            var logger = new Mock<ILogger<UsersController>>();
+            var controller = new UsersController(userService.Object, logger.Object);
+            var claims = new[] { new System.Security.Claims.Claim("sub", "123") };
+            var identity = new System.Security.Claims.ClaimsIdentity(claims, "TestAuth");
+            controller.ControllerContext = new Microsoft.AspNetCore.Mvc.ControllerContext
+            {
+                HttpContext = new Microsoft.AspNetCore.Http.DefaultHttpContext { User = new System.Security.Claims.ClaimsPrincipal(identity) }
+            };
+            var result = await controller.GetCurrentUser();
+            Assert.IsType<NotFoundObjectResult>(result.Result);
+        }
     }
 }

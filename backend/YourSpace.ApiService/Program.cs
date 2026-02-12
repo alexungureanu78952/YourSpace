@@ -41,7 +41,8 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins("http://localhost:3000") // URL-ul frontend-ului Next.js
               .AllowAnyHeader()
-              .AllowAnyMethod();
+              .AllowAnyMethod()
+              .AllowCredentials(); // Necesar pentru JWT cookies
     });
 });
 

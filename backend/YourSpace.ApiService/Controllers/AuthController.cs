@@ -51,6 +51,22 @@ public class AuthController : ControllerBase
             var result = await _authService.LoginAsync(request);
             if (!result.Success)
                 return BadRequest(result);
+            if (!string.IsNullOrEmpty(result.Token))
+            {
+                // Secure=false pentru dezvoltare locală (HTTP), Secure=true în producție
+                var isDev = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development";
+                Response.Cookies.Append(
+                    "token",
+                    result.Token,
+                    new Microsoft.AspNetCore.Http.CookieOptions
+                    {
+                        HttpOnly = true,
+                        Secure = !isDev,
+                        SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Lax,
+                        Path = "/",
+                        Expires = DateTimeOffset.UtcNow.AddDays(7)
+                    });
+            }
             return Ok(result);
         }
         catch (Exception ex)

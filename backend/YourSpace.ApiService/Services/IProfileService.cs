@@ -16,4 +16,9 @@ public interface IProfileService
     /// Actualizează profilul utilizatorului (doar owner-ul poate)
     /// </summary>
     Task<UserProfileDto?> UpdateProfileAsync(int userId, UpdateProfileDto dto);
+
+    /// <summary>
+    /// Editare profil (avatar, html, css) pentru userul autentificat
+    /// </summary>
+    Task<ProfileDto?> UpdateProfileAsync(int userId, EditProfileRequest request);
 }

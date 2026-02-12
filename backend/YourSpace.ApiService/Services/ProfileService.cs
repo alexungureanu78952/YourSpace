@@ -105,4 +105,31 @@ public class ProfileService : IProfileService
         AvatarUrl = profile.AvatarUrl,
         UpdatedAt = profile.UpdatedAt
     };
+
+    /// <summary>
+    /// Editare profil (avatar, html, css) pentru userul autentificat
+    /// </summary>
+    public async Task<ProfileDto?> UpdateProfileAsync(int userId, EditProfileRequest request)
+    {
+        var profile = await _db.UserProfiles.FirstOrDefaultAsync(p => p.UserId == userId);
+        if (profile == null) return null;
+        // Validare și sanitizare
+        if (request.Html.Length > 50_000 || request.Css.Length > 20_000)
+            throw new ArgumentException("Html sau Css depășește limita de dimensiune.");
+        var htmlSanitizer = new Ganss.Xss.HtmlSanitizer();
+        var sanitizedHtml = htmlSanitizer.Sanitize(request.Html);
+        var sanitizedCss = SanitizeCss(request.Css);
+        profile.AvatarUrl = request.AvatarUrl;
+        profile.CustomHtml = sanitizedHtml;
+        profile.CustomCss = sanitizedCss;
+        profile.UpdatedAt = DateTime.UtcNow;
+        await _db.SaveChangesAsync();
+        return new ProfileDto
+        {
+            UserId = userId,
+            AvatarUrl = profile.AvatarUrl,
+            Html = profile.CustomHtml,
+            Css = profile.CustomCss
+        };
+    }
 }

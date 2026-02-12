@@ -19,6 +19,22 @@ public class ProfilesController : ControllerBase
     }
 
     /// <summary>
+    /// Editare profil (avatar, html, css) pentru userul autentificat
+    /// </summary>
+    [Authorize]
+    [HttpPost("edit")]
+    public async Task<ActionResult<ProfileDto>> EditProfile([FromBody] EditProfileRequest request)
+    {
+        // Extrage userId din JWT claims
+        var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+        if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out var userId))
+            return Unauthorized();
+        var updated = await _profileService.UpdateProfileAsync(userId, request);
+        if (updated == null) return NotFound(new { message = "Profilul nu a fost găsit" });
+        return Ok(updated);
+    }
+
+    /// <summary>
     /// Obține profilul public după username
     /// </summary>
     [HttpGet("{username}")]
