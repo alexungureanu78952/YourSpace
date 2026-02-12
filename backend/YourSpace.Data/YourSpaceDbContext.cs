@@ -30,6 +30,11 @@ public class YourSpaceDbContext : DbContext
     public DbSet<Post> Posts { get; set; }
 
     /// <summary>
+    /// Tabel pentru mesaje
+    /// </summary>
+    public DbSet<Message> Messages { get; set; }
+
+    /// <summary>
     /// Configurează relațiile între entități și alte setări
     /// </summary>
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -78,6 +83,29 @@ public class YourSpaceDbContext : DbContext
 
             // Index pentru a sorta rapid postările după dată
             entity.HasIndex(e => e.CreatedAt);
+        });
+
+        // Configurare Message
+        modelBuilder.Entity<Message>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.Content).IsRequired().HasMaxLength(5000);
+
+            // Relație cu Sender
+            entity.HasOne(e => e.Sender)
+                  .WithMany()
+                  .HasForeignKey(e => e.SenderId)
+                  .OnDelete(DeleteBehavior.Restrict);
+
+            // Relație cu Receiver
+            entity.HasOne(e => e.Receiver)
+                  .WithMany()
+                  .HasForeignKey(e => e.ReceiverId)
+                  .OnDelete(DeleteBehavior.Restrict);
+
+            // Index pentru query-uri rapide
+            entity.HasIndex(e => new { e.SenderId, e.ReceiverId, e.SentAt });
+            entity.HasIndex(e => new { e.ReceiverId, e.IsRead });
         });
     }
 }

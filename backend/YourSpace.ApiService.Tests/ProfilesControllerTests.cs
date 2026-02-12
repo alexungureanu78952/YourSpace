@@ -8,6 +8,7 @@ using YourSpace.ApiService.DTOs;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 using System;
+using Microsoft.Extensions.Logging;
 
 namespace YourSpace.ApiService.Tests
 {
@@ -17,7 +18,8 @@ namespace YourSpace.ApiService.Tests
         public async Task UpdateProfile_ReturnsUnauthorized_WhenNoAuth()
         {
             var mock = new Mock<IProfileService>();
-            var ctrl = new ProfilesController(mock.Object);
+            var logger = new Mock<ILogger<ProfilesController>>();
+            var ctrl = new ProfilesController(mock.Object, logger.Object);
             ctrl.ControllerContext = new ControllerContext { HttpContext = new DefaultHttpContext() };
             var result = await ctrl.UpdateProfile(new UpdateProfileDto());
             Assert.IsType<UnauthorizedResult>(result.Result);
@@ -27,7 +29,8 @@ namespace YourSpace.ApiService.Tests
         {
             var mock = new Mock<IProfileService>();
             mock.Setup(s => s.GetProfileByUsernameAsync("user")).ReturnsAsync(new UserProfileDto());
-            var ctrl = new ProfilesController(mock.Object);
+            var logger = new Mock<ILogger<ProfilesController>>();
+            var ctrl = new ProfilesController(mock.Object, logger.Object);
             var result = await ctrl.GetProfile("user");
             var ok = Assert.IsType<OkObjectResult>(result.Result);
             Assert.IsType<UserProfileDto>(ok.Value);
@@ -38,7 +41,8 @@ namespace YourSpace.ApiService.Tests
         {
             var mock = new Mock<IProfileService>();
             mock.Setup(s => s.GetProfileByUsernameAsync("nouser")).ReturnsAsync((UserProfileDto)null);
-            var ctrl = new ProfilesController(mock.Object);
+            var logger = new Mock<ILogger<ProfilesController>>();
+            var ctrl = new ProfilesController(mock.Object, logger.Object);
             var result = await ctrl.GetProfile("nouser");
             Assert.IsType<NotFoundObjectResult>(result.Result);
         }
@@ -47,7 +51,8 @@ namespace YourSpace.ApiService.Tests
         public async Task UpdateProfile_ReturnsUnauthorized_WhenNoUserId()
         {
             var mock = new Mock<IProfileService>();
-            var ctrl = new ProfilesController(mock.Object);
+            var logger = new Mock<ILogger<ProfilesController>>();
+            var ctrl = new ProfilesController(mock.Object, logger.Object);
             ctrl.ControllerContext = new ControllerContext { HttpContext = new DefaultHttpContext() };
             var result = await ctrl.UpdateProfile(new UpdateProfileDto());
             Assert.IsType<UnauthorizedResult>(result.Result);
@@ -58,7 +63,8 @@ namespace YourSpace.ApiService.Tests
         {
             var mock = new Mock<IProfileService>();
             mock.Setup(s => s.UpdateProfileAsync(1, It.IsAny<UpdateProfileDto>())).ReturnsAsync(new UserProfileDto());
-            var ctrl = new ProfilesController(mock.Object);
+            var logger = new Mock<ILogger<ProfilesController>>();
+            var ctrl = new ProfilesController(mock.Object, logger.Object);
             var user = new ClaimsPrincipal(new ClaimsIdentity(new[] { new Claim("sub", "1") }));
             ctrl.ControllerContext = new ControllerContext { HttpContext = new DefaultHttpContext { User = user } };
             var result = await ctrl.UpdateProfile(new UpdateProfileDto());
@@ -70,7 +76,8 @@ namespace YourSpace.ApiService.Tests
         {
             var mock = new Mock<IProfileService>();
             mock.Setup(s => s.UpdateProfileAsync(1, It.IsAny<UpdateProfileDto>())).ReturnsAsync((UserProfileDto)null);
-            var ctrl = new ProfilesController(mock.Object);
+            var logger = new Mock<ILogger<ProfilesController>>();
+            var ctrl = new ProfilesController(mock.Object, logger.Object);
             var user = new ClaimsPrincipal(new ClaimsIdentity(new[] { new Claim("sub", "1") }));
             ctrl.ControllerContext = new ControllerContext { HttpContext = new DefaultHttpContext { User = user } };
             var result = await ctrl.UpdateProfile(new UpdateProfileDto());
@@ -82,7 +89,8 @@ namespace YourSpace.ApiService.Tests
         {
             var mock = new Mock<IProfileService>();
             mock.Setup(s => s.GetProfileByUsernameAsync(It.IsAny<string>())).ThrowsAsync(new Exception("Test exception"));
-            var ctrl = new ProfilesController(mock.Object);
+            var logger = new Mock<ILogger<ProfilesController>>();
+            var ctrl = new ProfilesController(mock.Object, logger.Object);
             var result = await ctrl.GetProfile("user");
             var objectResult = Assert.IsType<ObjectResult>(result.Result);
             Assert.Equal(500, objectResult.StatusCode);
@@ -93,7 +101,8 @@ namespace YourSpace.ApiService.Tests
         {
             var mock = new Mock<IProfileService>();
             mock.Setup(s => s.UpdateProfileAsync(It.IsAny<int>(), It.IsAny<UpdateProfileDto>())).ThrowsAsync(new Exception("Test exception"));
-            var ctrl = new ProfilesController(mock.Object);
+            var logger = new Mock<ILogger<ProfilesController>>();
+            var ctrl = new ProfilesController(mock.Object, logger.Object);
             var user = new ClaimsPrincipal(new ClaimsIdentity(new[] { new Claim("sub", "1") }));
             ctrl.ControllerContext = new ControllerContext { HttpContext = new DefaultHttpContext { User = user } };
             var result = await ctrl.UpdateProfile(new UpdateProfileDto());

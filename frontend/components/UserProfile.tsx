@@ -28,9 +28,9 @@ const UserProfile: React.FC<UserProfileProps> = ({ user }) => {
     const displayName = profile.displayName || user.displayName || user.username;
     const bio = profile.bio || '';
     const avatarUrl = profile.avatarUrl || '/default-avatar.png';
-    
+
     const [imgSrc, setImgSrc] = React.useState(avatarUrl);
-    
+
     return (
         <div className="rounded-lg shadow-lg p-6 bg-white text-black">
             <div className="flex items-center gap-4 mb-4">
@@ -47,17 +47,17 @@ const UserProfile: React.FC<UserProfileProps> = ({ user }) => {
             </div>
             {bio && <p className="mb-2">{bio}</p>}
             <p className="text-xs text-gray-500">Joined: {new Date(user.createdAt).toLocaleDateString()}</p>
-            
+
             {/* Custom HTML Section */}
             {profile.customHtml && (
                 <div className="mt-4 p-4 border rounded" dangerouslySetInnerHTML={{ __html: profile.customHtml }} />
             )}
-            
+
             {/* Custom CSS */}
             {profile.customCss && (
                 <style dangerouslySetInnerHTML={{ __html: profile.customCss }} />
             )}
-            
+
             {isOwnProfile && (
                 <button
                     className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
