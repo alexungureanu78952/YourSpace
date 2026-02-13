@@ -1,36 +1,36 @@
-## Cum să pornești baza de date PostgreSQL
+## How to start the PostgreSQL database
 
-Ai trei opțiuni:
+You have three options:
 
-### Opțiunea 1: Docker Compose (Recomandată)
-Dacă ai Docker instalat, rulează în directorul rădăcină al proiectului:
+### Option 1: Docker Compose (Recommended)
+If you have Docker installed, run in the project root directory:
 
 ```bash
 docker-compose up -d
 ```
 
-Aceasta va porni PostgreSQL pe `localhost:5433` cu credențialele:
+This will start PostgreSQL on `localhost:5433` with credentials:
 - **Database**: yourspace
 - **Username**: postgres
 - **Password**: postgres
 
-Pentru a opri:
+To stop:
 ```bash
 docker-compose down
 ```
 
-### Opțiunea 2: PostgreSQL Local
-Dacă ai PostgreSQL instalat pe mașina ta:
+### Option 2: Local PostgreSQL
+If you have PostgreSQL installed on your machine:
 
-1. Creează o bază de date numită `yourspace`:
+1. Create a database named `yourspace`:
 ```sql
 CREATE DATABASE yourspace;
 ```
 
-2. Asigură-te că ai un utilizator `postgres` cu parola `postgres` sau actualizează connection string-ul din `appsettings.json`
+2. Make sure you have a `postgres` user with password `postgres` or update the connection string in `appsettings.json`
 
-### Opțiunea 3: Connection String Custom
-Dacă ai PostgreSQL pe alt server, actualizează file-ul `appsettings.json`:
+### Option 3: Custom Connection String
+If you have PostgreSQL on another server, update the `appsettings.json` file:
 
 ```json
 {
@@ -40,24 +40,24 @@ Dacă ai PostgreSQL pe alt server, actualizează file-ul `appsettings.json`:
 }
 ```
 
-## Aplicarea Migrărilor
+## Applying Migrations
 
-După ce PostgreSQL rulează, aplicați migrările din folderul `backend`:
+After PostgreSQL is running, apply the migrations from the `backend` folder:
 
 ```bash
 cd backend/YourSpace.ApiService
 dotnet ef database update --project ../YourSpace.Data
 ```
 
-Aceasta va crea automat tabelele necesare în baza de date.
+This will automatically create the necessary tables in the database.
 
-## Pornirea Backend-ului
+## Starting the Backend
 
 ```bash
 cd backend
 dotnet run --project YourSpace.ApiService
 ```
 
-API-ul va fi disponibil pe: `http://localhost:5000`
+The API will be available at: `http://localhost:5000`
 
-Testează health check-ul: `http://localhost:5000/api/health`
+Test the health check: `http://localhost:5000/api/health`

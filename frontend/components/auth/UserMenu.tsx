@@ -8,7 +8,7 @@ export default function UserMenu() {
 
     return (
         <div className="flex items-center gap-4">
-            <span className="text-white font-semibold">Salut, {user.displayName || user.username}!</span>
+            <span className="text-white font-semibold">Hello, {user.displayName || user.username}!</span>
             <button
                 onClick={logout}
                 className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm"

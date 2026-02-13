@@ -1,84 +1,108 @@
-# YourSpace - Progres Implementare
+# YourSpace - Implementation Progress
 
-## ✅ Funcționalități Complete
+## ✅ Completed Features
 
-### 1. Autentificare & Securitate
+### 1. Authentication & Security
 - **Backend JWT Authentication**
-  - Token generation cu JwtTokenService (120 min expiry)
-  - ClaimTypes mapping fix (NameIdentifier pentru user ID)
+  - Token generation with JwtTokenService (120 min expiry)
+  - ClaimTypes mapping fix (NameIdentifier for user ID)  
   - Cookie + Authorization header support
-  - ValidateLifetime disabled în development pentru debugging
+  - ValidateLifetime disabled in development for debugging
 - **Frontend Auth System**
-  - AuthContext cu localStorage persistence
+  - AuthContext with localStorage persistence
   - Login/Register pages complete
-  - Protected routes cu redirect
-  - UserMenu component cu logout
+  - Protected routes with redirect
+  - UserMenu component with logout
 
 ### 2. User Management
 - **User Discovery System**
-  - `/profiles` - Search page cu listă utilizatori
+  - `/profiles` - Search page with user list
   - `/profile/[username]` - Public profile viewing
-  - GET /api/users endpoint (cu protecție JWT)
-  - GET /api/users/{id} endpoint pentru detalii
+  - GET /api/users endpoint (with JWT protection)
+  - GET /api/users/{id} endpoint for details
 
-### 3. Real-Time Messaging System ⭐ **NOU**
+### 3. Real-Time Messaging System ⭐
 - **Backend (SignalR)**
-  - `ChatHub` pentru conexiuni WebSocket
-  - Real-time message delivery (instant, nu polling)
-  - User groups pentru notificări directe (`user_{id}`)
+  - `ChatHub` for WebSocket connections
+  - Real-time message delivery (instant, no polling)
+  - User groups for direct notifications (`user_{id}`)
   - Typing indicators support
   - Automatic reconnection handling
   
 - **Frontend**
   - SignalR client integration (@microsoft/signalr)
-  - Custom hook `useChatHub` pentru conexiuni
-  - Real-time message updates (elimină polling la 5 secunde)
+  - Custom hook `useChatHub` for connections
+  - Real-time message updates (eliminates 5-second polling)
   - Connection status tracking
-  - Automatic token injection în WebSocket
+  - Automatic token injection in WebSocket
 
 - **Endpoints & Features**
-  - POST /api/messages - Send message (notifică prin SignalR)
-  - GET /api/messages/conversations - Lista conversații
-  - GET /api/messages/{otherUserId} - Mesaje cu un user
+  - POST /api/messages - Send message (notifies via SignalR)
+  - GET /api/messages/conversations - Conversations list
+  - GET /api/messages/{otherUserId} - Messages with a user
   - `/messages` - Conversations list page
   - `/messages/[userId]` - Individual chat page
-  - Clickable username în chat → profile link
+  - Clickable username in chat → profile link
   - Message grouping by date
   - Scroll to bottom on new messages
 
-### 4. Database & ORM
-- **PostgreSQL** cu Entity Framework Core
-- **Modele**:
+### 4. AI Profile Assistant ✨ **NEW**
+- **Backend (OpenAI Integration)**
+  - `AiAssistantService` for HTML/CSS code generation
+  - OpenAI API integration (Azure.AI.OpenAI)
+  - Smart prompting for MySpace-style profiles
+  - HTML/CSS sanitization for security
+  - POST /api/ai/generate-profile-code (JWT protected)
+  - Support for "html", "css", or "both" generation
+  
+- **Frontend**
+  - `AiCodeGenerator` component with intuitive UI
+  - Integrated in Edit Profile page
+  - Real-time code preview
+  - One-click apply for generated code
+  - Gradient purple/pink design with emoji ✨
+  
+- **Features**
+  - Natural language prompts ("create retro pink profile with sparkles")
+  - Instant code generation with OpenAI GPT-4o-mini
+  - Safe code - removes scripts, dangerous CSS, malicious patterns
+  - Apply directly to profile or edit manually
+  - Error handling for API failures
+
+### 5. Database & ORM
+- **PostgreSQL** with Entity Framework Core
+- **Models**:
   - User (Id, Username, Email, PasswordHash)
   - UserProfile (DisplayName, Bio, CustomHtml/Css)
   - Post (Content, UserId, LikesCount)
   - Message (SenderId, ReceiverId, Content, SentAt, IsRead)
-- **Migrations** complet configurate
-- Connection string în appsettings.Development.json
+- **Migrations** fully configured
+- Connection string in appsettings.Development.json
 
 ### 5. Architecture & Best Practices
 - **Clean Architecture**
   - Controllers → Services → Repositories
   - Dependency Injection
-  - DTOs pentru API responses
+  - DTOs for API responses
 - **Testing**
   - 81/81 unit tests passing
-  - xUnit pentru backend
-  - Moq pentru mocking
+  - xUnit for backend
+  - Moq for mocking
 - **Security**
-  - Password hashing cu BCrypt
+  - Password hashing with BCrypt
   - JWT token validation
-  - CORS configured pentru localhost:3000→5000
-  - [Authorize] attributes pe protected endpoints
+  - CORS configured for localhost:3000→5000
+  - [Authorize] attributes on protected endpoints
 
-## 🛠️ Stack Tehnologic Actual
+## 🛠️ Current Tech Stack
 
 ### Backend
 - .NET 10 + ASP.NET Core
 - Entity Framework Core 10
 - PostgreSQL (Npgsql provider)
-- SignalR pentru real-time
-- xUnit + Moq pentru testing
+- SignalR for real-time
+- **Azure.AI.OpenAI** for AI code generation
+- xUnit + Moq for testing
 
 ### Frontend
 - Next.js 16 (App Router)
@@ -86,9 +110,9 @@
 - TypeScript
 - Tailwind CSS
 - SignalR Client (@microsoft/signalr)
-- localStorage pentru token persistence
+- localStorage for token persistence
 
-## 📝 Configurare Actuală
+## 📝 Current Configuration
 
 ### Backend Ports
 - API: http://localhost:5000
@@ -109,7 +133,17 @@
 }
 ```
 
-## 🚀 Cum să Rulezi Proiectul
+### OpenAI Configuration
+```json
+{
+  "OpenAI": {
+    "ApiKey": "your-openai-api-key-here"
+  }
+}
+```
+**⚠️ Important**: Replace `your-openai-api-key-here` with your actual OpenAI API key from https://platform.openai.com/api-keys
+
+## 🚀 How to Run the Project
 
 ### Backend
 ```bash
@@ -132,55 +166,64 @@ dotnet test
 
 ## 🎯 Feature Highlights
 
+### AI Profile Assistant (OpenAI)
+- **Natural language input** - "Create a dark gothic profile with purple accents"
+- **Instant generation** - GPT-4o-mini produces clean HTML/CSS in seconds
+- **Security first** - All code sanitized, scripts removed, safe tags only
+- **MySpace-style** - Optimized prompts for retro profile aesthetics
+- **One-click apply** - Generated code applied directly to profile
+- **Developer friendly** - View/edit generated code before applying
+
 ### Real-Time Messaging (SignalR)
-- **Instant delivery** - mesajele apar imediat fără refresh
-- **WebSocket connection** - mai eficient decât polling
-- **Auto-reconnect** - conexiunea se restabilește automat
-- **Typing indicators** - support pentru "user is typing..."
-- **Scalable** - arhitectură pregătită pentru multe conexiuni simultane
+- **Instant delivery** - Messages appear immediately without refresh
+- **WebSocket connection** - More efficient than polling
+- **Auto-reconnect** - Connection automatically reestablishes
+- **Typing indicators** - Support for "user is typing..."
+- **Scalable** - Architecture ready for many simultaneous connections
 
 ### Authentication Flow
-1. User se loghează → primește JWT token
-2. Token salvat în localStorage + cookie
-3. Token trimis în Authorization header la fiecare request
-4. Backend validează token și extrage user ID din claims
-5. SignalR folosește același token pentru autentificare WebSocket
+1. User logs in → receives JWT token
+2. Token saved in localStorage + cookie
+3. Token sent in Authorization header with each request
+4. Backend validates token and extracts user ID from claims
+5. SignalR uses the same token for WebSocket authentication
 
 ### Message Flow
-1. User A trimite mesaj → POST /api/messages
-2. Backend salvează în DB → returnează MessageDto
-3. Backend notifică User B prin SignalR → `ReceiveMessage` event
-4. Frontend User B primește mesaj instant → adaugă în UI
-5. Fără polling, fără delay!
+1. User A sends message → POST /api/messages
+2. Backend saves in DB → returns MessageDto
+3. Backend notifies User B via SignalR → `ReceiveMessage` event
+4. Frontend User B receives message instantly → adds to UI
+5. No polling, no delay!
 
-## 📊 Statistici Proiect
+## 📊 Project Statistics
 
-- **Backend Tests**: 81/81 passing ✅
-- **API Endpoints**: 12+ endpoints
+- **Backend Tests**: 81/81 passing ✅ (AI tests pending OpenAI key)
+- **API Endpoints**: 15+ endpoints (auth, users, profiles, messages, AI)
 - **Frontend Pages**: 8 pages (home, auth, profiles, messages, etc.)
 - **Real-time Features**: SignalR messaging + typing indicators
+- **AI Features**: OpenAI GPT-4o-mini integration for code generation
 - **Database Tables**: 4 (Users, UserProfiles, Posts, Messages)
 
-## 🔄 Următorii Pași Posibili
+## 🔄 Possible Next Steps
 
-### Nivel 1 - Refinement
-- [ ] Message read receipts (IsRead flag în UI)
+### Level 1 - Refinement
+- [ ] Message read receipts (IsRead flag in UI)
 - [ ] Typing indicators UI
-- [ ] Notification badges pentru unread messages
+- [ ] Notification badges for unread messages
 - [ ] Message search & filtering
 
-### Nivel 2 - Advanced Features
+### Level 2 - Advanced Features
 - [ ] Group chats (multiple users)
-- [ ] File/image sharing în messages
+- [ ] File/image sharing in messages
 - [ ] Message reactions (emoji)
 - [ ] Voice/video calls integration
-- [ ] Profile customization cu HTML/CSS editor
+- [ ] Profile customization with HTML/CSS editor
 
-### Nivel 3 - Scalability
+### Level 3 - Scalability
 - [ ] Message pagination/infinite scroll
-- [ ] Redis caching pentru conversations
-- [ ] Azure SignalR Service pentru production
-- [ ] Background jobs pentru cleanup
+- [ ] Redis caching for conversations
+- [ ] Azure SignalR Service for production
+- [ ] Background jobs for cleanup
 - [ ] Analytics & monitoring
 
 ## 📚 Documentation Links
@@ -189,52 +232,52 @@ dotnet test
 - [Next.js App Router](https://nextjs.org/docs/app)
 - [Entity Framework Core](https://learn.microsoft.com/en-us/ef/core/)
 - [JWT Best Practices](https://jwt.io/introduction)
-   - Password hashing (BCrypt, parolele nu se stochează niciodată în clar)
-   - Validare request și răspuns cu DTO-uri dedicate
-   - Endpoint-urile /api/users sunt protejate cu JWT (trebuie header Authorization: Bearer <token>)
-   - Exemple request/response și flux complet în README.md
-   - Pagini frontend: login/register, context global, UserMenu, Navbar, redirect dacă ești logat
+   - Password hashing (BCrypt, passwords are never stored in plain text)
+   - Request and response validation with dedicated DTOs
+   - /api/users endpoints are protected with JWT (requires Authorization: Bearer <token> header)
+   - Request/response examples and complete flow in README.md
+   - Frontend pages: login/register, global context, UserMenu, Navbar, redirect if logged in
 
-2. **Profiluri Customizabile** (NEXT)
-   - Profile page cu editor HTML/CSS custom
-   - PUT /api/users/{id}/profile - Actualizare profil custom
-   - GET /api/profiles/{username} - Vizualizare profil public
+2. **Customizable Profiles** (NEXT)
+   - Profile page with custom HTML/CSS editor
+   - PUT /api/users/{id}/profile - Update custom profile
+   - GET /api/profiles/{username} - View public profile
 
 3. **Feed Page**
-   - Feed page cu postări
+   - Feed page with posts
 
-### Mediu Termen:
-1. **Chat Real-time**
-   - SignalR pentru conexiuni WebSocket
-   - Mesaje direct între utilizatori
+### Medium Term:
+1. **Real-time Chat**
+   - SignalR for WebSocket connections
+   - Direct messages between users
 
-2. **Feed Social**
-   - POST /api/posts - Creare postare
-   - GET /api/posts - Citire feed
+2. **Social Feed**
+   - POST /api/posts - Create post
+   - GET /api/posts - Read feed
    - Like/Unlike posts
 
-3. **Validare și Sanitizare**
-   - HTML sanitizer pentru CustomHtml (DOMPurify pe frontend, HtmlSanitizer pe backend)
+3. **Validation & Sanitization**
+   - HTML sanitizer for CustomHtml (DOMPurify on frontend, HtmlSanitizer on backend)
    - Whitelist CSS properties
 
 ### Long Term:
 1. **AI Assistant**
-   - Integrare OpenAI API
-   - Generare cod HTML/CSS din descrieri text
+   - OpenAI API integration
+   - Generate HTML/CSS code from text descriptions
 
 2. **Deploy**
    - Docker containerization
    - GitHub Actions CI/CD
    - Hosting (Azure/AWS)
 
-## Structura Proiect Curenti
+## Current Project Structure
 
 ```
 YourSpace/
 ├── backend/
 │   ├── YourSpace.sln
 │   ├── YourSpace.ApiService/
-│   │   ├── Program.cs (configurare API)
+│   │   ├── Program.cs (API configuration)
 │   │   ├── appsettings.json (connection string)
 │   │   └── Controllers/
 │   │       └── UsersController.cs
@@ -244,14 +287,14 @@ YourSpace/
 │       │   ├── UserProfile.cs
 │       │   └── Post.cs
 │       ├── YourSpaceDbContext.cs
-│       └── [Migrations/ - va fi creat după prima migrare]
+│       └── [Migrations/ - will be created after first migration]
 │
 ├── frontend/
 │   ├── app/
 │   │   ├── page.tsx (home page)
 │   │   ├── layout.tsx
 │   │   ├── globals.css
-│   │   └── [alte pagini vor merge aici]
+│   │   └── [other pages will go here]
 │   ├── config/
 │   │   └── api.ts
 │   ├── package.json
@@ -259,49 +302,49 @@ YourSpace/
 │   ├── tailwind.config.ts
 │   └── next.config.ts
 │
-├── docker-compose.yml (pentru PostgreSQL)
+├── docker-compose.yml (for PostgreSQL)
 ├── DATABASE_SETUP.md
 └── README.md
 ```
 
-## Tehnologii Folosite
+## Technologies Used
 
 ### Backend
-- **.NET 10** - Runtime-ul modern Microsoft
-- **ASP.NET Core 10** - Framework web
+- **.NET 10** - Modern Microsoft runtime
+- **ASP.NET Core 10** - Web framework
 - **Entity Framework Core 10** - ORM (Object-Relational Mapping)
-- **PostgreSQL 16** - Bază de date
-- **C# 13** - Limbaj de programare
+- **PostgreSQL 16** - Database
+- **C# 13** - Programming language
 
 ### Frontend
-- **Next.js 15** - React framework cu SSR/SSG
+- **Next.js 15** - React framework with SSR/SSG
 - **React 19** - UI library
-- **TypeScript 5** - Tip de date static
+- **TypeScript 5** - Static type checking
 - **Tailwind CSS 4** - Utility-first CSS
 - **ESLint** - Code quality
 
-## Notes de Dezvoltare
+## Development Notes
 
 ### DTOs (Data Transfer Objects)
-Am folosit DTOs în `UsersController.cs` pentru a:
-- Expune doar datele necesare prin API (nu stochem PasswordHash!)
-- Decupla structura DB de structura API
-- Simplifica schimbări viitoare
+We used DTOs in `UsersController.cs` to:
+- Expose only necessary data through API (we don't expose PasswordHash!)
+- Decouple DB structure from API structure
+- Simplify future changes
 
-### Relații Entity Framework
-Am configurat relații:
-- User ↔ UserProfile (1:1 cu cascade delete)
-- User ↔ Posts (1:many cu cascade delete)
-- Index pe CreatedAt pentru feed sorting rapid
+### Entity Framework Relationships
+We configured relationships:
+- User ↔ UserProfile (1:1 with cascade delete)
+- User ↔ Posts (1:many with cascade delete)
+- Index on CreatedAt for fast feed sorting
 
 ### Security Considerations
 - [x] Enforce unit testing and testable architecture for all new code (see copilot-instructions.md)
 
-## Cum să contribui la Proiect
+## How to Contribute to the Project
 
 1. Start backend: `cd backend && dotnet run --project YourSpace.ApiService`
 2. Start frontend: `cd frontend && npm run dev`
-3. Accesezi http://localhost:3000
-4. Testezi health check: http://localhost:5000/api/health
+3. Access http://localhost:3000
+4. Test health check: http://localhost:5000/api/health
 
-Fiecare feature va fi dezvoltat treptat cu explicații și comentarii pentru a putea învăța pe parcurs!
+Each feature will be developed gradually with explanations and comments to learn along the way!

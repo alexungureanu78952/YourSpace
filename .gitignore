@@ -50,5 +50,12 @@ next-env.d.ts
 .env.test.local
 .env.production.local
 
+# Sensitive configuration files with API keys
+**/appsettings.Development.json
+**/appsettings.Production.json
+
 # Aspire
 .aspire/
+
+# Ollama models (do NOT commit large model files)
+ollama/models/

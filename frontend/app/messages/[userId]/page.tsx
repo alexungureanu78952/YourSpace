@@ -221,7 +221,7 @@ export default function ChatPage() {
                                         {otherUsername.charAt(0).toUpperCase()}
                                     </div>
                                     <Link
-                                        href={`/profile/${otherUsername}`}
+                                        href={`/profile/${otherUserId}`}
                                         className="text-xl font-bold text-white hover:text-blue-300 transition-colors"
                                     >
                                         {otherUsername}

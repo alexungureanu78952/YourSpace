@@ -17,23 +17,23 @@ bun dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
-## Autentificare (complet)
+## Authentication (complete)
 
-- Paginile de autentificare:
-  - `/auth/login` — Login utilizator
-  - `/auth/register` — Înregistrare cont nou
-- Starea de autentificare (user/token) este partajată global prin `AuthContext` (DRY, fără props chain).
-- Navbar-ul global afișează UserMenu cu numele utilizatorului și buton de logout dacă ești autentificat.
-- Redirect automat către homepage dacă ești deja logat și accesezi /auth/login sau /auth/register.
+- Authentication pages:
+  - `/auth/login` — User login
+  - `/auth/register` — Register new account
+- Authentication state (user/token) is shared globally through `AuthContext` (DRY, no props chain).
+- Global Navbar displays UserMenu with username and logout button if authenticated.
+- Automatic redirect to homepage if already logged in and accessing /auth/login or /auth/register.
 
-### Flux complet
-1. Înregistrează un cont nou la `/auth/register` (vei fi autentificat automat).
-2. Autentifică-te la `/auth/login` dacă ai deja cont.
-3. Tokenul JWT și user info sunt salvate în localStorage și accesibile global.
-4. UserMenu din Navbar permite logout instant.
-5. Nu poți accesa paginile de login/register dacă ești deja logat.
+### Complete flow
+1. Register a new account at `/auth/register` (you'll be automatically authenticated).
+2. Log in at `/auth/login` if you already have an account.
+3. JWT token and user info are saved in localStorage and accessible globally.
+4. UserMenu in Navbar allows instant logout.
+5. You cannot access login/register pages if already logged in.
 
-### Exemplu request (după login)
+### Example request (after login)
 ```js
 const token = localStorage.getItem('token');
 fetch('http://localhost:5000/api/users', {
@@ -41,9 +41,9 @@ fetch('http://localhost:5000/api/users', {
 });
 ```
 
-### Note
-- Pentru logout, folosește butonul din UserMenu (șterge tokenul și user info din localStorage).
-- Pentru protecție reală, folosește HttpOnly cookies (vezi roadmap).
+### Notes
+- For logout, use the button in UserMenu (removes token and user info from localStorage).
+- For real protection, use HttpOnly cookies (see roadmap).
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 

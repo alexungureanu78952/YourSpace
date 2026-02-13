@@ -1,67 +1,67 @@
-# 🎉 YourSpace - Implementare Completă - Faza 1
+# 🎉 YourSpace - Complete Implementation - Phase 1
 
-Felicitări! Ai o platformă social media modernă funcțională cu Backend și Frontend configurat. Iată ce am construit treptat:
+Congratulations! You have a modern, functional social media platform with Backend and Frontend configured. Here's what we built step by step:
 
 ---
 
-## 📋 Rezumat Complet
+## 📋 Complete Summary
 
 ### Backend (.NET 10 + ASP.NET Core)
-✅ **Creat și configurat complet**
-- Solution cu 2 proiecte: API Service + Data Models
-- Entity Framework Core cu PostgreSQL
-- 3 modele principale: User, UserProfile, Post
-- UsersController cu endpoints GET
-- CORS activat pentru frontend
+✅ **Created and fully configured**
+- Solution with 2 projects: API Service + Data Models
+- Entity Framework Core with PostgreSQL
+- 3 main models: User, UserProfile, Post
+- UsersController with GET endpoints
+- CORS enabled for frontend
 - Health check endpoint
 
 ### Frontend (Next.js 16 + React)
-✅ **Creat și configurat complet**
-- App Router (structura modernă)
+✅ **Created and fully configured**
+- App Router (modern structure)
 - TypeScript, Tailwind CSS, ESLint
-- Landing page cu presentare proiect
-- API config cu endpoint-uri centralizate
+- Landing page with project presentation
+- API config with centralized endpoints
 - Dev environment ready
 
-### Bază de Date
+### Database
 ✅ **Configured**
 - PostgreSQL 16 (Alpine)
-- DbContext cu relații configurate
-- Migration system ready (doar că nu am rulat migrațiile)
+- DbContext with configured relationships
+- Migration system ready (migrations not yet run)
 
 ---
 
-## 🚀 Cum Să Pornești Proiectul
+## 🚀 How To Start The Project
 
-### Prerequisites (O singură dată)
-1. **PostgreSQL** - Instalează sau rulează Docker Compose:
+### Prerequisites (One Time)
+1. **PostgreSQL** - Install or run Docker Compose:
    ```bash
    docker-compose up -d
    ```
 
-2. **Migrații Bază de Date** - Din folderul `backend`:
+2. **Database Migrations** - From the `backend` folder:
    ```bash
    cd backend
    dotnet ef database update --project YourSpace.Data
    ```
-   Aceasta va crea tabelele în baza de date automat.
+   This will create the tables in the database automatically.
 
-### Development (Zilnic)
+### Development (Daily)
 1. **Terminal 1 - Backend**:
    ```bash
    cd backend
    dotnet run --project YourSpace.ApiService
    ```
-   Porturi: API pe `http://localhost:5000`
+   Ports: API on `http://localhost:5000`
 
 2. **Terminal 2 - Frontend**:
    ```bash
    cd frontend
    npm run dev
    ```
-   Porturi: Frontend pe `http://localhost:3000`
+   Ports: Frontend on `http://localhost:3000`
 
-3. **Accesează** `http://localhost:3000` în browser
+3. **Access** `http://localhost:3000` in your browser
 
 ---
 
@@ -107,7 +107,7 @@ YourSpace/
 
 ---
 
-## 🔑 Key Concepts Explicați
+## 🔑 Key Concepts Explained
 
 ### 1. **Entity Framework Core (ORM)**
 ORM = Object-Relational Mapping = maparea automată dintre obiecte C# și tabele SQL
@@ -149,8 +149,8 @@ public class UserDto {
 ```
 
 ### 5. **CORS (Cross-Origin Resource Sharing)**
-Frontend (http://localhost:3000) trebuie să comunice cu Backend (http://localhost:5000)
-Fără CORS, browser-ul ar bloca requestul. Am configurat sa permită:
+Frontend (http://localhost:3000) needs to communicate with Backend (http://localhost:5000)
+Without CORS, the browser would block the request. We configured it to allow:
 ```csharp
 builder.Services.AddCors(options =>
 {
@@ -165,62 +165,62 @@ builder.Services.AddCors(options =>
 
 ---
 
-## 🎯 Următorii Pași (Prioritari)
+## 🎯 Next Steps (Priority)
 
-### 1️⃣ **Autentificare Utilizatori** (Criticală)
-- Endpoint `POST /api/auth/register` - Creare cont
-- Endpoint `POST /api/auth/login` - Login cu JWT
-- Password hashing cu BCrypt
+### 1️⃣ **User Authentication** (Critical)
+- Endpoint `POST /api/auth/register` - Account creation
+- Endpoint `POST /api/auth/login` - Login with JWT
+- Password hashing with BCrypt
 - JWT token validation
-- Endpoint-urile `/api/users` sunt protejate cu JWT (trebuie header Authorization: Bearer <token>)
-### Testare endpoint protejat JWT
+- Endpoints `/api/users` are protected with JWT (requires Authorization: Bearer <token> header)
+### Testing JWT protected endpoint
 ```bash
-# După ce ai obținut un token JWT de la /api/auth/login sau /api/auth/register:
+# After obtaining a JWT token from /api/auth/login or /api/auth/register:
 curl -H "Authorization: Bearer <token>" http://localhost:5000/api/users
 # Response: []  (empty array - no users yet)
 ```
 
-### 2️⃣ **Profiluri Customizabile**
-- Endpoint `PUT /api/users/{id}/profile` - Update profil
+### 2️⃣ **Customizable Profiles**
+- Endpoint `PUT /api/users/{id}/profile` - Update profile
 - HTML/CSS sanitizer (security!)
-- Preview live al profilului
-- Upload avatar
+- Live profile preview
+- Avatar upload
 
-### 3️⃣ **Feed Social**
-- Endpoint `POST /api/posts` - Creare postare
-- Endpoint `GET /api/posts` - Citire feed
+### 3️⃣ **Social Feed**
+- Endpoint `POST /api/posts` - Create post
+- Endpoint `GET /api/posts` - Read feed
 - Like/Unlike functionality
 - Pagination
 
-### 4️⃣ **Chat Real-time**
+### 4️⃣ **Real-time Chat**
 - SignalR integration
 - WebSocket connections
-- Mesaje directe între utilizatori
+- Direct messages between users
 
 ### 5️⃣ **AI Assistant** (Future)
-- Integrare OpenAI/Azure
-- Generare HTML/CSS din descriere
-- Frontend editor cu AI suggestions
+- OpenAI/Azure integration
+- Generate HTML/CSS from description
+- Frontend editor with AI suggestions
 
 ---
 
-## 🛠️ Comenzi Utile
+## 🛠️ Useful Commands
 
 ```bash
 # Backend
 cd backend
-dotnet build                                    # Compilare
-dotnet run --project YourSpace.ApiService      # Rulare API
-dotnet test                                    # Teste (viitor)
+dotnet build                                    # Compile
+dotnet run --project YourSpace.ApiService      # Run API
+dotnet test                                    # Tests (future)
 
-# Migrări
+# Migrations
 dotnet ef migrations add InitialCreate --project YourSpace.Data
 dotnet ef database update --project YourSpace.Data
 dotnet ef database drop --project YourSpace.Data   # ⚠️ Delete all tables!
 
 # Frontend
 cd frontend
-npm install                                    # Instalare dependințe
+npm install                                    # Install dependencies
 npm run dev                                    # Dev server (hot reload)
 npm run build                                  # Production build
 npm run lint                                   # Code quality check
@@ -241,9 +241,9 @@ npm run lint                                   # Code quality check
 
 ---
 
-## 📊 Tehnologii Versiuni
+## 📊 Technology Versions
 
-| Tehnologie | Versiune | Note |
+| Technology | Version | Notes |
 |---|---|---|
 | .NET | 10.0.102 | Latest (2026) |
 | C# | 13 | Latest |
@@ -259,8 +259,8 @@ npm run lint                                   # Code quality check
 
 ## 📚 Learning Path
 
-Aceasta este un **proof of concept** pentru a învăța:
-1. ✅ **Modern Web Architecture** - Backend separate, Frontend separate
+This is a **proof of concept** to learn:
+1. ✅ **Modern Web Architecture** - Separate backend, separate frontend
 2. ✅ **Full-stack Development** - C# backend, TypeScript frontend
 3. ✅ **ORM/Database Design** - Entity Framework, Relationships
 4. ✅ **API Design** - REST principles, DTOs, CORS
@@ -271,54 +271,54 @@ Aceasta este un **proof of concept** pentru a învăța:
 
 ---
 
-## 🎓 Ghid Pas cu Pas de Învățare
+## 🎓 Step-by-Step Learning Guide
 
-Îți recomand să studiezi codul în această ordine:
+I recommend studying the code in this order:
 
 1. **Backend Config** → [YourSpace.ApiService/Program.cs](backend/YourSpace.ApiService/Program.cs)
-   - Cum se configureaza o API ASP.NET Core
+   - How to configure an ASP.NET Core API
 
 2. **Models & Database** → [YourSpace.Data/Models/](backend/YourSpace.Data/Models/)
-   - Cum se definesc entități și relații
+   - How to define entities and relationships
 
 3. **DbContext** → [YourSpaceDbContext.cs](backend/YourSpace.Data/YourSpaceDbContext.cs)
-   - Cum funcționează Entity Framework Core
+   - How Entity Framework Core works
 
 4. **API Controller** → [UsersController.cs](backend/YourSpace.ApiService/Controllers/UsersController.cs)
-   - Cum se creează endpoints REST și DTOs
+   - How to create REST endpoints and DTOs
 
 5. **Frontend Setup** → [app/page.tsx](frontend/app/page.tsx)
-   - Cum se structurează Next.js
+   - How Next.js is structured
 
 ---
 
 ## ❓ FAQ
 
-**Q: De ce DTOs și nu direct entities?**
-A: Porque vrem să controlăm exact ce exposăm prin API. De exemplu, nu vrem ca PasswordHash să fie vizibil!
+**Q: Why DTOs and not direct entities?**
+A: Because we want to control exactly what we expose through the API. For example, we don't want PasswordHash to be visible!
 
-**Q: De ce Entity Framework și nu raw SQL?**
-A: EF Core este type-safe și îți permite să schimbi baza de date ușor. Plus, protejează de SQL injection.
+**Q: Why Entity Framework and not raw SQL?**
+A: EF Core is type-safe and allows you to change databases easily. Plus, it protects against SQL injection.
 
-**Q: De ce PostgreSQL?**
-A: Excelent pentru development, open-source, scalabil, JSON support, și relații complexe.
+**Q: Why PostgreSQL?**
+A: Excellent for development, open-source, scalable, JSON support, and complex relationships.
 
-**Q: Cum funcionează CORS?**
-A: Browser-ul, din motive de securitate, nu permite un site (localhost:3000) să facă requesturi la alt origin (localhost:5000) decât dacă serverul acceptă explicit.
+**Q: How does CORS work?**
+A: The browser, for security reasons, doesn't allow a site (localhost:3000) to make requests to another origin (localhost:5000) unless the server explicitly accepts it.
 
-**Q: Ce-i de facut cu AI-ul?**
-A: Ideea este: utilizatorul descrie "vreau profil cu background roșu, anunțuri în yellow" → AI generează HTML/CSS → utilizatorul puterea edita manual.
+**Q: What about the AI?**
+A: The idea is: the user describes "I want a profile with red background, announcements in yellow" → AI generates HTML/CSS → user can edit manually.
 
 ---
 
 ## 📞 Support & Next Steps
 
-Dacă găsești bugs:
-1. Verifică że PostgreSQL rulează: `docker-compose ps`
-2. Verifică că API merge: `curl http://localhost:5000/api/health`
-3. Check console errors în browser (DevTools)
+If you find bugs:
+1. Check that PostgreSQL is running: `docker-compose ps`
+2. Check that the API works: `curl http://localhost:5000/api/health`
+3. Check console errors in browser (DevTools)
 
-Ready to build next feature? Pick from "Următorii Pași" section above! 🚀
+Ready to build the next feature? Pick from the "Next Steps" section above! 🚀
 
 ---
 

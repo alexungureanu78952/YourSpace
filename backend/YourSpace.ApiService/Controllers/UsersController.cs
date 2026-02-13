@@ -53,6 +53,7 @@ namespace YourSpace.ApiService.Controllers
         /// GET /api/users/5
         /// </summary>
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<UserDetailDto>> GetUser(int id)
         {
             try

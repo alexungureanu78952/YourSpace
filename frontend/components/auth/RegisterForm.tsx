@@ -35,7 +35,7 @@ export default function RegisterForm() {
                 }),
             });
             const data = await res.json();
-            if (!res.ok) throw new Error(data.message || "Înregistrare eșuată");
+            if (!res.ok) throw new Error(data.message || "Registration failed");
             login(data.token, data.user);
             window.location.href = "/";
         } catch (err: any) {
@@ -48,7 +48,7 @@ export default function RegisterForm() {
             onSubmit={handleSubmit}
             className="bg-white/10 backdrop-blur-md p-8 rounded-lg shadow-lg w-96 flex flex-col gap-4"
         >
-            <h2 className="text-2xl font-bold text-white mb-2">Înregistrare</h2>
+            <h2 className="text-2xl font-bold text-white mb-2">Sign Up</h2>
             <input
                 type="text"
                 placeholder="Username"
@@ -67,7 +67,7 @@ export default function RegisterForm() {
             />
             <input
                 type="password"
-                placeholder="Parolă"
+                placeholder="Password"
                 className="p-2 rounded border border-gray-400"
                 value={state.password}
                 onChange={(e) => setState((s) => ({ ...s, password: e.target.value }))}
@@ -80,7 +80,7 @@ export default function RegisterForm() {
                 className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded mt-2 disabled:opacity-60"
                 disabled={state.loading}
             >
-                {state.loading ? "Se înregistrează..." : "Înregistrează-te"}
+                {state.loading ? "Signing up..." : "Sign Up"}
             </button>
             <div className="text-sm text-gray-200 mt-2">
                 Ai deja cont? <a href="/auth/login" className="underline">Login</a>

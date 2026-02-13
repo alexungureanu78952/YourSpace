@@ -1,10 +1,10 @@
-# 🎯 YourSpace - Rezumat Final Faza 1
+# 🎯 YourSpace - Phase 1 Final Summary
 
-Bun venit! Ai o **platformă social media funcțională** configurată complet. Iată ce am construit pentru tine:
+Welcome! You have a **fully functioning social media platform** configured. Here's what we built for you:
 
 ---
 
-## ✅ Ce am Construit (Completat)
+## ✅ What We Built (Completed)
 
 ### Backend (.NET 10)
 ```
@@ -38,42 +38,42 @@ Bun venit! Ai o **platformă social media funcțională** configurată complet. 
 
 ---
 
-## 🚀 Cum Să Pornești
+## 🚀 How To Start
 
-### 1. Setup Database (Prima dată)
+### 1. Setup Database (First Time)
 
-**Opțiune A - Docker (Recomandată):**
+**Option A - Docker (Recommended):**
 ```bash
 docker-compose up -d
 ```
 
-**Opțiune B - PostgreSQL Local:**
-- Instalează PostgreSQL 16
-- Creează database: `CREATE DATABASE yourspace;`
+**Option B - Local PostgreSQL:**
+- Install PostgreSQL 16
+- Create database: `CREATE DATABASE yourspace;`
 
-### 2. Migrații (Prima dată)
+### 2. Migrations (First Time)
 ```bash
 cd backend
 dotnet ef database update --project YourSpace.Data
 ```
 
-### 3. Development (Zilnic)
+### 3. Development (Daily)
 
 **Terminal 1 - Backend:**
 ```bash
 cd backend
 dotnet run --project YourSpace.ApiService
-# → API pe http://localhost:5000
+# → API on http://localhost:5000
 ```
 
 **Terminal 2 - Frontend:**
 ```bash
 cd frontend
 npm run dev
-# → Frontend pe http://localhost:3000
+# → Frontend on http://localhost:3000
 ```
 
-**Vizitează:** http://localhost:3000 în browser
+**Visit:** http://localhost:3000 in your browser
 
 ---
 
@@ -115,11 +115,11 @@ YourSpace/
 
 ---
 
-## 🎯 Următorii Pași (Recomandați)
+## 🎯 Next Steps (Recommended)
 
-### Faza 2 - Autentificare (1-2 zile)
+### Phase 2 - Authentication (1-2 days)
 ```
-Priority: CRITICALA
+Priority: CRITICAL
 [ ] Endpoint: POST /api/auth/register
 [ ] Endpoint: POST /api/auth/login
 [ ] JWT token validation
@@ -128,9 +128,9 @@ Priority: CRITICALA
 [ ] Frontend: Auth context/state
 ```
 
-### Faza 3 - Profiluri Customizabile (2-3 zile)
+### Phase 3 - Customizable Profiles (2-3 days)
 ```
-Priority: ALTA
+Priority: HIGH
 [ ] Endpoint: GET /api/profiles/{username}
 [ ] Endpoint: PUT /api/users/{id}/profile
 [ ] HTML/CSS sanitizer (DOMPurify)
@@ -139,9 +139,9 @@ Priority: ALTA
 [ ] Avatar upload
 ```
 
-### Faza 4 - Feed Social (2-3 zile)
+### Phase 4 - Social Feed (2-3 days)
 ```
-Priority: MEDIE
+Priority: MEDIUM
 [ ] Endpoint: POST /api/posts
 [ ] Endpoint: GET /api/posts?page=1
 [ ] Endpoint: POST /api/posts/{id}/like
@@ -150,9 +150,9 @@ Priority: MEDIE
 [ ] Like/Unlike UI
 ```
 
-### Faza 5 - Chat Real-time (3-4 zile)
+### Phase 5 - Real-time Chat (3-4 days)
 ```
-Priority: MEDIE
+Priority: MEDIUM
 [ ] SignalR hub: ChatHub
 [ ] Message model
 [ ] Frontend: WebSocket connection
@@ -160,7 +160,7 @@ Priority: MEDIE
 [ ] Real-time notifications
 ```
 
-### Faza 6 - AI Assistant (2-3 zile)
+### Phase 6 - AI Assistant (2-3 days)
 ```
 Priority: FUTURE
 [ ] OpenAI API integration
@@ -212,7 +212,7 @@ curl http://localhost:5000/api/health
 
 ### Test Users Endpoint (JWT Protected)
 ```bash
-# După ce ai obținut un token JWT de la /api/auth/login sau /api/auth/register:
+# After obtaining a JWT token from /api/auth/login or /api/auth/register:
 curl -H "Authorization: Bearer <token>" http://localhost:5000/api/users
 # Response: []  (empty array - no users yet)
 ```
@@ -226,7 +226,7 @@ npm run build
 
 ---
 
-## 📖 Fișiere de Referință
+## 📚 Reference Files
 
 1. **[README.md](README.md)** - Project overview
 2. **[SETUP_GUIDE.md](SETUP_GUIDE.md)** - Detailed setup (MUST READ!)
@@ -241,18 +241,18 @@ npm run build
 ```bash
 # Backend
 cd backend
-dotnet build                          # Compilare
-dotnet run --project YourSpace.ApiService  # Rulare
+dotnet build                          # Compile
+dotnet run --project YourSpace.ApiService  # Run
 dotnet watch run --project YourSpace.ApiService  # Watch mode
 
-# Migrații
+# Migrations
 dotnet ef migrations add FeatureName --project YourSpace.Data
 dotnet ef database update --project YourSpace.Data
 dotnet ef database drop --project YourSpace.Data  # ⚠️
 
 # Frontend
 cd frontend
-npm install                           # Instalare
+npm install                           # Install
 npm run dev                           # Dev server
 npm run build                         # Build
 npm run lint                          # Linter
@@ -262,23 +262,23 @@ npm run lint                          # Linter
 
 ## ❓ FAQ
 
-**Q: Trebuie să instalez PostgreSQL local?**
-A: Nu! Docker Compose o pornește automatic. Dacă nu ai Docker, instalează PostgreSQL.
+**Q: Do I need to install PostgreSQL locally?**
+A: No! Docker Compose starts it automatically. If you don't have Docker, install PostgreSQL.
 
-**Q: API-ul nu merge - ce fac?**
+**Q: API is not working - what should I do?**
 A: 
-1. Verifică că PostgreSQL rulează: `docker-compose ps`
-2. Rulează migrații: `dotnet ef database update`
-3. Check DevTools → Network → ce eroare apare
+1. Check that PostgreSQL is running: `docker-compose ps`
+2. Run migrations: `dotnet ef database update`
+3. Check DevTools → Network → see what error appears
 
-**Q: De ce imi trebuie Terminal separat pentru backend și frontend?**
-A: Ambele trebui să ruleze în paralel. Deschide 2 cmd/powershell.
+**Q: Why do I need separate terminals for backend and frontend?**
+A: Both need to run in parallel. Open 2 cmd/powershell windows.
 
-**Q: Cum modific connection string-ul la baza de date?**
-A: În `backend/YourSpace.ApiService/appsettings.json`
+**Q: How do I modify the database connection string?**
+A: In `backend/YourSpace.ApiService/appsettings.json`
 
-**Q: E normal că frontend load-ul lent?**
-A: First load poate lua 10-20s (build/compilation). After that e rapid.
+**Q: Is it normal for the frontend to load slowly?**
+A: First load can take 10-20s (build/compilation). After that it's fast.
 
 ---
 
@@ -294,13 +294,13 @@ A: First load poate lua 10-20s (build/compilation). After that e rapid.
 
 ## 🎉 Congratulations!
 
-Ai o platformă full-stack **gata pentru development**! 
+You have a full-stack **platform ready for development**! 
 
-Paseți următor: **Autentificare Utilizatori (Faza 2)**
+Next step: **User Authentication (Phase 2)**
 
 🚀 **Happy Coding!**
 
 ---
 
-*Creat pe: 10 februarie 2026*
+*Created on: February 10, 2026*
 *Status: Backend ✅ | Frontend ✅ | Database ✅ | Ready for Feature Development 🚀*

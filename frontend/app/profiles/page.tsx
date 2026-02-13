@@ -119,7 +119,7 @@ export default function ProfilesPage() {
                     {/* Header */}
                     <div className="mb-8">
                         <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-2">
-                            Descoperă Utilizatori
+                            Discover Users
                         </h1>
                         <p className="text-gray-600 dark:text-gray-400">
                             Găsește și conectează-te cu alți membri ai comunității YourSpace
@@ -132,7 +132,7 @@ export default function ProfilesPage() {
                             type="text"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            placeholder="Caută după nume sau username..."
+                            placeholder="Search by name or username..."
                             className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
                     </div>
@@ -141,7 +141,7 @@ export default function ProfilesPage() {
                     {filteredUsers.length === 0 ? (
                         <div className="text-center py-12">
                             <p className="text-gray-600 dark:text-gray-400 text-lg">
-                                {searchQuery ? 'Nu s-au găsit utilizatori' : 'Nu există utilizatori'}
+                                {searchQuery ? 'No users found' : 'No users available'}
                             </p>
                         </div>
                     ) : (
@@ -149,7 +149,7 @@ export default function ProfilesPage() {
                             {filteredUsers.map((user) => (
                                 <Link
                                     key={user.id}
-                                    href={`/profile/${user.username}`}
+                                    href={`/profile/${user.id}`}
                                     className="bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow p-6 border border-gray-200 dark:border-gray-700"
                                 >
                                     <div className="flex items-center gap-4 mb-4">
@@ -193,7 +193,7 @@ export default function ProfilesPage() {
                     {/* Results count */}
                     {searchQuery && (
                         <div className="mt-6 text-center text-sm text-gray-600 dark:text-gray-400">
-                            {filteredUsers.length} {filteredUsers.length === 1 ? 'rezultat' : 'rezultate'} găsite
+                            {filteredUsers.length} {filteredUsers.length === 1 ? 'result' : 'results'} found
                         </div>
                     )}
                 </div>

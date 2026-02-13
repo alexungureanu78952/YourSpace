@@ -1,4 +1,4 @@
-# ✅ Implementation Checklist - YourSpace Faza 1
+# ✅ Implementation Checklist - YourSpace Phase 1
 
 ## Backend - .NET API Service
 
@@ -117,7 +117,7 @@ Frontend: ✅
 
 ## Next Steps (Ready to Start)
 
-### Immediate (Faza 2 - Autentificare)
+### Immediate (Phase 2 - Authentication)
 - [ ] Endpoint: POST /api/auth/register
 - [ ] Endpoint: POST /api/auth/login
 - [ ] JWT token generation
@@ -125,14 +125,14 @@ Frontend: ✅
 - [ ] Frontend: Login & Register pages
 - [ ] Frontend: Auth context/state management
 
-### Short Term (Faza 3-4)
+### Short Term (Phase 3-4)
 - [ ] Profile customization endpoints
 - [ ] Feed endpoints
 - [ ] Like/Unlike functionality
 - [ ] Frontend pages for profiles, feed
 
-### Medium Term (Faza 5-6)
-- [ ] SignalR chat real-time
+### Medium Term (Phase 5-6)
+- [ ] SignalR real-time chat
 - [ ] Notifications
 - [ ] AI Assistant integration
 
@@ -159,14 +159,14 @@ Frontend: ✅
    ```
 
 3. **Next Feature Development:**
-   - Choose from "Următorii Pași" section in PROGRESS.md
-   - Start with Autentificare (most critical)
+   - Choose from the "Next Steps" section in PROGRESS.md
+   - Start with Authentication (most critical)
    - Each feature follows: Backend API → Frontend UI
 
 4. **Version Control:**
    ```bash
    git add .
-   git commit -m "YourSpace Faza 1: Backend + Frontend + Database setup complete"
+   git commit -m "YourSpace Phase 1: Backend + Frontend + Database setup complete"
    ```
 
 ---

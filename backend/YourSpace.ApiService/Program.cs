@@ -3,12 +3,46 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using YourSpace.ApiService.Services;
 using YourSpace.Data;
 using YourSpace.Data.Repositories;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Setează explicit environment-ul ca Development dacă nu e setat
+Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Development");
+
+// Rebuild configuration pentru a asigura că appsettings.Development.json este citit
+var configBuilder = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+    .AddEnvironmentVariables();
+
+var builtConfig = configBuilder.Build();
+
+// Debug: arată toate cheile de configurare
+Console.WriteLine("🔑 All configuration keys:");
+foreach (var kvp in builtConfig.AsEnumerable().Where(k => k.Key.Contains("OpenAI")))
+{
+    Console.WriteLine($"  Key: '{kvp.Key}' = '{kvp.Value}'");
+}
+
+// IMPORTANT: Clear și rebuild configurația builder-ului
+var sources = builder.Configuration.Sources.ToList();
+sources.Clear();
+builder.Configuration.Sources.Clear();
+
+// Adaugă sursele în ordinea corectă
+builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+builder.Configuration.AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true);
+builder.Configuration.AddEnvironmentVariables();
+
+Console.WriteLine($"🌍 Environment: {builder.Environment.EnvironmentName}");
+Console.WriteLine($"📁 Current directory: {Directory.GetCurrentDirectory()}");
+Console.WriteLine($"📄 appsettings.Development.json exists: {File.Exists(Path.Combine(Directory.GetCurrentDirectory(), "appsettings.Development.json"))}");
 
 // JWT Authentication
 var jwtConfig = builder.Configuration.GetSection("Jwt");
@@ -113,6 +147,11 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IProfileService, ProfileService>();
 builder.Services.AddScoped<IMessageService, MessageService>();
+
+
+// AI Assistant Service (Ollama integration)
+builder.Services.AddHttpClient<OllamaAiAssistantService>();
+builder.Services.AddScoped<IAiAssistantService, OllamaAiAssistantService>();
 
 // SignalR pentru real-time messaging
 builder.Services.AddSignalR();

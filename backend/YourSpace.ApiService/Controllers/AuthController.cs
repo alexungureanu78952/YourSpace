@@ -53,18 +53,16 @@ public class AuthController : ControllerBase
                 return BadRequest(result);
             if (!string.IsNullOrEmpty(result.Token))
             {
-                // Pentru dezvoltare: SameSite=None permite cross-origin (localhost:3000 -> localhost:5000)
-                // IMPORTANT: SameSite=None necesită Secure=true, dar pentru HTTP local nu funcționează
-                // Soluție temporară: Comentează HttpOnly pentru debugging sau folosește HTTPS
-                var isDev = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development";
+                // Set cookie with SameSite=Lax for development (works with HTTP)
+                // Client will also store token in localStorage as primary method
                 Response.Cookies.Append(
                     "token",
                     result.Token,
                     new Microsoft.AspNetCore.Http.CookieOptions
                     {
-                        HttpOnly = true,
-                        Secure = false, // false pentru HTTP local (development)
-                        SameSite = Microsoft.AspNetCore.Http.SameSiteMode.None, // None pentru cross-origin
+                        HttpOnly = false, // Allow JavaScript access for localStorage sync
+                        Secure = false, // false for HTTP local development
+                        SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Lax, // Lax works with HTTP
                         Path = "/",
                         Expires = DateTimeOffset.UtcNow.AddDays(7)
                     });

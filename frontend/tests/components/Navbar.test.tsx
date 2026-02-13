@@ -13,7 +13,7 @@ describe('Navbar', () => {
       render(withMockAuthProvider(<Navbar />, { user: null, token: null }));
       expect(screen.getByRole('link', { name: /login/i })).toBeInTheDocument();
       expect(screen.getByRole('link', { name: /register/i })).toBeInTheDocument();
-      expect(screen.queryByRole('button', { name: /profilul meu/i })).not.toBeInTheDocument();
+      expect(screen.queryByRole('button', { name: /my profile/i })).not.toBeInTheDocument();
     });
 
     it('shows only Profile button when authenticated', () => {
@@ -27,7 +27,7 @@ describe('Navbar', () => {
         },
         token: 'mock-token',
       }));
-      expect(screen.getByRole('button', { name: /profilul meu/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /my profile/i })).toBeInTheDocument();
       expect(screen.queryByRole('link', { name: /login/i })).not.toBeInTheDocument();
       expect(screen.queryByRole('link', { name: /register/i })).not.toBeInTheDocument();
       expect(screen.queryByRole('button', { name: /edit profile/i })).not.toBeInTheDocument();

@@ -1,23 +1,23 @@
 # 🎯 YourSpace Implementation Summary
 
-## Faza 1 Completă ✅
+## Phase 1 Complete ✅
 
-Am construit o **platformă social media full-stack** inspirată de MySpace cu:
+We built a **full-stack social media platform** inspired by MySpace with:
 
-### Ce lucrează acum:
+### What's working now:
 - ✅ **Backend API** - .NET 10 ASP.NET Core
 - ✅ **Frontend** - Next.js 16 React
 - ✅ **Database** - PostgreSQL 16
 - ✅ **Architecture** - Microservices-ready
 
-### Stack Tehnologic:
+### Tech Stack:
 ```
 Frontend: Next.js 16 + React 19 + TypeScript + Tailwind CSS
 Backend:  .NET 10 + ASP.NET Core + Entity Framework Core
 Database: PostgreSQL 16 + Docker
 ```
 
-### Fișiere documentație (IMPORTANT - CITITI!):
+### Documentation files (IMPORTANT - READ!):
 1. **[QUICK_START.md](QUICK_START.md)** ← START HERE! 🚀
 2. **[SETUP_GUIDE.md](SETUP_GUIDE.md)** ← Detailed guide
 3. **[PROGRESS.md](PROGRESS.md)** ← What we built
@@ -25,7 +25,7 @@ Database: PostgreSQL 16 + Docker
 
 ---
 
-## 🚀 Pornire Rapidă
+## 🚀 Quick Start
 
 ```bash
 # 1. Terminal 1 - Backend
@@ -42,24 +42,24 @@ http://localhost:3000
 
 ---
 
-## 📊 Proiect Status
+## 📊 Project Status
 
 | Component | Status | Notes |
 |-----------|--------|-------|
 | Backend Solution | ✅ Complete | Builds successfully |
 | Frontend App | ✅ Complete | Builds successfully |
 | Database Schema | ✅ Ready | Migrations pending |
-| API Endpoints | ✅ Started | 2 endpoints (Users GET, protejate JWT) |
+| API Endpoints | ✅ Started | 2 endpoints (Users GET, JWT protected) |
 | Home Page | ✅ Done | Landing page |
 | Authentication | ✅ Complete | Auth backend + frontend |
-| Profiles | ⏳ Next | Custom HTML/CSS feature (urmează) |
+| Profiles | ⏳ Next | Custom HTML/CSS feature (next) |
 | Feed | ⏳ Next | Social media feed |
 | Chat | ⏳ Later | Real-time messaging |
 | AI Assistant | ⏳ Future | Code generation |
 
 ---
 
-## 📚 Key Concepts Implementate
+## 📚 Key Concepts Implemented
 
 1. **Entity Framework Core ORM** - Database mapping
 2. **REST API Design** - DTOs, Controllers, Routing
@@ -67,43 +67,43 @@ http://localhost:3000
 4. **TypeScript** - Type safety frontend & backend
 5. **Full-Stack Architecture** - Separate backend/frontend
 6. **Database Relationships** - 1:1, 1:many with cascade delete
-7. **Security First** - No PasswordHash in API, CORS configurat, endpoint-uri protejate cu JWT
+7. **Security First** - No PasswordHash in API, CORS configured, JWT-protected endpoints
 
 ---
 
-## ✨ Pași Următori (Recomandați)
+## ✨ Next Steps (Recommended)
 
-### Faza 2: Autentificare (1-2 zile)
+### Phase 2: Authentication (1-2 days)
 - [x] Register/Login endpoints
 - [x] JWT tokens
 - [x] Password hashing
 - [x] Frontend auth pages (login/register, context, UserMenu, Navbar, redirect)
 
-### Faza 3: Profiluri (2-3 zile)
+### Phase 3: Profiles (2-3 days)
 - [ ] Custom HTML/CSS support
 - [ ] Profile editor
 - [ ] Avatar upload
 - [ ] Public profile viewing
 
-### Faza 4: Feed Social (2-3 zile)
+### Phase 4: Social Feed (2-3 days)
 - [ ] Post creation
 - [ ] Feed timeline
 - [ ] Like/Unlike
 - [ ] Comments (future)
 
-### Faza 5: Chat Real-time (3-4 zile)
+### Phase 5: Real-time Chat (3-4 days)
 - [ ] SignalR integration
 - [ ] Message history
 - [ ] Real-time notifications
 
-### Faza 6: AI Assistant (2-3 zile)
+### Phase 6: AI Assistant (2-3 days)
 - [ ] OpenAI integration
 - [ ] Prompt → HTML/CSS generation
 - [ ] Code preview
 
 ---
 
-## 🎓 Ce Ai Învățat
+## 🎓 What You've Learned
 
 1. ✅ Modern full-stack architecture
 2. ✅ Entity Framework Core ORM patterns
@@ -130,4 +130,4 @@ http://localhost:3000
 
 **Status: READY FOR FEATURE DEVELOPMENT** 🚀
 
-Să continuez cu Faza 2 (Autentificare)?
+Shall we continue with Phase 2 (Authentication)?

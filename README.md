@@ -1,57 +1,65 @@
 # YourSpace - Real-Time Social Platform
 
-O platformă social media modernă inspirată de MySpace, cu **messaging real-time** prin SignalR și profiluri personalizabile.
+A modern social media platform inspired by MySpace, featuring **real-time messaging** via SignalR and fully customizable profiles.
 
-## ⭐ Features Implementate
+## ⭐ Implemented Features
+
+### 🤖 AI Profile Assistant (NEW!)
+- **Ollama Integration** - Local AI for code generation (smollm2 360M model)
+- **Natural language prompts** - "Create a retro pink profile"
+- **Instant HTML/CSS generation** - Seconds to beautiful profiles
+- **Safe & sanitized** - All code cleaned, no scripts/XSS
+- **One-click apply** - Direct integration in profile editor
 
 ### 🔐 Authentication & Security
-- JWT authentication cu BCrypt password hashing
+- JWT authentication with BCrypt password hashing
 - Token-based auth (localStorage + cookie support)
-- Protected routes cu automatic redirect
-- ClaimTypes mapping pentru .NET compatibility
+- Protected routes with automatic redirect
+- ClaimTypes mapping for .NET compatibility
 
 ### 💬 Real-Time Messaging (SignalR)
-- **Instant message delivery** - WebSocket în loc de polling
-- **SignalR Hub** - conexiuni persistente și scalabile
-- **Typing indicators** - support pentru "user is typing..."
-- **Auto-reconnect** - conexiune stabilă și resilientă
-- Conversații 1-on-1 cu message history
+- **Instant message delivery** - WebSocket instead of polling
+- **SignalR Hub** - persistent and scalable connections
+- **Typing indicators** - support for "user is typing..."
+- **Auto-reconnect** - stable and resilient connection
+- 1-on-1 conversations with message history
 - Message grouping by date
 - Clickable username → profile navigation
 
 ### 👥 User Discovery
 - Search & browse all users (`/profiles`)
-- Public profile viewing (`/profile/[username]`)
-- User cards cu avatar și display name
+- Public profile viewing (`/profile/[userId]`)
+- User cards with avatar and display name
 
 ### 🏗️ Architecture
 - **Clean Architecture** - Controllers → Services → Repositories
 - **TDD Approach** - 81/81 unit tests passing
-- **Dependency Injection** - toate dependențele injectabile
-- **DTOs** pentru separation of concerns
+- **Dependency Injection** - all dependencies injectable
+- **DTOs** for separation of concerns
 
-## Tehnologii
+## Technologies
 
 ### Backend
 - **.NET 10** + ASP.NET Core
-- **SignalR** pentru real-time WebSocket communication
-- **Entity Framework Core 10** cu PostgreSQL
-- **JWT Authentication** cu custom claim mapping
-- **xUnit + Moq** pentru testing (81/81 tests ✅)
+- **SignalR** for real-time WebSocket communication
+- **Entity Framework Core 10** with PostgreSQL
+- **JWT Authentication** with custom claim mapping
+- **Ollama** for AI code generation (local, free, privacy-first)
+- **xUnit + Moq** for testing (81/81 tests ✅)
 
 ### Frontend
 - **Next.js 16** (App Router) + React 19
 - **TypeScript** strict mode
-- **SignalR Client** (@microsoft/signalr) pentru WebSocket
-- **Tailwind CSS** pentru styling
-- Custom hooks pentru SignalR management
+- **SignalR Client** (@microsoft/signalr) for WebSocket
+- **Tailwind CSS** for styling
+- Custom hooks for SignalR management
 
 ### Database
 - **PostgreSQL** (via Npgsql)
-- 4 tabele: Users, UserProfiles, Posts, Messages
-- EF Core migrations cu cascade delete
+- 4 tables: Users, UserProfiles, Posts, Messages
+- EF Core migrations with cascade delete
 
-## Structură Proiect
+## Project Structure
 
 ```
 YourSpace/
@@ -77,18 +85,18 @@ YourSpace/
     └── config/                     # API endpoints config
 ```
 
-## Cum să rulezi proiectul
+## How to Run the Project
 
 ### Prerequisites
 - .NET 10 SDK
 - Node.js 18+
 - PostgreSQL database
-- npm sau yarn
+- npm or yarn
 
 ### 1. Database Setup
 ```bash
-# Asigură-te că PostgreSQL rulează
-# Connection string în backend/YourSpace.ApiService/appsettings.Development.json
+# Ensure PostgreSQL is running
+# Connection string in backend/YourSpace.ApiService/appsettings.Development.json
 
 cd backend
 dotnet ef database update --project YourSpace.Data
@@ -99,8 +107,8 @@ dotnet ef database update --project YourSpace.Data
 cd backend/YourSpace.ApiService
 dotnet run --urls "http://localhost:5000"
 
-# API disponibil la: http://localhost:5000
-# SignalR Hub la: http://localhost:5000/hubs/chat
+# API available at: http://localhost:5000
+# SignalR Hub at: http://localhost:5000/hubs/chat
 # Health check: http://localhost:5000/api/health
 ```
 
@@ -110,7 +118,7 @@ cd frontend
 npm install
 npm run dev
 
-# App disponibilă la: http://localhost:3000
+# App available at: http://localhost:3000
 ```
 
 ### 4. Testing
@@ -125,22 +133,26 @@ dotnet test
 
 ### Authentication
 - `POST /api/auth/register` - Create new account
-- `POST /api/auth/login` - Login și primește JWT token
+- `POST /api/auth/login` - Login and receive JWT token
 
 ### Users
-- `GET /api/users` - Lista utilizatori (protejat JWT)
-- `GET /api/users/{id}` - User details cu profil
+- `GET /api/users` - User list (JWT protected)
+- `GET /api/users/{id}` - User details with profile
 
 ### Messages
-- `POST /api/messages` - Trimite mesaj (notifică prin SignalR)
-- `GET /api/messages/conversations` - Lista conversații
-- `GET /api/messages/{otherUserId}` - Messages cu un user
+- `POST /api/messages` - Send message (notify via SignalR)
+- `GET /api/messages/conversations` - List conversations
+- `GET /api/messages/{otherUserId}` - Messages with a user
+
+### AI Assistant
+- `POST /api/ai/generate-profile-code` - Generate HTML/CSS with Ollama (JWT protected)
+- `GET /api/ai/status` - Health check for AI service
 
 ### SignalR Hub
-- `WS /hubs/chat` - WebSocket pentru real-time messaging
-  - `ReceiveMessage` - Event pentru mesaje primite
-  - `UserTyping` - Event pentru typing indicator
-  - `SendTypingIndicator` - Method pentru notificare typing
+- `WS /hubs/chat` - WebSocket for real-time messaging
+  - `ReceiveMessage` - Event for received messages
+  - `UserTyping` - Event for typing indicator
+  - `SendTypingIndicator` - Method for typing notification
 
 ## Real-Time Architecture
 
@@ -177,6 +189,23 @@ User A                Backend              User B
 }
 ```
 
+### Ollama Configuration
+For AI code generation:
+```bash
+# Install Ollama
+ollama pull smollm2
+
+# Ensure Ollama is running
+ollama serve
+```
+
+**Free & Privacy-First**: Run AI locally, no API keys needed!
+
+**⚠️ Important**: 
+- AI Assistant requires Ollama to be running
+- Model will auto-download on first use
+- Requires ~200MB disk space for smollm2 model
+
 ### Frontend SignalR Connection
 ```typescript
 // hooks/useChatHub.ts
@@ -188,28 +217,28 @@ const connection = new HubConnectionBuilder()
   .build();
 ```
 
-## Standarde de Inginerie
+## Engineering Standards
 
 ### Test-Driven Development (TDD)
-- **Mandatory**: Toate feature-urile noi încep cu teste failing
-- **Coverage**: 81/81 tests passing în backend
-- **Tools**: xUnit pentru backend, Jest pentru frontend (viitor)
+- **Mandatory**: All new features start with failing tests
+- **Coverage**: 81/81 tests passing in backend
+- **Tools**: xUnit for backend, Jest for frontend (future)
 
 ### Clean Architecture
-- **Domain Layer**: Models fără dependențe
-- **Application Layer**: Services cu business logic
+- **Domain Layer**: Models without dependencies
+- **Application Layer**: Services with business logic
 - **Infrastructure Layer**: Repositories, EF Core
-- **Presentation Layer**: Controllers cu logică minimă
+- **Presentation Layer**: Controllers with minimal logic
 
 ### Code Quality
-- TypeScript strict mode în frontend
+- TypeScript strict mode in frontend
 - C# nullable reference types enabled
-- Dependency Injection pentru toate dependențele
-- DTOs pentru separation între layers
+- Dependency Injection for all dependencies
+- DTOs for separation between layers
 
 ## Roadmap
 
-### ✅ Implementat
+### ✅ Implemented
 - [x] Authentication system (JWT + BCrypt)
 - [x] User management (register, login, profile viewing)
 - [x] User discovery (search, browse profiles)
@@ -217,42 +246,80 @@ const connection = new HubConnectionBuilder()
 - [x] Message history & conversations
 - [x] Unit testing suite (81 tests)
 - [x] Clean Architecture implementation
+- [x] **AI Profile Assistant (Ollama smollm2)**
 
 ### 🎯 Next Steps
 
 #### Messaging Enhancements
-- [ ] Message read receipts (IsRead în UI)
-- [ ] Typing indicators în UI
+- [ ] Message read receipts (IsRead in UI)
+- [ ] Typing indicators in UI
 - [ ] Unread message badges
 - [ ] Message reactions (emoji)
-        ```
-      - Login:
-        ```json
-        {
-          "usernameOrEmail": "ana",
-          "password": "parola123"
-        }
-        ```
-      - Response (ambele):
-        ```json
-        {
-          "success": true,
-          "message": "Cont creat cu succes.",
-          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-          "user": {
-            "id": 1,
-            "username": "ana",
-            "email": "ana@email.com",
-            "createdAt": "...",
-            "displayName": "ana"
-          }
-        }
-        ```
-    - Exemplu request protejat JWT:
-      ```bash
-      curl -H "Authorization: Bearer <token>" http://localhost:5000/api/users
-    ```
-- [ ] Profiluri customizabile
-- [ ] Feed social
-- [ ] Chat real-time
-- [ ] AI Assistant pentru generare cod
+- [ ] File/image attachments
+
+#### Social Features
+- [ ] Friend system (add/remove/block)
+- [ ] Notifications feed
+- [ ] Post likes and comments
+- [ ] User mentions (@username)
+
+#### AI Assistant Improvements
+- [ ] Multiple model support
+- [ ] Theme templates gallery
+- [ ] Preview before applying
+- [ ] Code history/versioning
+
+## API Examples
+
+### Authentication
+Register:
+```json
+{
+  "username": "ana",
+  "email": "ana@email.com",
+  "password": "password123"
+}
+```
+
+Login:
+```json
+{
+  "usernameOrEmail": "ana",
+  "password": "password123"
+}
+```
+
+Response (both):
+```json
+{
+  "success": true,
+  "message": "Account created successfully.",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "user": {
+    "id": 1,
+    "username": "ana",
+    "email": "ana@email.com",
+    "createdAt": "...",
+    "displayName": "ana"
+  }
+}
+```
+
+JWT protected request example:
+```bash
+curl -H "Authorization: Bearer <token>" http://localhost:5000/api/users
+```
+
+## License
+
+MIT License - See LICENSE file for details
+
+## Contact & Support
+
+- GitHub Issues: Report bugs or request features
+- Email: support@yourspace.com
+- Discord: Join our community
+
+---
+
+Made with ❤️ using .NET 10, Next.js 16, and SignalR

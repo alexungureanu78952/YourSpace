@@ -10,7 +10,11 @@ interface LoginFormState {
     loading: boolean;
 }
 
-export default function LoginForm() {
+interface LoginFormProps {
+    redirectUrl?: string;
+}
+
+export default function LoginForm({ redirectUrl = '/' }: LoginFormProps) {
     const [state, setState] = useState<LoginFormState>({
         usernameOrEmail: "",
         password: "",
@@ -34,7 +38,7 @@ export default function LoginForm() {
             const data = await res.json();
             if (!res.ok) throw new Error(data.message || "Login failed");
             login(data.token, data.user);
-            window.location.href = "/";
+            window.location.href = redirectUrl;
         } catch (err: any) {
             setState((s) => ({ ...s, error: err.message, loading: false }));
         }
@@ -48,7 +52,7 @@ export default function LoginForm() {
             <h2 className="text-2xl font-bold text-white mb-2">Login</h2>
             <input
                 type="text"
-                placeholder="Username sau Email"
+                placeholder="Username or Email"
                 className="p-2 rounded border border-gray-400"
                 value={state.usernameOrEmail}
                 onChange={(e) => setState((s) => ({ ...s, usernameOrEmail: e.target.value }))}
@@ -56,7 +60,7 @@ export default function LoginForm() {
             />
             <input
                 type="password"
-                placeholder="Parolă"
+                placeholder="Password"
                 className="p-2 rounded border border-gray-400"
                 value={state.password}
                 onChange={(e) => setState((s) => ({ ...s, password: e.target.value }))}
@@ -68,10 +72,10 @@ export default function LoginForm() {
                 className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded mt-2 disabled:opacity-60"
                 disabled={state.loading}
             >
-                {state.loading ? "Se autentifică..." : "Login"}
+                {state.loading ? "Logging in..." : "Login"}
             </button>
             <div className="text-sm text-gray-200 mt-2">
-                Nu ai cont? <a href="/auth/register" className="underline">Înregistrează-te</a>
+                Don't have an account? <a href="/auth/register" className="underline">Sign up</a>
             </div>
         </form>
     );

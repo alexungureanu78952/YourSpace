@@ -11,7 +11,7 @@ export default function Navbar() {
             <div className="flex items-center gap-4">
                 <Link href="/" className="text-2xl font-bold text-white">YourSpace</Link>
                 <Link href="/feed" className="text-white/80 hover:text-white">Feed</Link>
-                <Link href="/profiles" className="text-white/80 hover:text-white">Profiluri</Link>
+                <Link href="/profiles" className="text-white/80 hover:text-white">Profiles</Link>
                 {user && (
                     <Link href="/messages" className="text-white/80 hover:text-white">Messages</Link>
                 )}
@@ -26,11 +26,11 @@ export default function Navbar() {
                 {user && (
                     <>
                         <Link
-                            href="/profile"
+                            href={`/profile/${user.id}`}
                             className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm"
-                            aria-label="Profilul meu"
+                            aria-label="My Profile"
                         >
-                            Profilul meu
+                            My Profile
                         </Link>
                         <UserMenu />
                     </>
