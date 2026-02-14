@@ -4,68 +4,45 @@ export default function Home() {
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-            YourSpace
+            Welcome to YourSpace
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300">
-            Platforma ta de social media personalizabilă, inspirată de MySpace
+            Your personalized social media platform, inspired by MySpace
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8">
-          <div className="flex justify-center mb-8">
-            <a
-              href="/auth/login"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg text-lg shadow transition"
-            >
-              Autentificare / Înregistrare
-            </a>
-          </div>
-          <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-white">
-            Bine ai venit! 🎉
+          <h2 className="text-3xl font-bold mb-6 text-center text-gray-800 dark:text-white">
+            Welcome!
           </h2>
 
           <div className="space-y-6 text-gray-700 dark:text-gray-300">
-            <p className="text-lg">
-              Aceasta este platforma <strong>YourSpace</strong> - un proiect social media modern care îți permite să:
+            <p className="text-lg text-center">
+              <strong>YourSpace</strong> is a modern social media platform where you can connect with friends and express yourself!
             </p>
 
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>Creezi un profil complet personalizabil cu HTML/CSS custom</li>
-              <li>Comunici cu prietenii prin chat în timp real</li>
-              <li>Publici și vezi postări în feed-ul social</li>
-              <li>Folosești un asistent AI pentru a genera design-ul profilului tău (viitor)</li>
-            </ul>
-
-            <div className="bg-blue-50 dark:bg-gray-700 rounded-lg p-6 mt-8">
-              <h3 className="text-xl font-semibold mb-3 text-blue-800 dark:text-blue-300">
-                📚 Stack Tehnologic
+            <div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-4 text-purple-800 dark:text-purple-300">
+                Current Features
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-white">Backend:</h4>
-                  <ul className="text-sm space-y-1">
-                    <li>• .NET 10 + ASP.NET Core</li>
-                    <li>• Entity Framework Core</li>
-                    <li>• PostgreSQL</li>
-                    <li>• SignalR (pentru chat)</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-white">Frontend:</h4>
-                  <ul className="text-sm space-y-1">
-                    <li>• Next.js 16 + React</li>
-                    <li>• TypeScript</li>
-                    <li>• Tailwind CSS</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                <strong>Status:</strong> Backend și frontend configurate ✅ |
-                Următorii pași: Autentificare utilizatori, profiluri customizabile, feed social
-              </p>
+              <ul className="space-y-3">
+                <li>
+                  <strong className="text-gray-900 dark:text-white">Feed & Posts</strong>
+                  <p className="text-sm">Share your thoughts and see posts from people you follow</p>
+                </li>
+                <li>
+                  <strong className="text-gray-900 dark:text-white">Real-Time Messaging</strong>
+                  <p className="text-sm">Chat instantly with friends</p>
+                </li>
+                <li>
+                  <strong className="text-gray-900 dark:text-white">Make Friends</strong>
+                  <p className="text-sm">Follow users and build your social network</p>
+                </li>
+                <li>
+                  <strong className="text-gray-900 dark:text-white">Edit Profile with AI Assistant</strong>
+                  <p className="text-sm">Customize your profile with AI-generated HTML/CSS designs</p>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

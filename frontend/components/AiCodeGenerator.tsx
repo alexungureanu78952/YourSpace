@@ -93,7 +93,6 @@ export default function AiCodeGenerator({ onCodeGenerated }: AiCodeGeneratorProp
     return (
         <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur border border-purple-500/20 rounded-lg p-6 mb-6">
             <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl">✨</span>
                 <h3 className="text-xl font-bold text-white">AI Profile Assistant</h3>
             </div>
 
@@ -164,10 +163,7 @@ export default function AiCodeGenerator({ onCodeGenerated }: AiCodeGeneratorProp
                             Generating...
                         </>
                     ) : (
-                        <>
-                            <span>✨</span>
-                            Generate Code
-                        </>
+                        'Generate Code'
                     )}
                 </button>
 

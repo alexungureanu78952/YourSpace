@@ -2,22 +2,22 @@
 
 A modern social media platform inspired by MySpace, featuring **real-time messaging** via SignalR and fully customizable profiles.
 
-## ⭐ Implemented Features
+## Implemented Features
 
-### 🤖 AI Profile Assistant (NEW!)
+### AI Profile Assistant (NEW!)
 - **Ollama Integration** - Local AI for code generation (smollm2 360M model)
 - **Natural language prompts** - "Create a retro pink profile"
 - **Instant HTML/CSS generation** - Seconds to beautiful profiles
 - **Safe & sanitized** - All code cleaned, no scripts/XSS
 - **One-click apply** - Direct integration in profile editor
 
-### 🔐 Authentication & Security
+### Authentication & Security
 - JWT authentication with BCrypt password hashing
 - Token-based auth (localStorage + cookie support)
 - Protected routes with automatic redirect
 - ClaimTypes mapping for .NET compatibility
 
-### 💬 Real-Time Messaging (SignalR)
+### Real-Time Messaging (SignalR)
 - **Instant message delivery** - WebSocket instead of polling
 - **SignalR Hub** - persistent and scalable connections
 - **Typing indicators** - support for "user is typing..."
@@ -26,7 +26,7 @@ A modern social media platform inspired by MySpace, featuring **real-time messag
 - Message grouping by date
 - Clickable username → profile navigation
 
-### 👥 User Discovery & Social Features
+### User Discovery & Social Features
 - Search & browse all users (`/profiles`)
 - Public profile viewing (`/profile/[userId]`)
 - User cards with avatar and display name
@@ -43,7 +43,7 @@ A modern social media platform inspired by MySpace, featuring **real-time messag
   - Pagination support (load more)
   - No cloud storage - external media links only
 
-### 🏗️ Architecture
+### Architecture
 - **Clean Architecture** - Controllers → Services → Repositories
 - **TDD Approach** - 110+ unit tests passing
 - **Dependency Injection** - all dependencies injectable
@@ -57,7 +57,7 @@ A modern social media platform inspired by MySpace, featuring **real-time messag
 - **Entity Framework Core 10** with PostgreSQL
 - **JWT Authentication** with custom claim mapping
 - **Ollama** for AI code generation (local, free, privacy-first)
-- **xUnit + Moq** for testing (110+ tests ✅)
+- **xUnit + Moq** for testing (110+ tests)
 
 ### Frontend
 - **Next.js 16** (App Router) + React 19
@@ -138,7 +138,7 @@ npm run dev
 cd backend
 dotnet test
 
-# Output: 81/81 tests passing ✅
+# Output: 81/81 tests passing
 ```
 
 ## API Endpoints
@@ -156,7 +156,7 @@ dotnet test
 - `GET /api/messages/conversations` - List conversations
 - `GET /api/messages/{otherUserId}` - Messages with a user
 
-### Follows ⭐ NEW
+### Follows (NEW)
 - `POST /api/follows/{userId}` - Follow a user (JWT protected)
 - `DELETE /api/follows/{userId}` - Unfollow a user (JWT protected)
 - `GET /api/follows/is-following?followerId={id}&followedId={id}` - Check follow status
@@ -188,10 +188,10 @@ User A                Backend              User B
 ```
 
 ### SignalR Benefits vs Polling
-- ✅ **Latency**: 0ms vs 5000ms (polling interval)
-- ✅ **Bandwidth**: Minimal (only when needed) vs constant requests
-- ✅ **Scalability**: Handles thousands of connections efficiently
-- ✅ **User Experience**: Instant updates, no delays
+- **Latency**: 0ms vs 5000ms (polling interval)
+- **Bandwidth**: Minimal (only when needed) vs constant requests
+- **Scalability**: Handles thousands of connections efficiently
+- **User Experience**: Instant updates, no delays
 
 ## Configuration
 
@@ -219,7 +219,7 @@ ollama serve
 
 **Free & Privacy-First**: Run AI locally, no API keys needed!
 
-**⚠️ Important**: 
+**Important**: 
 - AI Assistant requires Ollama to be running
 - Model will auto-download on first use
 - Requires ~200MB disk space for smollm2 model
@@ -239,8 +239,8 @@ const connection = new HubConnectionBuilder()
 
 ### Test-Driven Development (TDD)
 - **Mandatory**: All new features start with failing tests
-- **Coverage**: 81/81 tests passing in backend
-- **Tools**: xUnit for backend, Jest for frontend (future)
+- **Coverage**: 110+ tests passing (backend + frontend)
+- **Tools**: xUnit + Moq for backend, Jest + React Testing Library for frontend
 
 ### Clean Architecture
 - **Domain Layer**: Models without dependencies
@@ -256,17 +256,27 @@ const connection = new HubConnectionBuilder()
 
 ## Roadmap
 
-### ✅ Implemented
+### Implemented
 - [x] Authentication system (JWT + BCrypt)
 - [x] User management (register, login, profile viewing)
 - [x] User discovery (search, browse profiles)
 - [x] Real-time messaging (SignalR WebSocket)
 - [x] Message history & conversations
-- [x] Unit testing suite (81 tests)
+- [x] Follow/Unfollow system with stats
+- [x] Posts & Feed with pagination
+- [x] Unit testing suite (110+ tests)
 - [x] Clean Architecture implementation
 - [x] **AI Profile Assistant (Ollama smollm2)**
 
-### 🎯 Next Steps
+### Next Steps
+
+#### Social Features
+- [ ] Post likes functionality (UI for existing LikesCount field)
+- [ ] Comments on posts
+- [ ] Post editing
+- [ ] User mentions (@username)
+- [ ] Hashtags
+- [ ] Notifications feed
 
 #### Messaging Enhancements
 - [ ] Message read receipts (IsRead in UI)
@@ -274,12 +284,7 @@ const connection = new HubConnectionBuilder()
 - [ ] Unread message badges
 - [ ] Message reactions (emoji)
 - [ ] File/image attachments
-
-#### Social Features
-- [ ] Friend system (add/remove/block)
-- [ ] Notifications feed
-- [ ] Post likes and comments
-- [ ] User mentions (@username)
+- [ ] Group chats
 
 #### AI Assistant Improvements
 - [ ] Multiple model support
@@ -328,16 +333,20 @@ JWT protected request example:
 curl -H "Authorization: Bearer <token>" http://localhost:5000/api/users
 ```
 
+## Getting Started
+
+1. **Clone the repository**
+2. **Set up PostgreSQL** - Ensure it's running on port 5433
+3. **Apply migrations** - `cd backend && dotnet ef database update --project YourSpace.Data`
+4. **Start Ollama** - `ollama serve` (for AI features)
+5. **Run backend** - `cd backend/YourSpace.ApiService && dotnet run --urls "http://localhost:5000"`
+6. **Run frontend** - `cd frontend && npm install && npm run dev`
+7. **Visit** http://localhost:3000
+
 ## License
 
 MIT License - See LICENSE file for details
 
-## Contact & Support
-
-- GitHub Issues: Report bugs or request features
-- Email: support@yourspace.com
-- Discord: Join our community
-
 ---
 
-Made with ❤️ using .NET 10, Next.js 16, and SignalR
+Made with .NET 10, Next.js 16, SignalR, and Ollama AI

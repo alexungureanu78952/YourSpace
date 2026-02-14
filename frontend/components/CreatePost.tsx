@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import API_BASE_URL from '@/config/api';
 interface CreatePostProps {
-  onPostCreated: () => void;
+    onPostCreated: () => void;
 }
 
 const MAX_CONTENT_LENGTH = 5000;

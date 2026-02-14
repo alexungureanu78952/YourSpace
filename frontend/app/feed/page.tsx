@@ -16,87 +16,87 @@ export default function FeedPage() {
     const [error, setError] = useState<string | null>(null);
     const [page, setPage] = useState(0);
     const [hasMore, setHasMore] = useState(true);
-  const [isInitialized, setIsInitialized] = useState(false);
+    const [isInitialized, setIsInitialized] = useState(false);
 
-  const POSTS_PER_PAGE = 20;
+    const POSTS_PER_PAGE = 20;
 
-  useEffect(() => {
-    if (!user) {
-      router.push('/auth/login');
-      return;
-    }
-
-    if (!isInitialized) {
-      fetchFeed(true);
-      setIsInitialized(true);
-    }
-  }, [user, router, isInitialized]);
-
-  const fetchFeed = async (reset = false, pageNum = page) => {
-    try {
-      setLoading(true);
-      setError(null);
-
-      const token = localStorage.getItem('token');
-      const currentPage = reset ? 0 : pageNum;
-
-      const response = await fetch(
-        API_ENDPOINTS.posts.feed(currentPage * POSTS_PER_PAGE, POSTS_PER_PAGE),
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+    useEffect(() => {
+        if (!user) {
+            router.push('/auth/login');
+            return;
         }
-      );
 
-      if (response.status === 401) {
-        router.push('/auth/login');
-        return;
-      }
+        if (!isInitialized) {
+            fetchFeed(true);
+            setIsInitialized(true);
+        }
+    }, [user, router, isInitialized]);
 
-      if (!response.ok) {
-        throw new Error('Failed to fetch feed');
-      }
+    const fetchFeed = async (reset = false, pageNum = page) => {
+        try {
+            setLoading(true);
+            setError(null);
 
-      const data: FeedPost[] = await response.json();
+            const token = localStorage.getItem('token');
+            const currentPage = reset ? 0 : pageNum;
 
-      if (reset) {
-        setPosts(data);
-        setPage(0);
-      } else {
-        setPosts((prev) => [...prev, ...data]);
-      }
+            const response = await fetch(
+                API_ENDPOINTS.posts.feed(currentPage * POSTS_PER_PAGE, POSTS_PER_PAGE),
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
 
-      setHasMore(data.length === POSTS_PER_PAGE);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Error loading feed');
-      console.error('Fetch feed error:', err);
-    } finally {
-      setLoading(false);
-    }
-  };
+            if (response.status === 401) {
+                router.push('/auth/login');
+                return;
+            }
 
-  const handlePostCreated = () => {
-    // Refresh the feed to get the new post with correct structure
-    fetchFeed(true);
-  };
+            if (!response.ok) {
+                throw new Error('Failed to fetch feed');
+            }
+
+            const data: FeedPost[] = await response.json();
+
+            if (reset) {
+                setPosts(data);
+                setPage(0);
+            } else {
+                setPosts((prev) => [...prev, ...data]);
+            }
+
+            setHasMore(data.length === POSTS_PER_PAGE);
+        } catch (err) {
+            setError(err instanceof Error ? err.message : 'Error loading feed');
+            console.error('Fetch feed error:', err);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handlePostCreated = () => {
+        // Refresh the feed to get the new post with correct structure
+        fetchFeed(true);
+    };
 
     const handlePostDeleted = (postId: number) => {
         // Remove the deleted post from the feed
         setPosts((prev) => prev.filter((post) => post.id !== postId));
     };
 
-  const handleLoadMore = () => {
-    const nextPage = page + 1;
-    setPage(nextPage);
-    fetchFeed(false, nextPage);
-  };
+    const handleLoadMore = () => {
+        const nextPage = page + 1;
+        setPage(nextPage);
+        fetchFeed(false, nextPage);
+    };
 
-  if (!user) {
-    return null;
-  }
+    if (!user) {
+        return null;
+    }
 
-  return (
+    return (
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
             <div className="max-w-2xl mx-auto px-4 py-6">
                 {/* Header */}
