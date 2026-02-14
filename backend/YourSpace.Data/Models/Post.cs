@@ -18,6 +18,11 @@ public class Post
     public required string Content { get; set; }
 
     /// <summary>
+    /// URL către media (video, imagine, muzică) - opțional
+    /// </summary>
+    public string? MediaUrl { get; set; }
+
+    /// <summary>
     /// Data și ora creării postării
     /// </summary>
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

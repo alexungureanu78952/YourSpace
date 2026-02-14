@@ -22,6 +22,14 @@ export const API_ENDPOINTS = {
     followers: (userId: number) => `${API_BASE_URL}/api/follows/followers/${userId}`,
     following: (userId: number) => `${API_BASE_URL}/api/follows/following/${userId}`,
   },
+  posts: {
+    create: `${API_BASE_URL}/api/posts`,
+    feed: (skip = 0, take = 20) => `${API_BASE_URL}/api/posts/feed?skip=${skip}&take=${take}`,
+    byId: (postId: number) => `${API_BASE_URL}/api/posts/${postId}`,
+    byUser: (userId: number, skip = 0, take = 20) =>
+      `${API_BASE_URL}/api/posts/user/${userId}?skip=${skip}&take=${take}`,
+    delete: (postId: number) => `${API_BASE_URL}/api/posts/${postId}`,
+  },
 };
 
 

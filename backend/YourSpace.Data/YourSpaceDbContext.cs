@@ -79,6 +79,7 @@ public class YourSpaceDbContext : DbContext
         {
             entity.HasKey(e => e.Id);
             entity.Property(e => e.Content).IsRequired().HasMaxLength(5000);
+            entity.Property(e => e.MediaUrl).HasMaxLength(2000); // URL-uri pot fi lungi
 
             // Un utilizator poate avea multe postări
             entity.HasOne(e => e.User)

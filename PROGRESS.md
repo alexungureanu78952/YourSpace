@@ -95,19 +95,80 @@
   - Unique constraint on (FollowerId, FollowedId)
   - Indexes for optimal query performance
   - Cascade delete when user is removed
+  - Migration: `20260214110112_AddFollowsTable`
 
-### 6. Database & ORM
+- **Follow Stats & Lists**
+  - `FollowStats` component showing follower/following counts
+  - Links to follower and following list pages
+  - Backend endpoints:
+    - GET /api/follows/followers/{userId} - Get user's followers
+    - GET /api/follows/following/{userId} - Get users being followed
+  - Frontend pages:
+    - `/profile/[userId]/followers` - Follower list with avatars
+    - `/profile/[userId]/following` - Following list with avatars
+  - Integrated into profile pages and user cards
+
+### 6. Posts & Feed System ⭐ **NEW**
+- **Backend**
+  - `Post` entity with MediaUrl support (external links)
+  - `PostService` with comprehensive business logic
+  - `PostsController` with RESTful endpoints
+  - TDD approach with 14 PostService tests + 15 Controller tests
+  - Feed algorithm: Followed users' posts appear first, then others
+  - Result pattern for error handling
+  - Endpoints:
+    - POST /api/posts - Create new post (authenticated)
+    - GET /api/posts/feed - Get personalized feed with following indicator
+    - GET /api/posts/{id} - Get specific post
+    - GET /api/posts/user/{userId} - Get user's posts
+    - DELETE /api/posts/{id} - Delete post (owner only)
+  - Pagination support (skip/take parameters)
+
+- **Frontend Components**
+  - `CreatePost` - Post creation form with content and media URL
+  - `PostCard` - Display post with user info, content, media link
+  - Following indicator "(Following)" next to followed users
+  - Delete button for own posts with confirmation
+  - Avatar display with fallback icon
+  - Formatted timestamps (human-readable)
+  - Like count display
+  - 100% test coverage with Jest + React Testing Library
+
+- **Feed Page** (`/feed`)
+  - Personalized feed showing all posts
+  - Followed users' posts appear first with "(Following)" label
+  - Create new posts at top of feed
+  - Infinite scroll with "Load More" pagination
+  - Real-time post updates after creation/deletion
+  - Empty state with helpful message
+  - Loading states and error handling
+
+- **Database**
+  - Post entity updated with `MediaUrl` field (max 2000 chars)
+  - Migration: `20260215000000_AddMediaUrlToPost`
+  - Indexes on CreatedAt and UserId for efficient queries
+  - Foreign key to Users with cascade delete
+
+- **Features**
+  - Text posts with optional external media URL (YouTube, images, etc.)
+  - No cloud storage - MediaUrl is just a link field
+  - Feed sorting: Following first, then by date
+  - Character limit: 5000 for content
+  - Owner-only deletion with authorization checks
+  - Click username to view profile
+
+### 7. Database & ORM
 - **PostgreSQL** with Entity Framework Core
 - **Models**:
   - User (Id, Username, Email, PasswordHash)
   - UserProfile (DisplayName, Bio, CustomHtml/Css)
-  - Post (Content, UserId, LikesCount)
+  - Post (Content, MediaUrl, UserId, LikesCount, CreatedAt) **UPDATED**
   - Message (SenderId, ReceiverId, Content, SentAt, IsRead)
-  - Follow (FollowerId, FollowedId, CreatedAt) **NEW**
+  - Follow (FollowerId, FollowedId, CreatedAt)
 - **Migrations** fully configured
 - Connection string in appsettings.Development.json
 
-### 7. Architecture & Best Practices
+### 8. Architecture & Best Practices
 - **Clean Architecture**
   - Controllers → Services → Repositories
   - Dependency Injection

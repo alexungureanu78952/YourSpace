@@ -30,15 +30,22 @@ A modern social media platform inspired by MySpace, featuring **real-time messag
 - Search & browse all users (`/profiles`)
 - Public profile viewing (`/profile/[userId]`)
 - User cards with avatar and display name
-- **Follow/Unfollow System** ⭐ NEW
+- **Follow/Unfollow System** ⭐
   - Follow button on user profiles
   - Real-time follow/unfollow toggle
   - Follow statistics (followers & following counts)
-  - Foundation for personalized feed (coming soon)
+  - Follower and following list pages
+- **Posts & Feed** ⭐ NEW
+  - Create posts with text and optional media URL
+  - Personalized feed (`/feed`) with followed users' posts first
+  - "(Following)" indicator next to followed users
+  - Delete own posts with authorization
+  - Pagination support (load more)
+  - No cloud storage - external media links only
 
 ### 🏗️ Architecture
 - **Clean Architecture** - Controllers → Services → Repositories
-- **TDD Approach** - 81/81 unit tests passing
+- **TDD Approach** - 110+ unit tests passing
 - **Dependency Injection** - all dependencies injectable
 - **DTOs** for separation of concerns
 
@@ -50,7 +57,7 @@ A modern social media platform inspired by MySpace, featuring **real-time messag
 - **Entity Framework Core 10** with PostgreSQL
 - **JWT Authentication** with custom claim mapping
 - **Ollama** for AI code generation (local, free, privacy-first)
-- **xUnit + Moq** for testing (81/81 tests ✅)
+- **xUnit + Moq** for testing (110+ tests ✅)
 
 ### Frontend
 - **Next.js 16** (App Router) + React 19
@@ -61,7 +68,7 @@ A modern social media platform inspired by MySpace, featuring **real-time messag
 
 ### Database
 - **PostgreSQL** (via Npgsql)
-- 5 tables: Users, UserProfiles, Posts, Messages, Follows
+- 5 tables: Users, UserProfiles, Posts (with MediaUrl), Messages, Follows
 - EF Core migrations with cascade delete
 
 ## Project Structure
