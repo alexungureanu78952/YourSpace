@@ -49,6 +49,44 @@ A modern social media platform inspired by MySpace, featuring **real-time messag
 - **Dependency Injection** - all dependencies injectable
 - **DTOs** for separation of concerns
 
+## Screenshots
+
+### Landing Page
+![Landing Page](docs/screenshots/landing-page.png)
+
+### Authentication
+**Login Page**
+![Login Page](docs/screenshots/auth-login.png)
+
+**Register Page**
+![Register Page](docs/screenshots/auth-register.png)
+
+### Feed & Posts
+**Feed Page with Posts(Followed users appear first)**
+![Feed Page](docs/screenshots/feed-page.png)
+
+### User Profiles
+**Custom Profile with HTML/CSS**
+![Custom Profile](docs/screenshots/custom-profile.png)
+
+### AI Profile Assistant
+**Edit Profile with AI Code Generator Interface**
+![AI Assistant](docs/screenshots/ai-assistant.png)
+
+### Real-Time Messaging
+**Conversations List**
+![Conversations](docs/screenshots/conversations-list.png)
+
+**Chat Interface**
+![Chat Interface](docs/screenshots/chat-interface.png)
+
+### Social Features
+**User Discovery / Profiles List**
+![User Discovery](docs/screenshots/user-discovery.png)
+
+**Follow Button & Stats**
+![Follow System](docs/screenshots/follow-system.png)
+
 ## Technologies
 
 ### Backend

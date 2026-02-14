@@ -11,6 +11,7 @@ public class UserDto
     public string Email { get; set; } = string.Empty;
     public DateTime CreatedAt { get; set; }
     public string DisplayName { get; set; } = string.Empty;
+    public UserProfileDto? Profile { get; set; }
 }
 
 public class UserDetailDto : UserDto

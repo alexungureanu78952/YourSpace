@@ -60,7 +60,8 @@ public class AuthService : IAuthService
                     Username = user.Username,
                     Email = user.Email,
                     CreatedAt = user.CreatedAt,
-                    DisplayName = user.Username
+                    DisplayName = user.Username,
+                    Profile = null
                 },
                 Token = token
             };
@@ -101,7 +102,8 @@ public class AuthService : IAuthService
                     Username = user.Username,
                     Email = user.Email,
                     CreatedAt = user.CreatedAt,
-                    DisplayName = user.Username
+                    DisplayName = user.Username,
+                    Profile = null
                 },
                 Token = token
             };

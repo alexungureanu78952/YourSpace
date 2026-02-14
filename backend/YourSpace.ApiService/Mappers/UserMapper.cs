@@ -20,7 +20,8 @@ public static class UserMapper
             Username = user.Username,
             Email = user.Email,
             CreatedAt = user.CreatedAt,
-            DisplayName = user.Profile?.DisplayName ?? user.Username
+            DisplayName = user.Profile?.DisplayName ?? user.Username,
+            Profile = user.Profile != null ? ToProfileDto(user.Profile) : null
         };
     }
 
