@@ -1,5 +1,7 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
+import FollowButton from './FollowButton';
+import FollowStats from './FollowStats';
 
 interface UserProfileProps {
     user: {
@@ -43,6 +45,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ user }) => {
                 <div>
                     <h2 className="text-2xl font-bold">{displayName}</h2>
                     <p className="text-sm text-gray-400">@{user.username}</p>
+                    <FollowStats userId={user.id} className="mt-2" />
                 </div>
             </div>
             {bio && <p className="mb-2">{bio}</p>}
@@ -66,12 +69,18 @@ const UserProfile: React.FC<UserProfileProps> = ({ user }) => {
                     Edit Profile
                 </button>
             ) : (
-                <button
-                    className="mt-4 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded"
-                    onClick={() => window.location.href = `/messages/${user.id}`}
-                >
-                    Send Message
-                </button>
+                <div className="mt-4 flex gap-2">
+                    <FollowButton
+                        targetUserId={user.id}
+                        currentUserId={currentUser?.id || null}
+                    />
+                    <button
+                        className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded"
+                        onClick={() => window.location.href = `/messages/${user.id}`}
+                    >
+                        Send Message
+                    </button>
+                </div>
             )}
         </div>
     );

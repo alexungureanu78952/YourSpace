@@ -13,6 +13,15 @@ export const API_ENDPOINTS = {
     conversations: `${API_BASE_URL}/api/messages/conversations`,
     withUser: (userId: number) => `${API_BASE_URL}/api/messages/${userId}`,
   },
+  follows: {
+    follow: (userId: number) => `${API_BASE_URL}/api/follows/${userId}`,
+    unfollow: (userId: number) => `${API_BASE_URL}/api/follows/${userId}`,
+    isFollowing: (followerId: number, followedId: number) =>
+      `${API_BASE_URL}/api/follows/is-following?followerId=${followerId}&followedId=${followedId}`,
+    stats: (userId: number) => `${API_BASE_URL}/api/follows/stats/${userId}`,
+    followers: (userId: number) => `${API_BASE_URL}/api/follows/followers/${userId}`,
+    following: (userId: number) => `${API_BASE_URL}/api/follows/following/${userId}`,
+  },
 };
 
 

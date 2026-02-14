@@ -35,6 +35,11 @@ public class YourSpaceDbContext : DbContext
     public DbSet<Message> Messages { get; set; }
 
     /// <summary>
+    /// Tabel pentru relații follow între utilizatori
+    /// </summary>
+    public DbSet<Follow> Follows { get; set; }
+
+    /// <summary>
     /// Configurează relațiile între entități și alte setări
     /// </summary>
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -106,6 +111,32 @@ public class YourSpaceDbContext : DbContext
             // Index pentru query-uri rapide
             entity.HasIndex(e => new { e.SenderId, e.ReceiverId, e.SentAt });
             entity.HasIndex(e => new { e.ReceiverId, e.IsRead });
+        });
+
+        // Configurare Follow
+        modelBuilder.Entity<Follow>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+
+            // Relație cu Follower (cel care urmărește)
+            entity.HasOne(e => e.Follower)
+                  .WithMany()
+                  .HasForeignKey(e => e.FollowerId)
+                  .OnDelete(DeleteBehavior.Cascade);
+
+            // Relație cu Followed (cel urmărit)
+            entity.HasOne(e => e.Followed)
+                  .WithMany()
+                  .HasForeignKey(e => e.FollowedId)
+                  .OnDelete(DeleteBehavior.Cascade);
+
+            // Index unic pentru a preveni follow-uri duplicate
+            entity.HasIndex(e => new { e.FollowerId, e.FollowedId }).IsUnique();
+
+            // Index pentru query-uri rapide
+            entity.HasIndex(e => e.FollowerId);
+            entity.HasIndex(e => e.FollowedId);
+            entity.HasIndex(e => e.CreatedAt);
         });
     }
 }

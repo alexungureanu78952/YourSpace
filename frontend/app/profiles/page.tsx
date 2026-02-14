@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import API_BASE_URL from '@/config/api';
 import { useAuth } from '@/context/AuthContext';
+import FollowStats from '@/components/FollowStats';
 
 interface User {
     id: number;
@@ -122,7 +123,7 @@ export default function ProfilesPage() {
                             Discover Users
                         </h1>
                         <p className="text-gray-600 dark:text-gray-400">
-                            Găsește și conectează-te cu alți membri ai comunității YourSpace
+                            Find and connect with other members of YourSpace. Browse profiles, follow your friends, and explore the community!
                         </p>
                     </div>
 
@@ -168,6 +169,7 @@ export default function ProfilesPage() {
                                             <p className="text-sm text-gray-500 dark:text-gray-400 truncate">
                                                 @{user.username}
                                             </p>
+                                            <FollowStats userId={user.id} className="mt-1" />
                                         </div>
                                     </div>
 
@@ -179,10 +181,10 @@ export default function ProfilesPage() {
 
                                     <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
                                         <span>
-                                            Membru din {new Date(user.createdAt).toLocaleDateString('ro-RO')}
+                                            Member from {new Date(user.createdAt).toLocaleDateString('en-US')}
                                         </span>
                                         <span className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
-                                            Vezi profil →
+                                            View profile →
                                         </span>
                                     </div>
                                 </Link>

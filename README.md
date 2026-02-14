@@ -26,10 +26,15 @@ A modern social media platform inspired by MySpace, featuring **real-time messag
 - Message grouping by date
 - Clickable username → profile navigation
 
-### 👥 User Discovery
+### 👥 User Discovery & Social Features
 - Search & browse all users (`/profiles`)
 - Public profile viewing (`/profile/[userId]`)
 - User cards with avatar and display name
+- **Follow/Unfollow System** ⭐ NEW
+  - Follow button on user profiles
+  - Real-time follow/unfollow toggle
+  - Follow statistics (followers & following counts)
+  - Foundation for personalized feed (coming soon)
 
 ### 🏗️ Architecture
 - **Clean Architecture** - Controllers → Services → Repositories
@@ -56,7 +61,7 @@ A modern social media platform inspired by MySpace, featuring **real-time messag
 
 ### Database
 - **PostgreSQL** (via Npgsql)
-- 4 tables: Users, UserProfiles, Posts, Messages
+- 5 tables: Users, UserProfiles, Posts, Messages, Follows
 - EF Core migrations with cascade delete
 
 ## Project Structure
@@ -143,6 +148,12 @@ dotnet test
 - `POST /api/messages` - Send message (notify via SignalR)
 - `GET /api/messages/conversations` - List conversations
 - `GET /api/messages/{otherUserId}` - Messages with a user
+
+### Follows ⭐ NEW
+- `POST /api/follows/{userId}` - Follow a user (JWT protected)
+- `DELETE /api/follows/{userId}` - Unfollow a user (JWT protected)
+- `GET /api/follows/is-following?followerId={id}&followedId={id}` - Check follow status
+- `GET /api/follows/stats/{userId}` - Get follower/following counts
 
 ### AI Assistant
 - `POST /api/ai/generate-profile-code` - Generate HTML/CSS with Ollama (JWT protected)

@@ -7,7 +7,7 @@ import { MessageDto } from '@/types/message';
 export function useChatHub(userId: number | null, onMessageReceived: (message: MessageDto) => void) {
     const [connection, setConnection] = useState<signalR.HubConnection | null>(null);
     const [isConnected, setIsConnected] = useState(false);
-    const reconnectTimeoutRef = useRef<NodeJS.Timeout>();
+    const reconnectTimeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
     useEffect(() => {
         if (!userId) return;

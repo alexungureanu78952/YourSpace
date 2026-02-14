@@ -69,17 +69,45 @@
   - Apply directly to profile or edit manually
   - Error handling for API failures
 
-### 5. Database & ORM
+### 5. Follow/Unfollow System ⭐ **NEW**
+- **Backend**
+  - `Follow` entity with EF Core configuration
+  - `FollowService` with full CRUD operations
+  - `FollowsController` with RESTful endpoints
+  - Result pattern for error handling
+  - 100% test coverage with TDD approach
+  - Endpoints:
+    - POST /api/follows/{userId} - Follow a user
+    - DELETE /api/follows/{userId} - Unfollow a user
+    - GET /api/follows/is-following - Check follow status
+    - GET /api/follows/stats/{userId} - Get follower/following counts
+
+- **Frontend**
+  - `FollowButton` component with dynamic state
+  - Integrated into user profile pages
+  - Real-time follow/unfollow functionality
+  - Loading states and error handling
+  - Positioned next to "Send Message" button
+  - 100% test coverage with Jest + React Testing Library
+
+- **Database**
+  - Follows table with foreign keys to Users
+  - Unique constraint on (FollowerId, FollowedId)
+  - Indexes for optimal query performance
+  - Cascade delete when user is removed
+
+### 6. Database & ORM
 - **PostgreSQL** with Entity Framework Core
 - **Models**:
   - User (Id, Username, Email, PasswordHash)
   - UserProfile (DisplayName, Bio, CustomHtml/Css)
   - Post (Content, UserId, LikesCount)
   - Message (SenderId, ReceiverId, Content, SentAt, IsRead)
+  - Follow (FollowerId, FollowedId, CreatedAt) **NEW**
 - **Migrations** fully configured
 - Connection string in appsettings.Development.json
 
-### 5. Architecture & Best Practices
+### 7. Architecture & Best Practices
 - **Clean Architecture**
   - Controllers → Services → Repositories
   - Dependency Injection
@@ -339,6 +367,19 @@ We configured relationships:
 
 ### Security Considerations
 - [x] Enforce unit testing and testable architecture for all new code (see copilot-instructions.md)
+
+## 🚀 Next Steps
+
+### Feed Feature (In Planning)
+Based on the follow system, we will implement:
+- **Global Feed** - All posts from all users
+- **Followed Users Feed** - Posts from followed users appear first
+- **Post Creation** - Create new posts with text content
+- **Feed Sorting** - Chronological with followed users prioritized
+- **Pagination** - Efficient feed loading with infinite scroll
+- **Like/Unlike** - Engagement features for posts
+
+The follow system (completed) is the foundation that will enable personalized feed ranking.
 
 ## How to Contribute to the Project
 

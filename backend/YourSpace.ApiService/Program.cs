@@ -147,6 +147,8 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IProfileService, ProfileService>();
 builder.Services.AddScoped<IMessageService, MessageService>();
+builder.Services.AddScoped<IFollowService, FollowService>();
+builder.Services.AddScoped<IFollowService, FollowService>();
 
 
 // AI Assistant Service (Ollama integration)
