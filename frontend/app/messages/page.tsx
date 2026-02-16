@@ -40,10 +40,9 @@ export default function MessagesPage() {
             });
 
             if (response.status === 401) {
-                // Token expirat sau invalid - logout și redirect
                 localStorage.removeItem('token');
                 localStorage.removeItem('user');
-                alert('Sesiunea ta a expirat. Te rugăm să te autentifici din nou.');
+                alert('Your session expired. Please log in again.');
                 router.push('/auth/login');
                 return;
             }
@@ -70,82 +69,170 @@ export default function MessagesPage() {
         const diffHours = Math.floor(diffMs / 3600000);
         const diffDays = Math.floor(diffMs / 86400000);
 
-        if (diffMins < 1) return 'acum';
+        if (diffMins < 1) return 'now';
         if (diffMins < 60) return `${diffMins}m`;
         if (diffHours < 24) return `${diffHours}h`;
         if (diffDays < 7) return `${diffDays}d`;
-        return date.toLocaleDateString('ro-RO', { day: 'numeric', month: 'short' });
+        return date.toLocaleDateString('en-US', { day: 'numeric', month: 'short' });
     };
 
     if (loading) {
         return (
-            <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center">
-                <div className="text-white text-xl">Loading conversations...</div>
+            <div className="min-h-screen bg-black flex items-center justify-center py-20" style={{
+                backgroundImage: `
+                  repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(57, 255, 20, 0.03) 2px,
+                    rgba(57, 255, 20, 0.03) 4px
+                  )
+                `,
+            }}>
+                <div className="text-center">
+                    <div className="inline-block animate-pulse rounded-full h-12 w-12 border-4 mb-4" style={{
+                        borderColor: '#39ff14',
+                        boxShadow: '0 0 15px rgba(57, 255, 20, 0.6)',
+                    }}></div>
+                    <p className="font-bold text-sm" style={{
+                        color: '#39ff14',
+                        textShadow: '0 0 5px rgba(57, 255, 20, 0.6)',
+                    }}>
+                        LOADING CONVERSATIONS...
+                    </p>
+                </div>
             </div>
         );
     }
 
     if (error) {
         return (
-            <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center">
-                <div className="bg-red-500/20 border border-red-500 text-white px-6 py-4 rounded-lg">
-                    Error: {error}
+            <div className="min-h-screen bg-black flex items-center justify-center py-20" style={{
+                backgroundImage: `
+                  repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(57, 255, 20, 0.03) 2px,
+                    rgba(57, 255, 20, 0.03) 4px
+                  )
+                `,
+            }}>
+                <div className="p-6 border-2 border-red-500 font-bold text-center"
+                     style={{
+                         background: 'rgba(255, 0, 0, 0.1)',
+                         color: '#ff0000',
+                         textShadow: '0 0 5px rgba(255, 0, 0, 0.6)',
+                     }}>
+                    ERROR: {error}
                 </div>
             </div>
         );
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
-            <div className="container mx-auto px-4 py-8">
-                <div className="max-w-4xl mx-auto">
-                    <div className="bg-white/10 backdrop-blur-md rounded-lg shadow-xl border border-white/20 overflow-hidden">
+        <div className="min-h-screen bg-black py-8 px-4" style={{
+            backgroundImage: `
+              repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(57, 255, 20, 0.03) 2px,
+                rgba(57, 255, 20, 0.03) 4px
+              )
+            `,
+        }}>
+            <div className="container mx-auto px-4">
+                <div className="max-w-3xl mx-auto">
+                    <div className="y2k-card" style={{
+                        background: 'rgba(26, 26, 26, 0.9)',
+                        borderColor: '#00ffff',
+                    }}>
                         {/* Header */}
-                        <div className="bg-white/5 border-b border-white/20 px-6 py-4">
-                            <h1 className="text-2xl font-bold text-white">Messages</h1>
+                        <div className="pb-6 mb-6 border-b" style={{ borderColor: '#1a4d2e' }}>
+                            <h1 className="y2k-heading y2k-heading-lg" style={{
+                                color: '#00ffff',
+                                marginBottom: 0,
+                            }}>
+                                MESSAGES
+                            </h1>
                         </div>
 
                         {/* Conversations List */}
-                        <div className="divide-y divide-white/10">
+                        <div className="space-y-3">
                             {conversations.length === 0 ? (
-                                <div className="px-6 py-12 text-center text-white/60">
-                                    <p className="text-lg">No conversations yet</p>
-                                    <p className="text-sm mt-2">Start a conversation by visiting a user profile!</p>
+                                <div className="text-center py-12">
+                                    <div style={{
+                                        fontSize: '2.5rem',
+                                        marginBottom: '10px',
+                                    }}>
+                                        💬
+                                    </div>
+                                    <p className="font-bold text-sm" style={{
+                                        color: '#888888',
+                                        letterSpacing: '1px',
+                                    }}>
+                                        NO CONVERSATIONS YET
+                                    </p>
+                                    <p className="text-xs mt-2" style={{
+                                        color: '#666666',
+                                    }}>
+                                        Start a conversation by visiting a user profile!
+                                    </p>
                                 </div>
                             ) : (
                                 conversations.map((conversation) => (
                                     <Link
                                         key={conversation.otherUserId}
                                         href={`/messages/${conversation.otherUserId}`}
-                                        className="block px-6 py-4 hover:bg-white/5 transition-colors"
+                                        className="block p-4 border transition-all hover:scale-102"
+                                        style={{
+                                            borderColor: '#1a4d2e',
+                                            background: 'rgba(13, 59, 26, 0.3)',
+                                        }}
                                     >
                                         <div className="flex items-center justify-between">
-                                            <div className="flex-1">
-                                                <div className="flex items-center gap-3">
-                                                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-white font-bold text-lg">
-                                                        {conversation.otherUsername.charAt(0).toUpperCase()}
-                                                    </div>
-                                                    <div className="flex-1 min-w-0">
-                                                        <div className="flex items-center gap-2">
-                                                            <h3 className="font-semibold text-white truncate">
-                                                                {conversation.otherUsername}
-                                                            </h3>
-                                                            {conversation.unreadCount > 0 && (
-                                                                <span className="bg-blue-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
-                                                                    {conversation.unreadCount}
-                                                                </span>
-                                                            )}
-                                                        </div>
-                                                        {conversation.lastMessage && (
-                                                            <p className="text-white/60 text-sm truncate mt-1">
-                                                                {conversation.lastMessage}
-                                                            </p>
+                                            <div className="flex-1 flex items-center gap-3">
+                                                <div className="w-12 h-12 rounded-full border-2 flex items-center justify-center font-bold text-lg"
+                                                     style={{
+                                                         borderColor: '#39ff14',
+                                                         background: 'rgba(57, 255, 20, 0.1)',
+                                                         color: '#39ff14',
+                                                     }}>
+                                                    {conversation.otherUsername.charAt(0).toUpperCase()}
+                                                </div>
+                                                <div className="flex-1 min-w-0">
+                                                    <div className="flex items-center gap-2">
+                                                        <h3 className="font-bold truncate" style={{
+                                                            color: '#39ff14',
+                                                            textShadow: '0 0 5px rgba(57, 255, 20, 0.6)',
+                                                        }}>
+                                                            {conversation.otherUsername}
+                                                        </h3>
+                                                        {conversation.unreadCount > 0 && (
+                                                            <span className="font-bold text-xs px-2 py-0.5 border" style={{
+                                                                color: '#ff00ff',
+                                                                borderColor: '#ff00ff',
+                                                                background: 'rgba(255, 0, 255, 0.1)',
+                                                                boxShadow: '0 0 5px rgba(255, 0, 255, 0.4)',
+                                                            }}>
+                                                                {conversation.unreadCount}
+                                                            </span>
                                                         )}
                                                     </div>
+                                                    {conversation.lastMessage && (
+                                                        <p className="text-xs truncate mt-1" style={{
+                                                            color: '#888888',
+                                                        }}>
+                                                            {conversation.lastMessage}
+                                                        </p>
+                                                    )}
                                                 </div>
                                             </div>
                                             {conversation.lastMessageAt && (
-                                                <div className="text-white/40 text-xs ml-4">
+                                                <div className="text-xs ml-4" style={{
+                                                    color: '#666666',
+                                                }}>
                                                     {formatDate(conversation.lastMessageAt)}
                                                 </div>
                                             )}
@@ -160,9 +247,13 @@ export default function MessagesPage() {
                     <div className="mt-6 text-center">
                         <Link
                             href="/"
-                            className="text-white/80 hover:text-white transition-colors"
+                            className="font-bold text-sm uppercase"
+                            style={{
+                                color: '#00ffff',
+                                textShadow: '0 0 5px rgba(0, 255, 255, 0.6)',
+                            }}
                         >
-                            ← Back to Home
+                            ← BACK TO HOME
                         </Link>
                     </div>
                 </div>

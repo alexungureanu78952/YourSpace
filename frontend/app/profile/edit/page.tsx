@@ -45,8 +45,29 @@ export default function EditProfilePage() {
 
     if (loading) {
         return (
-            <div className="flex items-center justify-center min-h-screen">
-                <div className="text-white">Loading...</div>
+            <div className="flex items-center justify-center min-h-screen bg-black py-20" style={{
+                backgroundImage: `
+                  repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(57, 255, 20, 0.03) 2px,
+                    rgba(57, 255, 20, 0.03) 4px
+                  )
+                `,
+            }}>
+                <div className="text-center">
+                    <div className="inline-block animate-pulse rounded-full h-12 w-12 border-4 mb-4" style={{
+                        borderColor: '#39ff14',
+                        boxShadow: '0 0 15px rgba(57, 255, 20, 0.6)',
+                    }}></div>
+                    <p className="font-bold text-sm" style={{
+                        color: '#39ff14',
+                        textShadow: '0 0 5px rgba(57, 255, 20, 0.6)',
+                    }}>
+                        LOADING...
+                    </p>
+                </div>
             </div>
         );
     }
@@ -55,5 +76,19 @@ export default function EditProfilePage() {
         return null;
     }
 
-    return <EditProfileForm user={user} />;
+    return (
+        <div className="min-h-screen bg-black py-8 px-4" style={{
+            backgroundImage: `
+              repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(57, 255, 20, 0.03) 2px,
+                rgba(57, 255, 20, 0.03) 4px
+              )
+            `,
+        }}>
+            <EditProfileForm user={user} />
+        </div>
+    );
 }

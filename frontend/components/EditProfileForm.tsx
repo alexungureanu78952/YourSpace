@@ -78,27 +78,149 @@ export default function EditProfileForm({ user }: EditProfileFormProps) {
     }
 
     return (
-        <div className="max-w-4xl mx-auto mt-8 space-y-6">
+        <div className="max-w-4xl mx-auto space-y-6">
             {/* AI Code Generator */}
             <AiCodeGenerator onCodeGenerated={handleAiCodeGenerated} />
 
             {/* Edit Profile Form */}
-            <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur p-8 rounded-lg shadow-lg flex flex-col gap-4">
-                <h2 className="text-2xl font-bold mb-2">Edit Profile</h2>
-                <label>Display Name</label>
-                <input type="text" value={form.displayName} onChange={e => setForm(f => ({ ...f, displayName: e.target.value }))} className="input" />
-                <label>Bio</label>
-                <textarea value={form.bio} onChange={e => setForm(f => ({ ...f, bio: e.target.value }))} className="input" />
-                <label>Avatar URL</label>
-                <input type="text" value={form.avatarUrl} onChange={e => setForm(f => ({ ...f, avatarUrl: e.target.value }))} className="input" />
-                <label>Custom HTML</label>
-                <textarea value={form.customHtml} onChange={e => setForm(f => ({ ...f, customHtml: e.target.value }))} className="input font-mono" rows={4} />
-                <label>Custom CSS</label>
-                <textarea value={form.customCss} onChange={e => setForm(f => ({ ...f, customCss: e.target.value }))} className="input font-mono" rows={4} />
-                {form.error && <div className="text-red-500">{form.error}</div>}
-                {form.success && <div className="text-green-600">Profile updated!</div>}
-                <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded" disabled={form.loading}>
-                    {form.loading ? "Saving..." : "Save Changes"}
+            <form onSubmit={handleSubmit} className="y2k-card flex flex-col gap-6"
+                  style={{
+                      background: 'rgba(26, 26, 26, 0.9)',
+                      borderColor: '#39ff14',
+                  }}>
+                <div className="mb-4 pb-4 border-b" style={{ borderColor: '#1a4d2e' }}>
+                    <h2 className="y2k-heading y2k-heading-md" style={{ marginBottom: 0 }}>
+                        EDIT PROFILE
+                    </h2>
+                </div>
+
+                <div>
+                    <label style={{
+                        display: 'block',
+                        marginBottom: '8px',
+                        color: '#39ff14',
+                        fontWeight: 'bold',
+                        textShadow: '0 0 5px rgba(57, 255, 20, 0.6)',
+                    }}>
+                        DISPLAY NAME
+                    </label>
+                    <input
+                        type="text"
+                        value={form.displayName}
+                        onChange={e => setForm(f => ({ ...f, displayName: e.target.value }))}
+                        className="y2k-input w-full"
+                        style={{ borderColor: '#39ff14' }}
+                    />
+                </div>
+
+                <div>
+                    <label style={{
+                        display: 'block',
+                        marginBottom: '8px',
+                        color: '#39ff14',
+                        fontWeight: 'bold',
+                        textShadow: '0 0 5px rgba(57, 255, 20, 0.6)',
+                    }}>
+                        BIO
+                    </label>
+                    <textarea
+                        value={form.bio}
+                        onChange={e => setForm(f => ({ ...f, bio: e.target.value }))}
+                        className="y2k-input w-full"
+                        rows={3}
+                        style={{ borderColor: '#39ff14' }}
+                    />
+                </div>
+
+                <div>
+                    <label style={{
+                        display: 'block',
+                        marginBottom: '8px',
+                        color: '#39ff14',
+                        fontWeight: 'bold',
+                        textShadow: '0 0 5px rgba(57, 255, 20, 0.6)',
+                    }}>
+                        AVATAR URL
+                    </label>
+                    <input
+                        type="text"
+                        value={form.avatarUrl}
+                        onChange={e => setForm(f => ({ ...f, avatarUrl: e.target.value }))}
+                        className="y2k-input w-full"
+                        style={{ borderColor: '#39ff14' }}
+                    />
+                </div>
+
+                <div>
+                    <label style={{
+                        display: 'block',
+                        marginBottom: '8px',
+                        color: '#00ffff',
+                        fontWeight: 'bold',
+                        textShadow: '0 0 5px rgba(0, 255, 255, 0.6)',
+                    }}>
+                        CUSTOM HTML
+                    </label>
+                    <textarea
+                        value={form.customHtml}
+                        onChange={e => setForm(f => ({ ...f, customHtml: e.target.value }))}
+                        className="y2k-input w-full font-mono"
+                        rows={6}
+                        style={{ borderColor: '#00ffff' }}
+                    />
+                </div>
+
+                <div>
+                    <label style={{
+                        display: 'block',
+                        marginBottom: '8px',
+                        color: '#00ffff',
+                        fontWeight: 'bold',
+                        textShadow: '0 0 5px rgba(0, 255, 255, 0.6)',
+                    }}>
+                        CUSTOM CSS
+                    </label>
+                    <textarea
+                        value={form.customCss}
+                        onChange={e => setForm(f => ({ ...f, customCss: e.target.value }))}
+                        className="y2k-input w-full font-mono"
+                        rows={6}
+                        style={{ borderColor: '#00ffff' }}
+                    />
+                </div>
+
+                {form.error && (
+                    <div className="p-3 border-2 border-red-500 font-bold text-center"
+                         style={{
+                             background: 'rgba(255, 0, 0, 0.1)',
+                             color: '#ff0000',
+                             textShadow: '0 0 5px rgba(255, 0, 0, 0.6)',
+                         }}>
+                        {form.error}
+                    </div>
+                )}
+
+                {form.success && (
+                    <div className="p-3 border-2 border-green-500 font-bold text-center"
+                         style={{
+                             background: 'rgba(57, 255, 20, 0.1)',
+                             color: '#39ff14',
+                             textShadow: '0 0 5px rgba(57, 255, 20, 0.6)',
+                         }}>
+                        PROFILE UPDATED! ✓
+                    </div>
+                )}
+
+                <button
+                    type="submit"
+                    className="y2k-button w-full py-3"
+                    disabled={form.loading}
+                    style={{
+                        opacity: form.loading ? 0.5 : 1,
+                        cursor: form.loading ? 'not-allowed' : 'pointer',
+                    }}
+                >
+                    {form.loading ? "SAVING..." : "SAVE CHANGES"}
                 </button>
             </form>
         </div>

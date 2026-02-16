@@ -97,14 +97,26 @@ export default function FeedPage() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-            <div className="max-w-2xl mx-auto px-4 py-6">
+        <div className="min-h-screen bg-black py-8 px-4" style={{
+            backgroundImage: `
+              repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(57, 255, 20, 0.03) 2px,
+                rgba(57, 255, 20, 0.03) 4px
+              )
+            `,
+        }}>
+            <div className="max-w-2xl mx-auto">
                 {/* Header */}
-                <div className="mb-6">
-                    <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                        Feed
-                    </h1>
-                    <p className="text-gray-600 dark:text-gray-400">
+                <div className="mb-8 pb-6 border-b-2" style={{ borderColor: '#39ff14' }}>
+                    <h1 className="y2k-heading y2k-heading-lg mb-2">FEED</h1>
+                    <p className="text-sm" style={{
+                        color: '#00ffff',
+                        textShadow: '0 0 5px rgba(0, 255, 255, 0.6)',
+                        letterSpacing: '1px',
+                    }}>
                         Posts from people you follow and others
                     </p>
                 </div>
@@ -114,16 +126,30 @@ export default function FeedPage() {
 
                 {/* Error Message */}
                 {error && (
-                    <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-4">
-                        <p className="text-red-600 dark:text-red-400">{error}</p>
+                    <div className="mb-4 p-4 border-2 border-red-500 font-bold"
+                         style={{
+                             background: 'rgba(255, 0, 0, 0.1)',
+                             color: '#ff0000',
+                             textShadow: '0 0 5px rgba(255, 0, 0, 0.6)',
+                         }}>
+                        {error}
                     </div>
                 )}
 
                 {/* Loading State (Initial) */}
                 {loading && posts.length === 0 && (
                     <div className="text-center py-12">
-                        <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-                        <p className="mt-2 text-gray-600 dark:text-gray-400">Loading feed...</p>
+                        <div className="inline-block animate-pulse rounded-full h-12 w-12 border-4" style={{
+                            borderColor: '#39ff14',
+                            boxShadow: '0 0 15px rgba(57, 255, 20, 0.6)',
+                        }}></div>
+                        <p className="mt-4 text-sm font-bold" style={{
+                            color: '#39ff14',
+                            textShadow: '0 0 5px rgba(57, 255, 20, 0.6)',
+                            letterSpacing: '1px',
+                        }}>
+                            LOADING FEED...
+                        </p>
                     </div>
                 )}
 
@@ -143,24 +169,21 @@ export default function FeedPage() {
 
                 {/* Empty State */}
                 {!loading && posts.length === 0 && (
-                    <div className="text-center py-12 bg-white dark:bg-gray-800 rounded-lg shadow">
-                        <svg
-                            className="mx-auto h-12 w-12 text-gray-400"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
-                            />
-                        </svg>
-                        <h3 className="mt-2 text-lg font-medium text-gray-900 dark:text-white">
-                            No posts yet
-                        </h3>
-                        <p className="mt-1 text-gray-500 dark:text-gray-400">
+                    <div className="y2k-card text-center py-12" style={{
+                        background: 'rgba(26, 26, 26, 0.8)',
+                        borderColor: '#1a4d2e',
+                    }}>
+                        <div style={{
+                            fontSize: '3rem',
+                            marginBottom: '10px',
+                        }}>
+                            📭
+                        </div>
+                        <h3 className="y2k-heading y2k-heading-md mb-2">NO POSTS YET</h3>
+                        <p style={{
+                            color: '#888888',
+                            fontSize: '0.95rem',
+                        }}>
                             Start following people to see their posts here!
                         </p>
                     </div>
@@ -168,23 +191,28 @@ export default function FeedPage() {
 
                 {/* Load More Button */}
                 {hasMore && posts.length > 0 && (
-                    <div className="mt-6 text-center">
+                    <div className="mt-8 text-center">
                         <button
                             onClick={handleLoadMore}
                             disabled={loading}
-                            className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium
-                       hover:bg-blue-700 disabled:bg-gray-300 dark:disabled:bg-gray-600
-                       disabled:cursor-not-allowed transition-colors"
+                            className="y2k-button py-3"
+                            style={{
+                                opacity: loading ? 0.5 : 1,
+                                cursor: loading ? 'not-allowed' : 'pointer',
+                            }}
                         >
-                            {loading ? 'Loading...' : 'Load More'}
+                            {loading ? 'LOADING...' : 'LOAD MORE'}
                         </button>
                     </div>
                 )}
 
                 {/* End of Feed */}
                 {!hasMore && posts.length > 0 && (
-                    <div className="mt-6 text-center text-gray-500 dark:text-gray-400 text-sm">
-                        You've reached the end of the feed
+                    <div className="mt-8 text-center text-sm font-bold" style={{
+                        color: '#888888',
+                        textShadow: '0 0 5px rgba(136, 136, 136, 0.4)',
+                    }}>
+                        ▼ END OF FEED ▼
                     </div>
                 )}
             </div>

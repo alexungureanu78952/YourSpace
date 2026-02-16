@@ -41,25 +41,35 @@ const FollowStats: React.FC<FollowStatsProps> = ({ userId, className = '' }) => 
 
     if (loading) {
         return (
-            <div className={`flex gap-3 text-sm ${className}`}>
-                <span className="text-gray-400">Loading...</span>
+            <div className={`flex gap-3 text-xs font-bold ${className}`} style={{
+                color: '#888888',
+            }}>
+                <span>LOADING...</span>
             </div>
         );
     }
 
     return (
-        <div className={`flex gap-3 text-sm ${className}`}>
+        <div className={`flex gap-4 text-xs font-bold ${className}`}>
             <Link
                 href={`/profile/${userId}/followers`}
-                className="hover:underline text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                className="hover:brightness-150 transition-all"
+                style={{
+                    color: '#39ff14',
+                    textShadow: '0 0 5px rgba(57, 255, 20, 0.6)',
+                }}
             >
-                <span className="font-bold">{stats.followersCount}</span> {stats.followersCount === 1 ? 'Follower' : 'Followers'}
+                <span style={{ fontSize: '1.1em' }}>{stats.followersCount}</span> {stats.followersCount === 1 ? 'FOLLOWER' : 'FOLLOWERS'}
             </Link>
             <Link
                 href={`/profile/${userId}/following`}
-                className="hover:underline text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                className="hover:brightness-150 transition-all"
+                style={{
+                    color: '#00ffff',
+                    textShadow: '0 0 5px rgba(0, 255, 255, 0.6)',
+                }}
             >
-                <span className="font-bold">{stats.followingCount}</span> Following
+                <span style={{ fontSize: '1.1em' }}>{stats.followingCount}</span> FOLLOWING
             </Link>
         </div>
     );

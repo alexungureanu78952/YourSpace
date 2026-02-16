@@ -120,19 +120,29 @@ const FollowButton: React.FC<FollowButtonProps> = ({
     }
 
     return (
-        <div className="inline-block">
+        <div className="w-full">
             <button
                 onClick={isFollowing ? handleUnfollow : handleFollow}
                 disabled={isLoading}
-                className={`px-4 py-2 rounded font-medium transition-colors ${isFollowing
-                        ? 'bg-gray-600 hover:bg-gray-700 text-white'
-                        : 'bg-blue-600 hover:bg-blue-700 text-white'
-                    } ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className="y2k-button w-full py-2"
+                style={{
+                    opacity: isLoading ? 0.5 : 1,
+                    cursor: isLoading ? 'not-allowed' : 'pointer',
+                    borderColor: isFollowing ? '#00ffff' : '#39ff14',
+                    color: isFollowing ? '#00ffff' : '#39ff14',
+                    textShadow: isFollowing ? '0 0 5px rgba(0, 255, 255, 0.6)' : '0 0 5px rgba(57, 255, 20, 0.6)',
+                    background: isFollowing ? 'rgba(0, 255, 255, 0.1)' : 'rgba(13, 59, 26, 0.3)',
+                }}
             >
-                {isLoading ? 'Loading...' : isFollowing ? 'Unfollow' : 'Follow'}
+                {isLoading ? 'PROCESSING...' : isFollowing ? 'UNFOLLOW' : 'FOLLOW'}
             </button>
             {error && (
-                <p className="text-red-500 text-sm mt-1">{error}</p>
+                <p className="text-xs font-bold mt-2" style={{
+                    color: '#ff0000',
+                    textShadow: '0 0 5px rgba(255, 0, 0, 0.6)',
+                }}>
+                    {error}
+                </p>
             )}
         </div>
     );

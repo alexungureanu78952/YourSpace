@@ -1,8 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Y2K Retro Color Palette */
+  --y2k-black: #000000;
+  --y2k-dark-green: #0d3b1a;
+  --y2k-green: #1a4d2e;
+  --y2k-neon-green: #39ff14;
+  --y2k-lime: #00ff00;
+  --y2k-cyan: #00ffff;
+  --y2k-magenta: #ff00ff;
+  --y2k-dark-bg: #0a0a0a;
+  --y2k-card-bg: #1a1a1a;
+  --y2k-input-bg: #2a2a2a;
+  --y2k-border: #39ff14;
+  --y2k-text: #00ff00;
+  --y2k-text-secondary: #888888;
+  
+  --background: #000000;
+  --foreground: #39ff14;
 }
 
 @theme inline {
@@ -14,13 +29,214 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000000;
+    --foreground: #39ff14;
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background: var(--y2k-black);
+  color: var(--y2k-neon-green);
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000000;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 0, 0.03) 2px,
+      rgba(0, 255, 0, 0.03) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 0, 0.03) 2px,
+      rgba(0, 255, 0, 0.03) 4px
+    );
+  color: var(--y2k-neon-green);
+}
+
+/* Y2K Text Effects */
+.y2k-glow {
+  color: var(--y2k-neon-green);
+  text-shadow: 0 0 10px var(--y2k-neon-green), 0 0 20px var(--y2k-lime);
+  font-weight: bold;
+}
+
+.y2k-glow-cyan {
+  color: var(--y2k-cyan);
+  text-shadow: 0 0 10px var(--y2k-cyan), 0 0 20px #0099ff;
+}
+
+.y2k-glow-magenta {
+  color: var(--y2k-magenta);
+  text-shadow: 0 0 10px var(--y2k-magenta), 0 0 20px #ff1493;
+}
+
+/* Y2K Buttons */
+.y2k-button {
+  background-color: var(--y2k-dark-green);
+  color: var(--y2k-neon-green);
+  border: 2px solid var(--y2k-neon-green);
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.y2k-button:hover {
+  background-color: var(--y2k-neon-green);
+  color: var(--y2k-black);
+  box-shadow: 0 0 20px var(--y2k-neon-green), inset 0 0 10px rgba(57, 255, 20, 0.3);
+  transform: scale(1.05);
+}
+
+.y2k-button:active {
+  transform: scale(0.98);
+}
+
+.y2k-button-secondary {
+  background-color: transparent;
+  color: var(--y2k-cyan);
+  border: 2px solid var(--y2k-cyan);
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.y2k-button-secondary:hover {
+  background-color: var(--y2k-cyan);
+  color: var(--y2k-black);
+  box-shadow: 0 0 20px var(--y2k-cyan), inset 0 0 10px rgba(0, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+/* Y2K Input Fields */
+.y2k-input {
+  background-color: var(--y2k-input-bg);
+  color: var(--y2k-neon-green);
+  border: 2px solid var(--y2k-green);
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  font-family: 'Courier New', monospace;
+}
+
+.y2k-input::placeholder {
+  color: var(--y2k-text-secondary);
+  opacity: 0.7;
+}
+
+.y2k-input:focus {
+  outline: none;
+  border-color: var(--y2k-neon-green);
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.6), inset 0 0 10px rgba(57, 255, 20, 0.2);
+  background-color: rgba(13, 59, 26, 0.3);
+}
+
+/* Y2K Cards */
+.y2k-card {
+  background-color: var(--y2k-card-bg);
+  border: 2px solid var(--y2k-green);
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.2), inset 0 0 20px rgba(57, 255, 20, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.y2k-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--y2k-neon-green), transparent);
+  opacity: 0.5;
+}
+
+.y2k-card:hover {
+  border-color: var(--y2k-neon-green);
+  box-shadow: 0 0 30px rgba(57, 255, 20, 0.4), inset 0 0 20px rgba(57, 255, 20, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Y2K Grid Background */
+.y2k-grid {
+  position: relative;
+  background-image: 
+    linear-gradient(0deg, transparent 24%, rgba(57, 255, 20, 0.05) 25%, rgba(57, 255, 20, 0.05) 26%, transparent 27%, transparent 74%, rgba(57, 255, 20, 0.05) 75%, rgba(57, 255, 20, 0.05) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(57, 255, 20, 0.05) 25%, rgba(57, 255, 20, 0.05) 26%, transparent 27%, transparent 74%, rgba(57, 255, 20, 0.05) 75%, rgba(57, 255, 20, 0.05) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+}
+
+/* Y2K Heading Styles */
+.y2k-heading {
+  font-family: 'Arial Black', sans-serif;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--y2k-neon-green);
+  text-shadow: 
+    2px 2px 0 var(--y2k-dark-green),
+    4px 4px 0 rgba(57, 255, 20, 0.3);
+}
+
+.y2k-heading-lg {
+  font-size: 3.5rem;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.y2k-heading-md {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.y2k-heading-sm {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Scanline Effect */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes scanlines {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(10px);
+    }
+  }
+
+  .y2k-scanline {
+    animation: scanlines 0.15s linear infinite;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.15) 2px,
+      rgba(0, 0, 0, 0.15) 4px
+    );
+    pointer-events: none;
+  }
 }

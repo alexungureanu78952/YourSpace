@@ -91,63 +91,106 @@ export default function AiCodeGenerator({ onCodeGenerated }: AiCodeGeneratorProp
     };
 
     return (
-        <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur border border-purple-500/20 rounded-lg p-6 mb-6">
-            <div className="flex items-center gap-3 mb-4">
-                <h3 className="text-xl font-bold text-white">AI Profile Assistant</h3>
+        <div className="y2k-card mb-6" style={{
+            background: 'rgba(26, 26, 26, 0.9)',
+            borderColor: '#ff00ff',
+            boxShadow: '0 0 30px rgba(255, 0, 255, 0.3), inset 0 0 20px rgba(255, 0, 255, 0.05)',
+        }}>
+            <div className="mb-4">
+                <h3 className="y2k-heading y2k-heading-md" style={{
+                    color: '#ff00ff',
+                    textShadow: '0 0 5px rgba(255, 0, 255, 0.6)',
+                    marginBottom: 0,
+                }}>
+                    AI PROFILE ASSISTANT
+                </h3>
+                <div style={{
+                    height: '2px',
+                    background: 'linear-gradient(90deg, transparent, #ff00ff, transparent)',
+                    marginTop: '10px',
+                }}></div>
             </div>
 
-            <p className="text-gray-300 text-sm mb-4">
+            <p style={{
+                color: '#888888',
+                fontSize: '0.95rem',
+                marginBottom: '20px',
+            }}>
                 Describe your profile design and select what code you want AI to generate. Copy the result below into your custom HTML or CSS boxes.
             </p>
 
             <div className="space-y-4">
                 <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
-                        What do you want to create?
+                    <label className="y2k-heading" style={{
+                        color: '#39ff14',
+                        fontSize: '0.9rem',
+                        textShadow: '0 0 3px rgba(57, 255, 20, 0.5)',
+                        marginBottom: '8px',
+                        display: 'block',
+                    }}>
+                        WHAT DO YOU WANT TO CREATE?
                     </label>
                     <textarea
                         value={prompt}
                         onChange={(e) => setPrompt(e.target.value)}
                         placeholder="e.g., Create a retro MySpace profile with pink gradient background and sparkles"
-                        className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        className="y2k-input w-full"
                         rows={3}
+                        style={{
+                            borderColor: '#39ff14',
+                        }}
                     />
                 </div>
 
                 <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
-                        Generate:
+                    <label className="y2k-heading" style={{
+                        color: '#00ffff',
+                        fontSize: '0.9rem',
+                        textShadow: '0 0 3px rgba(0, 255, 255, 0.5)',
+                        marginBottom: '8px',
+                        display: 'block',
+                    }}>
+                        GENERATE:
                     </label>
                     <div className="flex gap-3">
                         <button
                             type="button"
                             onClick={() => setType('both')}
-                            className={`px-4 py-2 rounded-lg font-medium transition ${type === 'both'
-                                ? 'bg-purple-600 text-white'
-                                : 'bg-white/5 text-gray-300 hover:bg-white/10'
-                                }`}
+                            className="y2k-button"
+                            style={{
+                                background: type === 'both' ? '#39ff14' : 'rgba(13, 59, 26, 0.5)',
+                                color: type === 'both' ? '#000000' : '#39ff14',
+                                borderColor: '#39ff14',
+                                flex: 1,
+                            }}
                         >
-                            Both (HTML + CSS)
+                            BOTH
                         </button>
                         <button
                             type="button"
                             onClick={() => setType('html')}
-                            className={`px-4 py-2 rounded-lg font-medium transition ${type === 'html'
-                                ? 'bg-purple-600 text-white'
-                                : 'bg-white/5 text-gray-300 hover:bg-white/10'
-                                }`}
+                            className="y2k-button"
+                            style={{
+                                background: type === 'html' ? '#00ffff' : 'rgba(13, 59, 26, 0.5)',
+                                color: type === 'html' ? '#000000' : '#00ffff',
+                                borderColor: '#00ffff',
+                                flex: 1,
+                            }}
                         >
-                            HTML Only
+                            HTML
                         </button>
                         <button
                             type="button"
                             onClick={() => setType('css')}
-                            className={`px-4 py-2 rounded-lg font-medium transition ${type === 'css'
-                                ? 'bg-purple-600 text-white'
-                                : 'bg-white/5 text-gray-300 hover:bg-white/10'
-                                }`}
+                            className="y2k-button"
+                            style={{
+                                background: type === 'css' ? '#ff00ff' : 'rgba(13, 59, 26, 0.5)',
+                                color: type === 'css' ? '#000000' : '#ff00ff',
+                                borderColor: '#ff00ff',
+                                flex: 1,
+                            }}
                         >
-                            CSS Only
+                            CSS
                         </button>
                     </div>
                 </div>
@@ -155,44 +198,65 @@ export default function AiCodeGenerator({ onCodeGenerated }: AiCodeGeneratorProp
                 <button
                     onClick={handleGenerate}
                     disabled={loading || !prompt.trim()}
-                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed text-white font-bold py-3 px-6 rounded-lg transition duration-200 flex items-center justify-center gap-2"
+                    className="y2k-button w-full py-3"
+                    style={{
+                        opacity: loading || !prompt.trim() ? 0.5 : 1,
+                        cursor: loading || !prompt.trim() ? 'not-allowed' : 'pointer',
+                    }}
                 >
                     {loading ? (
-                        <>
-                            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                            Generating...
-                        </>
+                        <>GENERATING...</>
                     ) : (
-                        'Generate Code'
+                        'GENERATE CODE'
                     )}
                 </button>
 
                 {error && (
-                    <div className="bg-red-500/20 border border-red-500 text-red-300 px-4 py-3 rounded-lg">
+                    <div className="p-3 border-2 border-red-500 text-red-400 font-bold" style={{
+                        background: 'rgba(255, 0, 0, 0.1)',
+                        boxShadow: '0 0 10px rgba(255, 0, 0, 0.4)',
+                    }}>
                         {error}
                     </div>
                 )}
 
                 {result && (
                     <div className="space-y-4 mt-6">
-                        <div className="bg-green-500/20 border border-green-500 text-green-300 px-4 py-3 rounded-lg">
+                        <div className="p-3 border-2 border-green-500 text-green-400 font-bold" style={{
+                            background: 'rgba(57, 255, 20, 0.1)',
+                            boxShadow: '0 0 10px rgba(57, 255, 20, 0.4)',
+                        }}>
                             {result.message}
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium text-gray-300 mb-2">
-                                Generated Code:
+                            <label className="y2k-heading" style={{
+                                color: '#39ff14',
+                                fontSize: '0.9rem',
+                                textShadow: '0 0 3px rgba(57, 255, 20, 0.5)',
+                                marginBottom: '8px',
+                                display: 'block',
+                            }}>
+                                GENERATED CODE:
                             </label>
-                            <pre className="bg-black/50 border border-gray-600 rounded-lg p-4 text-xs text-gray-300 overflow-x-auto max-h-60">
+                            <pre className="y2k-card p-4" style={{
+                                background: 'rgba(0, 0, 0, 0.7)',
+                                borderColor: '#39ff14',
+                                overflow: 'x-auto',
+                                maxHeight: '240px',
+                                fontSize: '0.85rem',
+                                color: '#39ff14',
+                                fontFamily: 'monospace',
+                            }}>
                                 {result.code}
                             </pre>
                         </div>
 
                         <button
                             onClick={handleApply}
-                            className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-200"
+                            className="y2k-button-secondary w-full py-3"
                         >
-                            Clear
+                            CLEAR
                         </button>
                     </div>
                 )}

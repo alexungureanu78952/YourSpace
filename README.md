@@ -58,9 +58,6 @@ A modern social media platform inspired by MySpace, featuring **real-time messag
 **Login Page**
 ![Login Page](docs/screenshots/auth-login.png)
 
-**Register Page**
-![Register Page](docs/screenshots/auth-register.png)
-
 ### Feed & Posts
 **Feed Page with Posts(Followed users appear first)**
 ![Feed Page](docs/screenshots/feed-page.png)

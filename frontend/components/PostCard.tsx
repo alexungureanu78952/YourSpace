@@ -76,9 +76,12 @@ export default function PostCard({ post, currentUserId, onDelete }: PostCardProp
     };
 
     return (
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 mb-4">
+        <div className="y2k-card mb-4" style={{
+            background: 'rgba(26, 26, 26, 0.8)',
+            borderColor: '#1a4d2e',
+        }}>
             {/* Header: Avatar + User Info */}
-            <div className="flex items-start gap-3 mb-3">
+            <div className="flex items-start gap-3 mb-3 pb-3 border-b border-green-900">
                 {/* Avatar */}
                 <div className="flex-shrink-0">
                     {post.avatarUrl ? (
@@ -87,11 +90,13 @@ export default function PostCard({ post, currentUserId, onDelete }: PostCardProp
                             alt={post.displayName}
                             width={48}
                             height={48}
-                            className="rounded-full"
+                            className="rounded-full border-2"
+                            style={{ borderColor: '#39ff14' }}
                         />
                     ) : (
                         <UserCircleIcon
-                            className="w-12 h-12 text-gray-400"
+                            className="w-12 h-12"
+                            style={{ color: '#39ff14' }}
                             data-testid="default-avatar"
                         />
                     )}
@@ -100,21 +105,30 @@ export default function PostCard({ post, currentUserId, onDelete }: PostCardProp
                 {/* User Info */}
                 <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
-                        <h3 className="font-semibold text-gray-900 dark:text-white">
+                        <h3 className="font-bold" style={{ color: '#39ff14', textShadow: '0 0 5px rgba(57, 255, 20, 0.6)' }}>
                             {post.displayName}
                         </h3>
                         <button
                             onClick={handleUsernameClick}
-                            className="text-sm text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+                            className="text-sm hover:brightness-150 transition-all"
+                            style={{
+                                color: '#00ffff',
+                                textShadow: '0 0 5px rgba(0, 255, 255, 0.6)',
+                                cursor: 'pointer',
+                            }}
                         >
                             @{post.username}
                         </button>
                         {post.isFollowing && (
-                            <span className="text-xs text-blue-600 dark:text-blue-400 font-medium">
-                                (Following)
+                            <span className="text-xs font-bold px-2 py-1 border border-green-600"
+                                  style={{
+                                      color: '#39ff14',
+                                      textShadow: '0 0 5px rgba(57, 255, 20, 0.6)',
+                                  }}>
+                                FOLLOWING
                             </span>
                         )}
-                        <span className="text-xs text-gray-500 dark:text-gray-400">
+                        <span className="text-xs" style={{ color: '#888888' }}>
                             · {formatTimestamp(post.createdAt)}
                         </span>
                     </div>
@@ -125,7 +139,13 @@ export default function PostCard({ post, currentUserId, onDelete }: PostCardProp
                     <button
                         onClick={handleDelete}
                         disabled={isDeleting}
-                        className="text-red-600 hover:text-red-700 text-sm disabled:opacity-50"
+                        className="text-sm font-bold uppercase px-2 py-1 border transition-all"
+                        style={{
+                            color: isDeleting ? '#888888' : '#ff00ff',
+                            borderColor: isDeleting ? '#888888' : '#ff00ff',
+                            textShadow: isDeleting ? 'none' : '0 0 5px rgba(255, 0, 255, 0.6)',
+                            opacity: isDeleting ? 0.5 : 1,
+                        }}
                         aria-label="Delete post"
                     >
                         {isDeleting ? 'Deleting...' : 'Delete'}
@@ -135,48 +155,53 @@ export default function PostCard({ post, currentUserId, onDelete }: PostCardProp
 
             {/* Content */}
             <div className="mb-3">
-                <p className="text-gray-800 dark:text-gray-200 whitespace-pre-wrap">
+                <p className="whitespace-pre-wrap" style={{ color: '#cccccc' }}>
                     {post.content}
                 </p>
             </div>
 
             {/* Media (if present) */}
             {post.mediaUrl && (
-                <div className="mb-3" data-testid="post-media">
+                <div className="mb-3 p-2 border border-dashed" style={{
+                    borderColor: '#39ff14',
+                    background: 'rgba(57, 255, 20, 0.05)',
+                }} data-testid="post-media">
                     <a
                         href={post.mediaUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 text-sm"
+                        className="text-sm font-bold hover:brightness-150 transition-all"
+                        style={{
+                            color: '#00ffff',
+                            textShadow: '0 0 5px rgba(0, 255, 255, 0.6)',
+                        }}
                     >
-                        View Media →
+                        ▶ VIEW MEDIA →
                     </a>
                 </div>
             )}
 
             {/* Footer: Likes */}
-            <div className="flex items-center gap-4 pt-2 border-t border-gray-200 dark:border-gray-700">
-                <div className="flex items-center gap-1 text-gray-600 dark:text-gray-400">
-                    <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                        />
-                    </svg>
-                    <span className="text-sm">{post.likesCount}</span>
+            <div className="flex items-center gap-4 pt-3 mt-3 border-t" style={{
+                borderColor: '#1a4d2e',
+            }}>
+                <div className="flex items-center gap-2 font-bold" style={{
+                    color: '#ff00ff',
+                    textShadow: '0 0 5px rgba(255, 0, 255, 0.6)',
+                }}>
+                    <span>❤</span>
+                    <span>{post.likesCount}</span>
                 </div>
             </div>
 
             {/* Error Message */}
             {error && (
-                <div className="mt-2 text-sm text-red-600 dark:text-red-400">
+                <div className="mt-2 p-2 text-sm font-bold border border-red-500"
+                     style={{
+                         color: '#ff0000',
+                         background: 'rgba(255, 0, 0, 0.1)',
+                         textShadow: '0 0 5px rgba(255, 0, 0, 0.6)',
+                     }}>
                     {error}
                 </div>
             )}

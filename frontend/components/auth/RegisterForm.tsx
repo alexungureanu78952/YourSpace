@@ -46,44 +46,94 @@ export default function RegisterForm() {
     return (
         <form
             onSubmit={handleSubmit}
-            className="bg-white/10 backdrop-blur-md p-8 rounded-lg shadow-lg w-96 flex flex-col gap-4"
-        >
-            <h2 className="text-2xl font-bold text-white mb-2">Sign Up</h2>
+            className="y2k-card w-96 flex flex-col gap-6"
+            style={{
+                background: 'rgba(26, 26, 26, 0.9)',
+                borderColor: '#00ffff',
+                boxShadow: '0 0 30px rgba(0, 255, 255, 0.4), inset 0 0 20px rgba(0, 255, 255, 0.05)',
+            }}>
+            <div className="text-center mb-4">
+                <h2 className="y2k-heading y2k-heading-md" style={{ marginBottom: 0, color: '#00ffff' }}>
+                    SIGN UP
+                </h2>
+                <div style={{
+                    height: '2px',
+                    background: 'linear-gradient(90deg, transparent, #00ffff, transparent)',
+                    marginTop: '10px',
+                }}></div>
+            </div>
+
             <input
                 type="text"
                 placeholder="Username"
-                className="p-2 rounded border border-gray-400"
+                className="y2k-input w-full"
                 value={state.username}
                 onChange={(e) => setState((s) => ({ ...s, username: e.target.value }))}
                 required
             />
+
             <input
                 type="email"
                 placeholder="Email"
-                className="p-2 rounded border border-gray-400"
+                className="y2k-input w-full"
                 value={state.email}
                 onChange={(e) => setState((s) => ({ ...s, email: e.target.value }))}
                 required
             />
+
             <input
                 type="password"
                 placeholder="Password"
-                className="p-2 rounded border border-gray-400"
+                className="y2k-input w-full"
                 value={state.password}
                 onChange={(e) => setState((s) => ({ ...s, password: e.target.value }))}
                 required
             />
-            {state.error && <div className="text-red-400 text-sm">{state.error}</div>}
-            {state.success && <div className="text-green-400 text-sm">{state.success}</div>}
+
+            {state.error && (
+                <div className="p-3 border-2 border-red-500 text-red-400 font-bold text-center"
+                     style={{
+                         background: 'rgba(255, 0, 0, 0.1)',
+                         boxShadow: '0 0 10px rgba(255, 0, 0, 0.4)',
+                     }}>
+                    {state.error}
+                </div>
+            )}
+
+            {state.success && (
+                <div className="p-3 border-2 border-green-500 text-green-400 font-bold text-center"
+                     style={{
+                         background: 'rgba(57, 255, 20, 0.1)',
+                         boxShadow: '0 0 10px rgba(57, 255, 20, 0.4)',
+                     }}>
+                    {state.success}
+                </div>
+            )}
+
             <button
                 type="submit"
-                className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded mt-2 disabled:opacity-60"
+                className="y2k-button-secondary w-full py-3"
                 disabled={state.loading}
             >
-                {state.loading ? "Signing up..." : "Sign Up"}
+                {state.loading ? "Creating Account..." : "Sign Up"}
             </button>
-            <div className="text-sm text-gray-200 mt-2">
-                Ai deja cont? <a href="/auth/login" className="underline">Login</a>
+
+            <div style={{
+                textAlign: 'center',
+                color: '#888888',
+                fontSize: '0.9rem',
+                paddingTop: '10px',
+                borderTop: '1px solid #0d3b1a',
+            }}>
+                Already have an account?{' '}
+                <a href="/auth/login" style={{
+                    color: '#39ff14',
+                    textDecoration: 'underline',
+                    cursor: 'pointer',
+                    textShadow: '0 0 5px rgba(57, 255, 20, 0.6)',
+                }}>
+                    Login here
+                </a>
             </div>
         </form>
     );

@@ -34,26 +34,59 @@ const UserProfile: React.FC<UserProfileProps> = ({ user }) => {
     const [imgSrc, setImgSrc] = React.useState(avatarUrl);
 
     return (
-        <div className="rounded-lg shadow-lg p-6 bg-white text-black">
-            <div className="flex items-center gap-4 mb-4">
+        <div className="y2k-card" style={{
+            background: 'rgba(26, 26, 26, 0.8)',
+            borderColor: '#39ff14',
+        }}>
+            <div className="flex items-center gap-4 mb-6 pb-6 border-b" style={{ borderColor: '#1a4d2e' }}>
                 <img
                     src={imgSrc}
                     alt="avatar"
-                    className="w-16 h-16 rounded-full border"
+                    className="w-20 h-20 rounded-full border-2"
+                    style={{ borderColor: '#39ff14' }}
                     onError={() => setImgSrc('/default-avatar.png')}
                 />
-                <div>
-                    <h2 className="text-2xl font-bold">{displayName}</h2>
-                    <p className="text-sm text-gray-400">@{user.username}</p>
-                    <FollowStats userId={user.id} className="mt-2" />
+                <div className="flex-1">
+                    <h2 className="font-bold text-2xl" style={{
+                        color: '#39ff14',
+                        textShadow: '0 0 10px rgba(57, 255, 20, 0.8)',
+                    }}>
+                        {displayName}
+                    </h2>
+                    <p className="text-sm" style={{
+                        color: '#00ffff',
+                        textShadow: '0 0 5px rgba(0, 255, 255, 0.6)',
+                    }}>
+                        @{user.username}
+                    </p>
+                    <div style={{ marginTop: '8px' }}>
+                        <FollowStats userId={user.id} />
+                    </div>
                 </div>
             </div>
-            {bio && <p className="mb-2">{bio}</p>}
-            <p className="text-xs text-gray-500">Joined: {new Date(user.createdAt).toLocaleDateString()}</p>
+
+            {bio && (
+                <p className="mb-4" style={{
+                    color: '#cccccc',
+                }}>
+                    {bio}
+                </p>
+            )}
+
+            <p className="text-xs mb-4" style={{
+                color: '#888888',
+            }}>
+                JOINED: {new Date(user.createdAt).toLocaleDateString()}
+            </p>
 
             {/* Custom HTML Section */}
             {profile.customHtml && (
-                <div className="mt-4 p-4 border rounded" dangerouslySetInnerHTML={{ __html: profile.customHtml }} />
+                <div className="mt-4 p-4 border" style={{
+                    borderColor: '#39ff14',
+                    background: 'rgba(57, 255, 20, 0.05)',
+                }}>
+                    <div dangerouslySetInnerHTML={{ __html: profile.customHtml }} />
+                </div>
             )}
 
             {/* Custom CSS */}
@@ -63,22 +96,27 @@ const UserProfile: React.FC<UserProfileProps> = ({ user }) => {
 
             {isOwnProfile ? (
                 <button
-                    className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+                    className="y2k-button mt-6 w-full py-3"
                     onClick={() => window.location.href = '/profile/edit'}
                 >
-                    Edit Profile
+                    EDIT PROFILE
                 </button>
             ) : (
-                <div className="mt-4 flex gap-2">
-                    <FollowButton
-                        targetUserId={user.id}
-                        currentUserId={currentUser?.id || null}
-                    />
+                <div className="mt-6 flex gap-4">
+                    <div style={{ flex: 1 }}>
+                        <FollowButton
+                            targetUserId={user.id}
+                            currentUserId={currentUser?.id || null}
+                        />
+                    </div>
                     <button
-                        className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded"
+                        className="y2k-button-secondary flex-1 py-2"
                         onClick={() => window.location.href = `/messages/${user.id}`}
+                        style={{
+                            background: 'rgba(0, 255, 255, 0.1)',
+                        }}
                     >
-                        Send Message
+                        MESSAGE
                     </button>
                 </div>
             )}
